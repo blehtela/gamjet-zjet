@@ -13,7 +13,9 @@
 //   							//
 //   NOTE: Removed some of the branches not used in 	//
 //	   photon+jet analysis.				//
-//	   e.g. electron, boosted tau, fatjet...	//
+//	   e.g. electron, (boosted) tau, fatjet...	//
+//	   also remove L1 branches etc.			//
+//	   only keep HLT_Photon* hlt branches		//
 //							//
 //////////////////////////////////////////////////////////
 
@@ -48,10 +50,22 @@ class PhotonJetAnalysis {
 public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
    Int_t           fCurrent; //!current Tree number in a TChain
+			     
+   //int	isMC; 		// from gamjet for mc handling --> might want to use another type of flag instead? think.
+   bool		isMC;		// try with boolean variable
+   string	dataset;	// for the data-taking period (like 2023D for example)
+   string	version;	// for the version of the code
+
 
 // Fixed size dimensions of array or collections stored in the TTree if any.
+// originally copied these values from gamjet GamHistosFill.h, but might have changed over time.
    static const int nJetMax=200;
    static const int nPhotonMax=200;
+
+   static const int nElectronMax=10;
+   static const int nTauMax=10;
+   static const int nMuonMax=20;
+
 
 
    // Declaration of leaf types
@@ -63,9 +77,9 @@ public :
    Float_t         CaloMET_phi;
    Float_t         CaloMET_pt;
    Float_t         CaloMET_sumEt;
-   Float_t         ChsMET_phi;
-   Float_t         ChsMET_pt;
-   Float_t         ChsMET_sumEt;
+   Float_t         ChsMET_phi;		//run2?
+   Float_t         ChsMET_pt;		//run2?
+   Float_t         ChsMET_sumEt;	//run2?
 
    Int_t           nCorrT1METJet;
    Float_t         CorrT1METJet_area[12];   //[nCorrT1METJet]
@@ -106,8 +120,8 @@ public :
 						   //
    Int_t           nJet;
    UChar_t         Jet_jetId[nJetMax];   //[nJet], size used to be 15
-   UChar_t         Jet_nConstituents[nJetMax]];   //[nJet]
-   UChar_t         Jet_nElectrons[nJetMax]];   //[nJet]
+   UChar_t         Jet_nConstituents[nJetMax];   //[nJet]
+   UChar_t         Jet_nElectrons[nJetMax];   //[nJet]
    UChar_t         Jet_nMuons[];   //[nJet]
    UChar_t         Jet_nSVs[];   //[nJet]
    Short_t         Jet_electronIdx1[];   //[nJet]
@@ -178,6 +192,7 @@ public :
    Float_t         LowPtElectron_scEtOverPt[8];   //[nLowPtElectron]
    Float_t         LowPtElectron_sieie[8];   //[nLowPtElectron]
    Float_t         LowPtElectron_unbiased[8];   //[nLowPtElectron]
+						//
    Float_t         MET_MetUnclustEnUpDeltaX;
    Float_t         MET_MetUnclustEnUpDeltaY;
    Float_t         MET_covXX;
@@ -188,14 +203,7 @@ public :
    Float_t         MET_significance;
    Float_t         MET_sumEt;
    Float_t         MET_sumPtUnclustered;
-   Int_t           nProton_multiRP;
-   UChar_t         Proton_multiRP_arm[1];   //[nProton_multiRP]
-   Float_t         Proton_multiRP_t[1];   //[nProton_multiRP]
-   Float_t         Proton_multiRP_thetaX[1];   //[nProton_multiRP]
-   Float_t         Proton_multiRP_thetaY[1];   //[nProton_multiRP]
-   Float_t         Proton_multiRP_time[1];   //[nProton_multiRP]
-   Float_t         Proton_multiRP_timeUnc[1];   //[nProton_multiRP]
-   Float_t         Proton_multiRP_xi[1];   //[nProton_multiRP]
+
    Int_t           nMuon;
    UChar_t         Muon_highPtId[12];   //[nMuon]
    Bool_t          Muon_highPurity[12];   //[nMuon]
@@ -255,6 +263,7 @@ public :
    Float_t         Muon_bsConstrainedPtErr[12];   //[nMuon]
    Float_t         Muon_mvaLowPt[12];   //[nMuon]
    Float_t         Muon_mvaTTH[12];   //[nMuon]
+				      //
    Int_t           nPhoton;
    Char_t          Photon_seediEtaOriX[10];   //[nPhoton]
    UChar_t         Photon_cutBased[10];   //[nPhoton]
@@ -301,15 +310,7 @@ public :
    Float_t         Photon_x_calo[10];   //[nPhoton]
    Float_t         Photon_y_calo[10];   //[nPhoton]
    Float_t         Photon_z_calo[10];   //[nPhoton]
-   Int_t           nPPSLocalTrack;
-   Int_t           PPSLocalTrack_multiRPProtonIdx[1];   //[nPPSLocalTrack]
-   Int_t           PPSLocalTrack_singleRPProtonIdx[1];   //[nPPSLocalTrack]
-   Int_t           PPSLocalTrack_decRPId[1];   //[nPPSLocalTrack]
-   Int_t           PPSLocalTrack_rpType[1];   //[nPPSLocalTrack]
-   Float_t         PPSLocalTrack_x[1];   //[nPPSLocalTrack]
-   Float_t         PPSLocalTrack_y[1];   //[nPPSLocalTrack]
-   Float_t         PPSLocalTrack_time[1];   //[nPPSLocalTrack]
-   Float_t         PPSLocalTrack_timeUnc[1];   //[nPPSLocalTrack]
+					//
    Float_t         PuppiMET_phi;
    Float_t         PuppiMET_phiJERDown;
    Float_t         PuppiMET_phiJERUp;
@@ -328,15 +329,16 @@ public :
    Float_t         RawMET_phi;
    Float_t         RawMET_pt;
    Float_t         RawMET_sumEt;
-   Float_t         RawPuppiMET_phi;
-   Float_t         RawPuppiMET_pt;
-   Float_t         RawPuppiMET_sumEt;
+   Float_t         RawPuppiMET_phi;	//run3?
+   Float_t         RawPuppiMET_pt; 	//run3?
+   Float_t         RawPuppiMET_sumEt;	//run3?
    Float_t         Rho_fixedGridRhoAll;
    Float_t         Rho_fixedGridRhoFastjetAll;
    Float_t         Rho_fixedGridRhoFastjetCentral;
    Float_t         Rho_fixedGridRhoFastjetCentralCalo;
    Float_t         Rho_fixedGridRhoFastjetCentralChargedPileUp;
    Float_t         Rho_fixedGridRhoFastjetCentralNeutral;
+
    Int_t           nSoftActivityJet;
    Float_t         SoftActivityJet_eta[6];   //[nSoftActivityJet]
    Float_t         SoftActivityJet_phi[6];   //[nSoftActivityJet]
@@ -348,10 +350,7 @@ public :
    Float_t         SoftActivityJetHT10;
    Float_t         SoftActivityJetHT2;
    Float_t         SoftActivityJetHT5;
-   Int_t           nProton_singleRP;
-   Short_t         Proton_singleRP_decRPId[1];   //[nProton_singleRP]
-   Float_t         Proton_singleRP_thetaY[1];   //[nProton_singleRP]
-   Float_t         Proton_singleRP_xi[1];   //[nProton_singleRP]
+
    Int_t           nSubJet;
    Float_t         SubJet_btagDeepB[10];   //[nSubJet]
    Float_t         SubJet_eta[10];   //[nSubJet]
@@ -365,60 +364,11 @@ public :
    Float_t         SubJet_tau2[10];   //[nSubJet]
    Float_t         SubJet_tau3[10];   //[nSubJet]
    Float_t         SubJet_tau4[10];   //[nSubJet]
-   Int_t           nTau;
-   UChar_t         Tau_decayMode[6];   //[nTau]
-   Bool_t          Tau_idAntiEleDeadECal[6];   //[nTau]
-   UChar_t         Tau_idAntiMu[6];   //[nTau]
-   Bool_t          Tau_idDecayModeNewDMs[6];   //[nTau]
-   Bool_t          Tau_idDecayModeOldDMs[6];   //[nTau]
-   UChar_t         Tau_idDeepTau2017v2p1VSe[6];   //[nTau]
-   UChar_t         Tau_idDeepTau2017v2p1VSjet[6];   //[nTau]
-   UChar_t         Tau_idDeepTau2017v2p1VSmu[6];   //[nTau]
-   UChar_t         Tau_idDeepTau2018v2p5VSe[6];   //[nTau]
-   UChar_t         Tau_idDeepTau2018v2p5VSjet[6];   //[nTau]
-   UChar_t         Tau_idDeepTau2018v2p5VSmu[6];   //[nTau]
-   UChar_t         Tau_nSVs[6];   //[nTau]
-   Short_t         Tau_charge[6];   //[nTau]
-   Short_t         Tau_decayModePNet[6];   //[nTau]
-   Short_t         Tau_eleIdx[6];   //[nTau]
-   Short_t         Tau_jetIdx[6];   //[nTau]
-   Short_t         Tau_muIdx[6];   //[nTau]
-   Short_t         Tau_svIdx1[6];   //[nTau]
-   Short_t         Tau_svIdx2[6];   //[nTau]
-   Float_t         Tau_chargedIso[6];   //[nTau]
-   Float_t         Tau_dxy[6];   //[nTau]
-   Float_t         Tau_dz[6];   //[nTau]
-   Float_t         Tau_eta[6];   //[nTau]
-   Float_t         Tau_leadTkDeltaEta[6];   //[nTau]
-   Float_t         Tau_leadTkDeltaPhi[6];   //[nTau]
-   Float_t         Tau_leadTkPtOverTauPt[6];   //[nTau]
-   Float_t         Tau_mass[6];   //[nTau]
-   Float_t         Tau_neutralIso[6];   //[nTau]
-   Float_t         Tau_phi[6];   //[nTau]
-   Float_t         Tau_photonsOutsideSignalCone[6];   //[nTau]
-   Float_t         Tau_probDM0PNet[6];   //[nTau]
-   Float_t         Tau_probDM10PNet[6];   //[nTau]
-   Float_t         Tau_probDM11PNet[6];   //[nTau]
-   Float_t         Tau_probDM1PNet[6];   //[nTau]
-   Float_t         Tau_probDM2PNet[6];   //[nTau]
-   Float_t         Tau_pt[6];   //[nTau]
-   Float_t         Tau_ptCorrPNet[6];   //[nTau]
-   Float_t         Tau_puCorr[6];   //[nTau]
-   Float_t         Tau_qConfPNet[6];   //[nTau]
-   Float_t         Tau_rawDeepTau2017v2p1VSe[6];   //[nTau]
-   Float_t         Tau_rawDeepTau2017v2p1VSjet[6];   //[nTau]
-   Float_t         Tau_rawDeepTau2017v2p1VSmu[6];   //[nTau]
-   Float_t         Tau_rawDeepTau2018v2p5VSe[6];   //[nTau]
-   Float_t         Tau_rawDeepTau2018v2p5VSjet[6];   //[nTau]
-   Float_t         Tau_rawDeepTau2018v2p5VSmu[6];   //[nTau]
-   Float_t         Tau_rawIso[6];   //[nTau]
-   Float_t         Tau_rawIsodR03[6];   //[nTau]
-   Float_t         Tau_rawPNetVSe[6];   //[nTau]
-   Float_t         Tau_rawPNetVSjet[6];   //[nTau]
-   Float_t         Tau_rawPNetVSmu[6];   //[nTau]
+				      //
    Float_t         TkMET_phi;
    Float_t         TkMET_pt;
    Float_t         TkMET_sumEt;
+
    Int_t           nTrigObj;
    Short_t         TrigObj_l1charge[67];   //[nTrigObj]
    UShort_t        TrigObj_id[67];   //[nTrigObj]
@@ -430,6 +380,7 @@ public :
    Float_t         TrigObj_l1pt[67];   //[nTrigObj]
    Float_t         TrigObj_l1pt_2[67];   //[nTrigObj]
    Float_t         TrigObj_l2pt[67];   //[nTrigObj]
+				       //
    Int_t           nOtherPV;
    Float_t         OtherPV_z[3];   //[nOtherPV]
    Float_t         OtherPV_score[3];   //[nOtherPV]
@@ -458,6 +409,7 @@ public :
    Float_t         SV_x[15];   //[nSV]
    Float_t         SV_y[15];   //[nSV]
    Float_t         SV_z[15];   //[nSV]
+			       
    Bool_t          Flag_HBHENoiseFilter;
    Bool_t          Flag_HBHENoiseIsoFilter;
    Bool_t          Flag_CSCTightHaloFilter;
@@ -486,419 +438,7 @@ public :
    Bool_t          Flag_trkPOG_toomanystripclus53X;
    Bool_t          Flag_trkPOG_logErrorTooManyClusters;
    Bool_t          Flag_METFilters;
-   Bool_t          L1_AlwaysTrue;
-   Bool_t          L1_BPTX_AND_Ref1_VME;
-   Bool_t          L1_BPTX_AND_Ref3_VME;
-   Bool_t          L1_BPTX_AND_Ref4_VME;
-   Bool_t          L1_BPTX_BeamGas_B1_VME;
-   Bool_t          L1_BPTX_BeamGas_B2_VME;
-   Bool_t          L1_BPTX_BeamGas_Ref1_VME;
-   Bool_t          L1_BPTX_BeamGas_Ref2_VME;
-   Bool_t          L1_BPTX_NotOR_VME;
-   Bool_t          L1_BPTX_OR_Ref3_VME;
-   Bool_t          L1_BPTX_OR_Ref4_VME;
-   Bool_t          L1_BPTX_RefAND_VME;
-   Bool_t          L1_BptxMinus;
-   Bool_t          L1_BptxOR;
-   Bool_t          L1_BptxPlus;
-   Bool_t          L1_BptxXOR;
-   Bool_t          L1_CDC_SingleMu_3_er1p2_TOP120_DPHI2p618_3p142;
-   Bool_t          L1_DoubleEG10_er1p2_dR_Max0p6;
-   Bool_t          L1_DoubleEG10p5_er1p2_dR_Max0p6;
-   Bool_t          L1_DoubleEG11_er1p2_dR_Max0p6;
-   Bool_t          L1_DoubleEG4_er1p2_dR_Max0p9;
-   Bool_t          L1_DoubleEG4p5_er1p2_dR_Max0p9;
-   Bool_t          L1_DoubleEG5_er1p2_dR_Max0p9;
-   Bool_t          L1_DoubleEG5p5_er1p2_dR_Max0p8;
-   Bool_t          L1_DoubleEG6_er1p2_dR_Max0p8;
-   Bool_t          L1_DoubleEG6p5_er1p2_dR_Max0p8;
-   Bool_t          L1_DoubleEG7_er1p2_dR_Max0p8;
-   Bool_t          L1_DoubleEG7p5_er1p2_dR_Max0p7;
-   Bool_t          L1_DoubleEG8_er1p2_dR_Max0p7;
-   Bool_t          L1_DoubleEG8er2p5_HTT260er;
-   Bool_t          L1_DoubleEG8er2p5_HTT280er;
-   Bool_t          L1_DoubleEG8er2p5_HTT300er;
-   Bool_t          L1_DoubleEG8er2p5_HTT320er;
-   Bool_t          L1_DoubleEG8er2p5_HTT340er;
-   Bool_t          L1_DoubleEG8p5_er1p2_dR_Max0p7;
-   Bool_t          L1_DoubleEG9_er1p2_dR_Max0p7;
-   Bool_t          L1_DoubleEG9p5_er1p2_dR_Max0p6;
-   Bool_t          L1_DoubleEG_15_10_er2p5;
-   Bool_t          L1_DoubleEG_20_10_er2p5;
-   Bool_t          L1_DoubleEG_22_10_er2p5;
-   Bool_t          L1_DoubleEG_25_12_er2p5;
-   Bool_t          L1_DoubleEG_25_14_er2p5;
-   Bool_t          L1_DoubleEG_27_14_er2p5;
-   Bool_t          L1_DoubleEG_LooseIso16_LooseIso12_er1p5;
-   Bool_t          L1_DoubleEG_LooseIso18_LooseIso12_er1p5;
-   Bool_t          L1_DoubleEG_LooseIso20_LooseIso12_er1p5;
-   Bool_t          L1_DoubleEG_LooseIso22_12_er2p5;
-   Bool_t          L1_DoubleEG_LooseIso22_LooseIso12_er1p5;
-   Bool_t          L1_DoubleEG_LooseIso25_12_er2p5;
-   Bool_t          L1_DoubleEG_LooseIso25_LooseIso12_er1p5;
-   Bool_t          L1_DoubleIsoTau26er2p1_Jet55_RmOvlp_dR0p5;
-   Bool_t          L1_DoubleIsoTau26er2p1_Jet70_RmOvlp_dR0p5;
-   Bool_t          L1_DoubleIsoTau28er2p1;
-   Bool_t          L1_DoubleIsoTau28er2p1_Mass_Max80;
-   Bool_t          L1_DoubleIsoTau28er2p1_Mass_Max90;
-   Bool_t          L1_DoubleIsoTau30er2p1;
-   Bool_t          L1_DoubleIsoTau30er2p1_Mass_Max80;
-   Bool_t          L1_DoubleIsoTau30er2p1_Mass_Max90;
-   Bool_t          L1_DoubleIsoTau32er2p1;
-   Bool_t          L1_DoubleIsoTau32er2p1_Mass_Max80;
-   Bool_t          L1_DoubleIsoTau34er2p1;
-   Bool_t          L1_DoubleIsoTau35er2p1;
-   Bool_t          L1_DoubleIsoTau36er2p1;
-   Bool_t          L1_DoubleJet100er2p3_dEta_Max1p6;
-   Bool_t          L1_DoubleJet100er2p5;
-   Bool_t          L1_DoubleJet112er2p3_dEta_Max1p6;
-   Bool_t          L1_DoubleJet120er2p5;
-   Bool_t          L1_DoubleJet120er2p5_Mu3_dR_Max0p8;
-   Bool_t          L1_DoubleJet150er2p5;
-   Bool_t          L1_DoubleJet16er2p5_Mu3_dR_Max0p4;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min225_dEta_Max1p5;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min250_dEta_Max1p5;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min300_dEta_Max1p5;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min330_dEta_Max1p5;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min360_dEta_Max1p5;
-   Bool_t          L1_DoubleJet35_Mass_Min450_IsoTau45_RmOvlp;
-   Bool_t          L1_DoubleJet35_Mass_Min450_IsoTau45er2p1_RmOvlp_dR0p5;
-   Bool_t          L1_DoubleJet35er2p5_Mu3_dR_Max0p4;
-   Bool_t          L1_DoubleJet40_Mass_Min450_IsoEG10er2p1_RmOvlp_dR0p2;
-   Bool_t          L1_DoubleJet40_Mass_Min450_LooseIsoEG15er2p1_RmOvlp_dR0p2;
-   Bool_t          L1_DoubleJet40er2p5;
-   Bool_t          L1_DoubleJet45_Mass_Min450_IsoTau45er2p1_RmOvlp_dR0p5;
-   Bool_t          L1_DoubleJet45_Mass_Min450_LooseIsoEG20er2p1_RmOvlp_dR0p2;
-   Bool_t          L1_DoubleJet60er2p5_Mu3_dR_Max0p4;
-   Bool_t          L1_DoubleJet80er2p5_Mu3_dR_Max0p4;
-   Bool_t          L1_DoubleJet_100_30_DoubleJet30_Mass_Min620;
-   Bool_t          L1_DoubleJet_100_30_DoubleJet30_Mass_Min800;
-   Bool_t          L1_DoubleJet_110_35_DoubleJet35_Mass_Min620;
-   Bool_t          L1_DoubleJet_110_35_DoubleJet35_Mass_Min800;
-   Bool_t          L1_DoubleJet_115_40_DoubleJet40_Mass_Min620;
-   Bool_t          L1_DoubleJet_115_40_DoubleJet40_Mass_Min620_Jet60TT28;
-   Bool_t          L1_DoubleJet_120_45_DoubleJet45_Mass_Min620;
-   Bool_t          L1_DoubleJet_120_45_DoubleJet45_Mass_Min620_Jet60TT28;
-   Bool_t          L1_DoubleJet_60_30_DoubleJet30_Mass_Min500_DoubleJetCentral50;
-   Bool_t          L1_DoubleJet_65_30_DoubleJet30_Mass_Min400_ETMHF65;
-   Bool_t          L1_DoubleJet_65_35_DoubleJet35_Mass_Min500_DoubleJetCentral50;
-   Bool_t          L1_DoubleJet_70_35_DoubleJet35_Mass_Min400_ETMHF65;
-   Bool_t          L1_DoubleJet_80_30_DoubleJet30_Mass_Min500_Mu3OQ;
-   Bool_t          L1_DoubleJet_80_30_Mass_Min420_DoubleMu0_SQ;
-   Bool_t          L1_DoubleJet_80_30_Mass_Min420_IsoTau40_RmOvlp;
-   Bool_t          L1_DoubleJet_80_30_Mass_Min420_Mu8;
-   Bool_t          L1_DoubleJet_85_35_DoubleJet35_Mass_Min500_Mu3OQ;
-   Bool_t          L1_DoubleJet_90_30_DoubleJet30_Mass_Min620;
-   Bool_t          L1_DoubleJet_90_30_DoubleJet30_Mass_Min800;
-   Bool_t          L1_DoubleLLPJet40;
-   Bool_t          L1_DoubleLooseIsoEG22er2p1;
-   Bool_t          L1_DoubleLooseIsoEG24er2p1;
-   Bool_t          L1_DoubleMu0;
-   Bool_t          L1_DoubleMu0_Mass_Min1;
-   Bool_t          L1_DoubleMu0_OQ;
-   Bool_t          L1_DoubleMu0_SQ;
-   Bool_t          L1_DoubleMu0_SQ_OS;
-   Bool_t          L1_DoubleMu0_Upt15_Upt7;
-   Bool_t          L1_DoubleMu0_Upt15_Upt7_BMTF_EMTF;
-   Bool_t          L1_DoubleMu0_Upt5_Upt5;
-   Bool_t          L1_DoubleMu0_Upt5_Upt5_BMTF_EMTF;
-   Bool_t          L1_DoubleMu0_Upt6_IP_Min1_Upt4;
-   Bool_t          L1_DoubleMu0_Upt6_IP_Min1_Upt4_BMTF_EMTF;
-   Bool_t          L1_DoubleMu0_dR_Max1p6_Jet90er2p5_dR_Max0p8;
-   Bool_t          L1_DoubleMu0er1p4_OQ_OS_dEta_Max1p6;
-   Bool_t          L1_DoubleMu0er1p4_SQ_OS_dEta_Max1p2;
-   Bool_t          L1_DoubleMu0er1p4_SQ_OS_dR_Max1p4;
-   Bool_t          L1_DoubleMu0er1p5_SQ;
-   Bool_t          L1_DoubleMu0er1p5_SQ_OS;
-   Bool_t          L1_DoubleMu0er1p5_SQ_OS_dEta_Max1p2;
-   Bool_t          L1_DoubleMu0er1p5_SQ_OS_dR_Max1p4;
-   Bool_t          L1_DoubleMu0er1p5_SQ_dR_Max1p4;
-   Bool_t          L1_DoubleMu0er2p0_SQ_OS_dEta_Max1p5;
-   Bool_t          L1_DoubleMu0er2p0_SQ_OS_dEta_Max1p6;
-   Bool_t          L1_DoubleMu0er2p0_SQ_dEta_Max1p5;
-   Bool_t          L1_DoubleMu0er2p0_SQ_dEta_Max1p6;
-   Bool_t          L1_DoubleMu18er2p1_SQ;
-   Bool_t          L1_DoubleMu3_OS_er2p3_Mass_Max14_DoubleEG7p5_er2p1_Mass_Max20;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF30_HTT60er;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF30_Jet60er2p5_OR_DoubleJet40er2p5;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF40_HTT60er;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF40_Jet60er2p5_OR_DoubleJet40er2p5;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF50_HTT60er;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF50_Jet60er2p5;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF50_Jet60er2p5_OR_DoubleJet40er2p5;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF60_Jet60er2p5;
-   Bool_t          L1_DoubleMu3_SQ_HTT220er;
-   Bool_t          L1_DoubleMu3_SQ_HTT240er;
-   Bool_t          L1_DoubleMu3_SQ_HTT260er;
-   Bool_t          L1_DoubleMu3_dR_Max1p6_Jet90er2p5_dR_Max0p8;
-   Bool_t          L1_DoubleMu3er2p0_SQ_OS_dR_Max1p6;
-   Bool_t          L1_DoubleMu4_SQ_EG9er2p5;
-   Bool_t          L1_DoubleMu4_SQ_OS;
-   Bool_t          L1_DoubleMu4_SQ_OS_dR_Max1p2;
-   Bool_t          L1_DoubleMu4er2p0_SQ_OS_dR_Max1p6;
-   Bool_t          L1_DoubleMu4p5_SQ_OS;
-   Bool_t          L1_DoubleMu4p5_SQ_OS_dR_Max1p2;
-   Bool_t          L1_DoubleMu4p5er2p0_SQ_OS;
-   Bool_t          L1_DoubleMu4p5er2p0_SQ_OS_Mass_7to18;
-   Bool_t          L1_DoubleMu4p5er2p0_SQ_OS_Mass_Min7;
-   Bool_t          L1_DoubleMu5_OS_er2p3_Mass_8to14_DoubleEG3er2p1_Mass_Max20;
-   Bool_t          L1_DoubleMu5_SQ_EG9er2p5;
-   Bool_t          L1_DoubleMu5_SQ_OS_dR_Max1p6;
-   Bool_t          L1_DoubleMu8_SQ;
-   Bool_t          L1_DoubleMu9_SQ;
-   Bool_t          L1_DoubleMu_12_5;
-   Bool_t          L1_DoubleMu_15_5_SQ;
-   Bool_t          L1_DoubleMu_15_7;
-   Bool_t          L1_DoubleMu_15_7_Mass_Min1;
-   Bool_t          L1_DoubleMu_15_7_SQ;
-   Bool_t          L1_DoubleTau70er2p1;
-   Bool_t          L1_ETM120;
-   Bool_t          L1_ETM150;
-   Bool_t          L1_ETMHF100;
-   Bool_t          L1_ETMHF100_HTT60er;
-   Bool_t          L1_ETMHF110;
-   Bool_t          L1_ETMHF110_HTT60er;
-   Bool_t          L1_ETMHF120;
-   Bool_t          L1_ETMHF120_HTT60er;
-   Bool_t          L1_ETMHF130;
-   Bool_t          L1_ETMHF130_HTT60er;
-   Bool_t          L1_ETMHF140;
-   Bool_t          L1_ETMHF150;
-   Bool_t          L1_ETMHF70;
-   Bool_t          L1_ETMHF70_HTT60er;
-   Bool_t          L1_ETMHF80;
-   Bool_t          L1_ETMHF80_HTT60er;
-   Bool_t          L1_ETMHF80_SingleJet55er2p5_dPhi_Min2p1;
-   Bool_t          L1_ETMHF80_SingleJet55er2p5_dPhi_Min2p6;
-   Bool_t          L1_ETMHF90;
-   Bool_t          L1_ETMHF90_HTT60er;
-   Bool_t          L1_ETMHF90_SingleJet60er2p5_dPhi_Min2p1;
-   Bool_t          L1_ETMHF90_SingleJet60er2p5_dPhi_Min2p6;
-   Bool_t          L1_ETMHF90_SingleJet80er2p5_dPhi_Min2p1;
-   Bool_t          L1_ETMHF90_SingleJet80er2p5_dPhi_Min2p6;
-   Bool_t          L1_ETT1600;
-   Bool_t          L1_ETT2000;
-   Bool_t          L1_FirstBunchAfterTrain;
-   Bool_t          L1_FirstBunchBeforeTrain;
-   Bool_t          L1_FirstBunchInTrain;
-   Bool_t          L1_FirstCollisionInOrbit;
-   Bool_t          L1_FirstCollisionInTrain;
-   Bool_t          L1_HCAL_LaserMon_Trig;
-   Bool_t          L1_HCAL_LaserMon_Veto;
-   Bool_t          L1_HTT120_SingleLLPJet40;
-   Bool_t          L1_HTT120er;
-   Bool_t          L1_HTT160_SingleLLPJet50;
-   Bool_t          L1_HTT160er;
-   Bool_t          L1_HTT200_SingleLLPJet60;
-   Bool_t          L1_HTT200er;
-   Bool_t          L1_HTT240_SingleLLPJet70;
-   Bool_t          L1_HTT255er;
-   Bool_t          L1_HTT280er;
-   Bool_t          L1_HTT280er_QuadJet_70_55_40_35_er2p5;
-   Bool_t          L1_HTT320er;
-   Bool_t          L1_HTT320er_QuadJet_70_55_40_40_er2p5;
-   Bool_t          L1_HTT320er_QuadJet_80_60_er2p1_45_40_er2p3;
-   Bool_t          L1_HTT320er_QuadJet_80_60_er2p1_50_45_er2p3;
-   Bool_t          L1_HTT360er;
-   Bool_t          L1_HTT400er;
-   Bool_t          L1_HTT450er;
-   Bool_t          L1_IsoEG32er2p5_Mt40;
-   Bool_t          L1_IsoTau52er2p1_QuadJet36er2p5;
-   Bool_t          L1_IsolatedBunch;
-   Bool_t          L1_LastBunchInTrain;
-   Bool_t          L1_LastCollisionInTrain;
-   Bool_t          L1_LooseIsoEG22er2p1_IsoTau26er2p1_dR_Min0p3;
-   Bool_t          L1_LooseIsoEG22er2p1_Tau70er2p1_dR_Min0p3;
-   Bool_t          L1_LooseIsoEG24er2p1_HTT100er;
-   Bool_t          L1_LooseIsoEG24er2p1_IsoTau27er2p1_dR_Min0p3;
-   Bool_t          L1_LooseIsoEG26er2p1_HTT100er;
-   Bool_t          L1_LooseIsoEG26er2p1_Jet34er2p5_dR_Min0p3;
-   Bool_t          L1_LooseIsoEG28er2p1_HTT100er;
-   Bool_t          L1_LooseIsoEG28er2p1_Jet34er2p5_dR_Min0p3;
-   Bool_t          L1_LooseIsoEG30er2p1_HTT100er;
-   Bool_t          L1_LooseIsoEG30er2p1_Jet34er2p5_dR_Min0p3;
-   Bool_t          L1_MinimumBiasHF0;
-   Bool_t          L1_MinimumBiasHF0_AND_BptxAND;
-   Bool_t          L1_Mu10er2p3_Jet32er2p3_dR_Max0p4_DoubleJet32er2p3_dEta_Max1p6;
-   Bool_t          L1_Mu12er2p3_Jet40er2p1_dR_Max0p4_DoubleJet40er2p1_dEta_Max1p6;
-   Bool_t          L1_Mu12er2p3_Jet40er2p3_dR_Max0p4_DoubleJet40er2p3_dEta_Max1p6;
-   Bool_t          L1_Mu18er2p1_Tau24er2p1;
-   Bool_t          L1_Mu18er2p1_Tau26er2p1;
-   Bool_t          L1_Mu18er2p1_Tau26er2p1_Jet55;
-   Bool_t          L1_Mu18er2p1_Tau26er2p1_Jet70;
-   Bool_t          L1_Mu20_EG10er2p5;
-   Bool_t          L1_Mu22er2p1_IsoTau28er2p1;
-   Bool_t          L1_Mu22er2p1_IsoTau30er2p1;
-   Bool_t          L1_Mu22er2p1_IsoTau32er2p1;
-   Bool_t          L1_Mu22er2p1_IsoTau34er2p1;
-   Bool_t          L1_Mu22er2p1_IsoTau36er2p1;
-   Bool_t          L1_Mu22er2p1_IsoTau40er2p1;
-   Bool_t          L1_Mu22er2p1_Tau70er2p1;
-   Bool_t          L1_Mu3_Jet120er2p5_dR_Max0p4;
-   Bool_t          L1_Mu3_Jet16er2p5_dR_Max0p4;
-   Bool_t          L1_Mu3_Jet30er2p5;
-   Bool_t          L1_Mu3_Jet60er2p5_dR_Max0p4;
-   Bool_t          L1_Mu3er1p5_Jet100er2p5_ETMHF30;
-   Bool_t          L1_Mu3er1p5_Jet100er2p5_ETMHF40;
-   Bool_t          L1_Mu3er1p5_Jet100er2p5_ETMHF50;
-   Bool_t          L1_Mu5_EG23er2p5;
-   Bool_t          L1_Mu5_LooseIsoEG20er2p5;
-   Bool_t          L1_Mu6_DoubleEG10er2p5;
-   Bool_t          L1_Mu6_DoubleEG12er2p5;
-   Bool_t          L1_Mu6_DoubleEG15er2p5;
-   Bool_t          L1_Mu6_DoubleEG17er2p5;
-   Bool_t          L1_Mu6_HTT240er;
-   Bool_t          L1_Mu6_HTT250er;
-   Bool_t          L1_Mu7_EG20er2p5;
-   Bool_t          L1_Mu7_EG23er2p5;
-   Bool_t          L1_Mu7_LooseIsoEG20er2p5;
-   Bool_t          L1_Mu7_LooseIsoEG23er2p5;
-   Bool_t          L1_NotBptxOR;
-   Bool_t          L1_QuadJet60er2p5;
-   Bool_t          L1_QuadJet_95_75_65_20_DoubleJet_75_65_er2p5_Jet20_FWD3p0;
-   Bool_t          L1_QuadMu0;
-   Bool_t          L1_QuadMu0_OQ;
-   Bool_t          L1_QuadMu0_SQ;
-   Bool_t          L1_SecondBunchInTrain;
-   Bool_t          L1_SecondLastBunchInTrain;
-   Bool_t          L1_SingleEG10er2p5;
-   Bool_t          L1_SingleEG15er2p5;
-   Bool_t          L1_SingleEG26er2p5;
-   Bool_t          L1_SingleEG28_FWD2p5;
-   Bool_t          L1_SingleEG28er1p5;
-   Bool_t          L1_SingleEG28er2p1;
-   Bool_t          L1_SingleEG28er2p5;
-   Bool_t          L1_SingleEG34er2p5;
-   Bool_t          L1_SingleEG36er2p5;
-   Bool_t          L1_SingleEG38er2p5;
-   Bool_t          L1_SingleEG40er2p5;
-   Bool_t          L1_SingleEG42er2p5;
-   Bool_t          L1_SingleEG45er2p5;
-   Bool_t          L1_SingleEG50;
-   Bool_t          L1_SingleEG60;
-   Bool_t          L1_SingleEG8er2p5;
-   Bool_t          L1_SingleIsoEG24er2p1;
-   Bool_t          L1_SingleIsoEG26er2p1;
-   Bool_t          L1_SingleIsoEG26er2p5;
-   Bool_t          L1_SingleIsoEG28_FWD2p5;
-   Bool_t          L1_SingleIsoEG28er1p5;
-   Bool_t          L1_SingleIsoEG28er2p1;
-   Bool_t          L1_SingleIsoEG28er2p5;
-   Bool_t          L1_SingleIsoEG30er2p1;
-   Bool_t          L1_SingleIsoEG30er2p5;
-   Bool_t          L1_SingleIsoEG32er2p1;
-   Bool_t          L1_SingleIsoEG32er2p5;
-   Bool_t          L1_SingleIsoEG34er2p5;
-   Bool_t          L1_SingleIsoTau32er2p1;
-   Bool_t          L1_SingleJet10erHE;
-   Bool_t          L1_SingleJet120;
-   Bool_t          L1_SingleJet120_FWD2p5;
-   Bool_t          L1_SingleJet120_FWD3p0;
-   Bool_t          L1_SingleJet120er2p5;
-   Bool_t          L1_SingleJet12erHE;
-   Bool_t          L1_SingleJet140er2p5;
-   Bool_t          L1_SingleJet140er2p5_ETMHF90;
-   Bool_t          L1_SingleJet160er2p5;
-   Bool_t          L1_SingleJet180;
-   Bool_t          L1_SingleJet180er2p5;
-   Bool_t          L1_SingleJet200;
-   Bool_t          L1_SingleJet20er2p5_NotBptxOR;
-   Bool_t          L1_SingleJet20er2p5_NotBptxOR_3BX;
-   Bool_t          L1_SingleJet35;
-   Bool_t          L1_SingleJet35_FWD2p5;
-   Bool_t          L1_SingleJet35_FWD3p0;
-   Bool_t          L1_SingleJet35er2p5;
-   Bool_t          L1_SingleJet43er2p5_NotBptxOR_3BX;
-   Bool_t          L1_SingleJet46er2p5_NotBptxOR_3BX;
-   Bool_t          L1_SingleJet60;
-   Bool_t          L1_SingleJet60_FWD2p5;
-   Bool_t          L1_SingleJet8erHE;
-   Bool_t          L1_SingleJet90;
-   Bool_t          L1_SingleJet90_FWD2p5;
-   Bool_t          L1_SingleLooseIsoEG26er1p5;
-   Bool_t          L1_SingleLooseIsoEG26er2p5;
-   Bool_t          L1_SingleLooseIsoEG28_FWD2p5;
-   Bool_t          L1_SingleLooseIsoEG28er1p5;
-   Bool_t          L1_SingleLooseIsoEG28er2p1;
-   Bool_t          L1_SingleLooseIsoEG28er2p5;
-   Bool_t          L1_SingleLooseIsoEG30er1p5;
-   Bool_t          L1_SingleLooseIsoEG30er2p5;
-   Bool_t          L1_SingleMu0_BMTF;
-   Bool_t          L1_SingleMu0_DQ;
-   Bool_t          L1_SingleMu0_EMTF;
-   Bool_t          L1_SingleMu0_OMTF;
-   Bool_t          L1_SingleMu0_Upt10;
-   Bool_t          L1_SingleMu0_Upt10_BMTF;
-   Bool_t          L1_SingleMu0_Upt10_EMTF;
-   Bool_t          L1_SingleMu0_Upt10_OMTF;
-   Bool_t          L1_SingleMu12_DQ_BMTF;
-   Bool_t          L1_SingleMu12_DQ_EMTF;
-   Bool_t          L1_SingleMu12_DQ_OMTF;
-   Bool_t          L1_SingleMu15_DQ;
-   Bool_t          L1_SingleMu18;
-   Bool_t          L1_SingleMu20;
-   Bool_t          L1_SingleMu22;
-   Bool_t          L1_SingleMu22_BMTF;
-   Bool_t          L1_SingleMu22_DQ;
-   Bool_t          L1_SingleMu22_EMTF;
-   Bool_t          L1_SingleMu22_OMTF;
-   Bool_t          L1_SingleMu22_OQ;
-   Bool_t          L1_SingleMu25;
-   Bool_t          L1_SingleMu3;
-   Bool_t          L1_SingleMu5;
-   Bool_t          L1_SingleMu7;
-   Bool_t          L1_SingleMu7_DQ;
-   Bool_t          L1_SingleMuCosmics;
-   Bool_t          L1_SingleMuCosmics_BMTF;
-   Bool_t          L1_SingleMuCosmics_EMTF;
-   Bool_t          L1_SingleMuCosmics_OMTF;
-   Bool_t          L1_SingleMuOpen;
-   Bool_t          L1_SingleMuOpen_BMTF;
-   Bool_t          L1_SingleMuOpen_EMTF;
-   Bool_t          L1_SingleMuOpen_NotBptxOR;
-   Bool_t          L1_SingleMuOpen_OMTF;
-   Bool_t          L1_SingleMuOpen_er1p1_NotBptxOR_3BX;
-   Bool_t          L1_SingleMuOpen_er1p4_NotBptxOR_3BX;
-   Bool_t          L1_SingleMuShower_Nominal;
-   Bool_t          L1_SingleMuShower_Tight;
-   Bool_t          L1_SingleTau120er2p1;
-   Bool_t          L1_SingleTau130er2p1;
-   Bool_t          L1_SingleTau70er2p1;
-   Bool_t          L1_TOTEM_1;
-   Bool_t          L1_TOTEM_2;
-   Bool_t          L1_TOTEM_3;
-   Bool_t          L1_TOTEM_4;
-   Bool_t          L1_TripleEG16er2p5;
-   Bool_t          L1_TripleEG_18_17_8_er2p5;
-   Bool_t          L1_TripleEG_18_18_12_er2p5;
-   Bool_t          L1_TripleJet_100_80_70_DoubleJet_80_70_er2p5;
-   Bool_t          L1_TripleJet_105_85_75_DoubleJet_85_75_er2p5;
-   Bool_t          L1_TripleJet_95_75_65_DoubleJet_75_65_er2p5;
-   Bool_t          L1_TripleMu0;
-   Bool_t          L1_TripleMu0_OQ;
-   Bool_t          L1_TripleMu0_SQ;
-   Bool_t          L1_TripleMu3;
-   Bool_t          L1_TripleMu3_SQ;
-   Bool_t          L1_TripleMu_3SQ_2p5SQ_0;
-   Bool_t          L1_TripleMu_3SQ_2p5SQ_0_Mass_Max12;
-   Bool_t          L1_TripleMu_3SQ_2p5SQ_0_OS_Mass_Max12;
-   Bool_t          L1_TripleMu_4SQ_2p5SQ_0_OS_Mass_Max12;
-   Bool_t          L1_TripleMu_5SQ_3SQ_0OQ;
-   Bool_t          L1_TripleMu_5SQ_3SQ_0OQ_DoubleMu_5_3_SQ_OS_Mass_Max9;
-   Bool_t          L1_TripleMu_5SQ_3SQ_0_DoubleMu_5_3_SQ_OS_Mass_Max9;
-   Bool_t          L1_TripleMu_5_3_3;
-   Bool_t          L1_TripleMu_5_3_3_SQ;
-   Bool_t          L1_TripleMu_5_3p5_2p5;
-   Bool_t          L1_TripleMu_5_3p5_2p5_DoubleMu_5_2p5_OS_Mass_5to17;
-   Bool_t          L1_TripleMu_5_4_2p5_DoubleMu_5_2p5_OS_Mass_5to17;
-   Bool_t          L1_TripleMu_5_5_3;
-   Bool_t          L1_TwoMuShower_Loose;
-   Bool_t          L1_UnpairedBunchBptxMinus;
-   Bool_t          L1_UnpairedBunchBptxPlus;
-   Bool_t          L1_ZeroBias;
-   Bool_t          L1_ZeroBias_copy;
-   Bool_t          L1_UnprefireableEvent;
-   Bool_t          L1Reco_step;
+
    Bool_t          Flag_HBHENoiseFilter_pRECO;
    Bool_t          Flag_HBHENoiseIsoFilter_pRECO;
    Bool_t          Flag_CSCTightHaloFilter_pRECO;
@@ -927,421 +467,8 @@ public :
    Bool_t          Flag_trkPOG_toomanystripclus53X_pRECO;
    Bool_t          Flag_trkPOG_logErrorTooManyClusters_pRECO;
    Bool_t          Flag_METFilters_pRECO;
-   Bool_t          L1_AlwaysTrue_pRECO;
-   Bool_t          L1_BPTX_AND_Ref1_VME_pRECO;
-   Bool_t          L1_BPTX_AND_Ref3_VME_pRECO;
-   Bool_t          L1_BPTX_AND_Ref4_VME_pRECO;
-   Bool_t          L1_BPTX_BeamGas_B1_VME_pRECO;
-   Bool_t          L1_BPTX_BeamGas_B2_VME_pRECO;
-   Bool_t          L1_BPTX_BeamGas_Ref1_VME_pRECO;
-   Bool_t          L1_BPTX_BeamGas_Ref2_VME_pRECO;
-   Bool_t          L1_BPTX_NotOR_VME_pRECO;
-   Bool_t          L1_BPTX_OR_Ref3_VME_pRECO;
-   Bool_t          L1_BPTX_OR_Ref4_VME_pRECO;
-   Bool_t          L1_BPTX_RefAND_VME_pRECO;
-   Bool_t          L1_BptxMinus_pRECO;
-   Bool_t          L1_BptxOR_pRECO;
-   Bool_t          L1_BptxPlus_pRECO;
-   Bool_t          L1_BptxXOR_pRECO;
-   Bool_t          L1_CDC_SingleMu_3_er1p2_TOP120_DPHI2p618_3p142_pRECO;
-   Bool_t          L1_DoubleEG10_er1p2_dR_Max0p6_pRECO;
-   Bool_t          L1_DoubleEG10p5_er1p2_dR_Max0p6_pRECO;
-   Bool_t          L1_DoubleEG11_er1p2_dR_Max0p6_pRECO;
-   Bool_t          L1_DoubleEG4_er1p2_dR_Max0p9_pRECO;
-   Bool_t          L1_DoubleEG4p5_er1p2_dR_Max0p9_pRECO;
-   Bool_t          L1_DoubleEG5_er1p2_dR_Max0p9_pRECO;
-   Bool_t          L1_DoubleEG5p5_er1p2_dR_Max0p8_pRECO;
-   Bool_t          L1_DoubleEG6_er1p2_dR_Max0p8_pRECO;
-   Bool_t          L1_DoubleEG6p5_er1p2_dR_Max0p8_pRECO;
-   Bool_t          L1_DoubleEG7_er1p2_dR_Max0p8_pRECO;
-   Bool_t          L1_DoubleEG7p5_er1p2_dR_Max0p7_pRECO;
-   Bool_t          L1_DoubleEG8_er1p2_dR_Max0p7_pRECO;
-   Bool_t          L1_DoubleEG8er2p5_HTT260er_pRECO;
-   Bool_t          L1_DoubleEG8er2p5_HTT280er_pRECO;
-   Bool_t          L1_DoubleEG8er2p5_HTT300er_pRECO;
-   Bool_t          L1_DoubleEG8er2p5_HTT320er_pRECO;
-   Bool_t          L1_DoubleEG8er2p5_HTT340er_pRECO;
-   Bool_t          L1_DoubleEG8p5_er1p2_dR_Max0p7_pRECO;
-   Bool_t          L1_DoubleEG9_er1p2_dR_Max0p7_pRECO;
-   Bool_t          L1_DoubleEG9p5_er1p2_dR_Max0p6_pRECO;
-   Bool_t          L1_DoubleEG_15_10_er2p5_pRECO;
-   Bool_t          L1_DoubleEG_20_10_er2p5_pRECO;
-   Bool_t          L1_DoubleEG_22_10_er2p5_pRECO;
-   Bool_t          L1_DoubleEG_25_12_er2p5_pRECO;
-   Bool_t          L1_DoubleEG_25_14_er2p5_pRECO;
-   Bool_t          L1_DoubleEG_27_14_er2p5_pRECO;
-   Bool_t          L1_DoubleEG_LooseIso16_LooseIso12_er1p5_pRECO;
-   Bool_t          L1_DoubleEG_LooseIso18_LooseIso12_er1p5_pRECO;
-   Bool_t          L1_DoubleEG_LooseIso20_LooseIso12_er1p5_pRECO;
-   Bool_t          L1_DoubleEG_LooseIso22_12_er2p5_pRECO;
-   Bool_t          L1_DoubleEG_LooseIso22_LooseIso12_er1p5_pRECO;
-   Bool_t          L1_DoubleEG_LooseIso25_12_er2p5_pRECO;
-   Bool_t          L1_DoubleEG_LooseIso25_LooseIso12_er1p5_pRECO;
-   Bool_t          L1_DoubleIsoTau26er2p1_Jet55_RmOvlp_dR0p5_pRECO;
-   Bool_t          L1_DoubleIsoTau26er2p1_Jet70_RmOvlp_dR0p5_pRECO;
-   Bool_t          L1_DoubleIsoTau28er2p1_pRECO;
-   Bool_t          L1_DoubleIsoTau28er2p1_Mass_Max80_pRECO;
-   Bool_t          L1_DoubleIsoTau28er2p1_Mass_Max90_pRECO;
-   Bool_t          L1_DoubleIsoTau30er2p1_pRECO;
-   Bool_t          L1_DoubleIsoTau30er2p1_Mass_Max80_pRECO;
-   Bool_t          L1_DoubleIsoTau30er2p1_Mass_Max90_pRECO;
-   Bool_t          L1_DoubleIsoTau32er2p1_pRECO;
-   Bool_t          L1_DoubleIsoTau32er2p1_Mass_Max80_pRECO;
-   Bool_t          L1_DoubleIsoTau34er2p1_pRECO;
-   Bool_t          L1_DoubleIsoTau35er2p1_pRECO;
-   Bool_t          L1_DoubleIsoTau36er2p1_pRECO;
-   Bool_t          L1_DoubleJet100er2p3_dEta_Max1p6_pRECO;
-   Bool_t          L1_DoubleJet100er2p5_pRECO;
-   Bool_t          L1_DoubleJet112er2p3_dEta_Max1p6_pRECO;
-   Bool_t          L1_DoubleJet120er2p5_pRECO;
-   Bool_t          L1_DoubleJet120er2p5_Mu3_dR_Max0p8_pRECO;
-   Bool_t          L1_DoubleJet150er2p5_pRECO;
-   Bool_t          L1_DoubleJet16er2p5_Mu3_dR_Max0p4_pRECO;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min225_dEta_Max1p5_pRECO;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min250_dEta_Max1p5_pRECO;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min300_dEta_Max1p5_pRECO;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min330_dEta_Max1p5_pRECO;
-   Bool_t          L1_DoubleJet30er2p5_Mass_Min360_dEta_Max1p5_pRECO;
-   Bool_t          L1_DoubleJet35_Mass_Min450_IsoTau45_RmOvlp_pRECO;
-   Bool_t          L1_DoubleJet35_Mass_Min450_IsoTau45er2p1_RmOvlp_dR0p5_pRECO;
-   Bool_t          L1_DoubleJet35er2p5_Mu3_dR_Max0p4_pRECO;
-   Bool_t          L1_DoubleJet40_Mass_Min450_IsoEG10er2p1_RmOvlp_dR0p2_pRECO;
-   Bool_t          L1_DoubleJet40_Mass_Min450_LooseIsoEG15er2p1_RmOvlp_dR0p2_pRECO;
-   Bool_t          L1_DoubleJet40er2p5_pRECO;
-   Bool_t          L1_DoubleJet45_Mass_Min450_IsoTau45er2p1_RmOvlp_dR0p5_pRECO;
-   Bool_t          L1_DoubleJet45_Mass_Min450_LooseIsoEG20er2p1_RmOvlp_dR0p2_pRECO;
-   Bool_t          L1_DoubleJet60er2p5_Mu3_dR_Max0p4_pRECO;
-   Bool_t          L1_DoubleJet80er2p5_Mu3_dR_Max0p4_pRECO;
-   Bool_t          L1_DoubleJet_100_30_DoubleJet30_Mass_Min620_pRECO;
-   Bool_t          L1_DoubleJet_100_30_DoubleJet30_Mass_Min800_pRECO;
-   Bool_t          L1_DoubleJet_110_35_DoubleJet35_Mass_Min620_pRECO;
-   Bool_t          L1_DoubleJet_110_35_DoubleJet35_Mass_Min800_pRECO;
-   Bool_t          L1_DoubleJet_115_40_DoubleJet40_Mass_Min620_pRECO;
-   Bool_t          L1_DoubleJet_115_40_DoubleJet40_Mass_Min620_Jet60TT28_pRECO;
-   Bool_t          L1_DoubleJet_120_45_DoubleJet45_Mass_Min620_pRECO;
-   Bool_t          L1_DoubleJet_120_45_DoubleJet45_Mass_Min620_Jet60TT28_pRECO;
-   Bool_t          L1_DoubleJet_60_30_DoubleJet30_Mass_Min500_DoubleJetCentral50_pRECO;
-   Bool_t          L1_DoubleJet_65_30_DoubleJet30_Mass_Min400_ETMHF65_pRECO;
-   Bool_t          L1_DoubleJet_65_35_DoubleJet35_Mass_Min500_DoubleJetCentral50_pRECO;
-   Bool_t          L1_DoubleJet_70_35_DoubleJet35_Mass_Min400_ETMHF65_pRECO;
-   Bool_t          L1_DoubleJet_80_30_DoubleJet30_Mass_Min500_Mu3OQ_pRECO;
-   Bool_t          L1_DoubleJet_80_30_Mass_Min420_DoubleMu0_SQ_pRECO;
-   Bool_t          L1_DoubleJet_80_30_Mass_Min420_IsoTau40_RmOvlp_pRECO;
-   Bool_t          L1_DoubleJet_80_30_Mass_Min420_Mu8_pRECO;
-   Bool_t          L1_DoubleJet_85_35_DoubleJet35_Mass_Min500_Mu3OQ_pRECO;
-   Bool_t          L1_DoubleJet_90_30_DoubleJet30_Mass_Min620_pRECO;
-   Bool_t          L1_DoubleJet_90_30_DoubleJet30_Mass_Min800_pRECO;
-   Bool_t          L1_DoubleLLPJet40_pRECO;
-   Bool_t          L1_DoubleLooseIsoEG22er2p1_pRECO;
-   Bool_t          L1_DoubleLooseIsoEG24er2p1_pRECO;
-   Bool_t          L1_DoubleMu0_pRECO;
-   Bool_t          L1_DoubleMu0_Mass_Min1_pRECO;
-   Bool_t          L1_DoubleMu0_OQ_pRECO;
-   Bool_t          L1_DoubleMu0_SQ_pRECO;
-   Bool_t          L1_DoubleMu0_SQ_OS_pRECO;
-   Bool_t          L1_DoubleMu0_Upt15_Upt7_pRECO;
-   Bool_t          L1_DoubleMu0_Upt15_Upt7_BMTF_EMTF_pRECO;
-   Bool_t          L1_DoubleMu0_Upt5_Upt5_pRECO;
-   Bool_t          L1_DoubleMu0_Upt5_Upt5_BMTF_EMTF_pRECO;
-   Bool_t          L1_DoubleMu0_Upt6_IP_Min1_Upt4_pRECO;
-   Bool_t          L1_DoubleMu0_Upt6_IP_Min1_Upt4_BMTF_EMTF_pRECO;
-   Bool_t          L1_DoubleMu0_dR_Max1p6_Jet90er2p5_dR_Max0p8_pRECO;
-   Bool_t          L1_DoubleMu0er1p4_OQ_OS_dEta_Max1p6_pRECO;
-   Bool_t          L1_DoubleMu0er1p4_SQ_OS_dEta_Max1p2_pRECO;
-   Bool_t          L1_DoubleMu0er1p4_SQ_OS_dR_Max1p4_pRECO;
-   Bool_t          L1_DoubleMu0er1p5_SQ_pRECO;
-   Bool_t          L1_DoubleMu0er1p5_SQ_OS_pRECO;
-   Bool_t          L1_DoubleMu0er1p5_SQ_OS_dEta_Max1p2_pRECO;
-   Bool_t          L1_DoubleMu0er1p5_SQ_OS_dR_Max1p4_pRECO;
-   Bool_t          L1_DoubleMu0er1p5_SQ_dR_Max1p4_pRECO;
-   Bool_t          L1_DoubleMu0er2p0_SQ_OS_dEta_Max1p5_pRECO;
-   Bool_t          L1_DoubleMu0er2p0_SQ_OS_dEta_Max1p6_pRECO;
-   Bool_t          L1_DoubleMu0er2p0_SQ_dEta_Max1p5_pRECO;
-   Bool_t          L1_DoubleMu0er2p0_SQ_dEta_Max1p6_pRECO;
-   Bool_t          L1_DoubleMu18er2p1_SQ_pRECO;
-   Bool_t          L1_DoubleMu3_OS_er2p3_Mass_Max14_DoubleEG7p5_er2p1_Mass_Max20_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF30_HTT60er_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF30_Jet60er2p5_OR_DoubleJet40er2p5_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF40_HTT60er_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF40_Jet60er2p5_OR_DoubleJet40er2p5_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF50_HTT60er_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF50_Jet60er2p5_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF50_Jet60er2p5_OR_DoubleJet40er2p5_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_ETMHF60_Jet60er2p5_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_HTT220er_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_HTT240er_pRECO;
-   Bool_t          L1_DoubleMu3_SQ_HTT260er_pRECO;
-   Bool_t          L1_DoubleMu3_dR_Max1p6_Jet90er2p5_dR_Max0p8_pRECO;
-   Bool_t          L1_DoubleMu3er2p0_SQ_OS_dR_Max1p6_pRECO;
-   Bool_t          L1_DoubleMu4_SQ_EG9er2p5_pRECO;
-   Bool_t          L1_DoubleMu4_SQ_OS_pRECO;
-   Bool_t          L1_DoubleMu4_SQ_OS_dR_Max1p2_pRECO;
-   Bool_t          L1_DoubleMu4er2p0_SQ_OS_dR_Max1p6_pRECO;
-   Bool_t          L1_DoubleMu4p5_SQ_OS_pRECO;
-   Bool_t          L1_DoubleMu4p5_SQ_OS_dR_Max1p2_pRECO;
-   Bool_t          L1_DoubleMu4p5er2p0_SQ_OS_pRECO;
-   Bool_t          L1_DoubleMu4p5er2p0_SQ_OS_Mass_7to18_pRECO;
-   Bool_t          L1_DoubleMu4p5er2p0_SQ_OS_Mass_Min7_pRECO;
-   Bool_t          L1_DoubleMu5_OS_er2p3_Mass_8to14_DoubleEG3er2p1_Mass_Max20_pRECO;
-   Bool_t          L1_DoubleMu5_SQ_EG9er2p5_pRECO;
-   Bool_t          L1_DoubleMu5_SQ_OS_dR_Max1p6_pRECO;
-   Bool_t          L1_DoubleMu8_SQ_pRECO;
-   Bool_t          L1_DoubleMu9_SQ_pRECO;
-   Bool_t          L1_DoubleMu_12_5_pRECO;
-   Bool_t          L1_DoubleMu_15_5_SQ_pRECO;
-   Bool_t          L1_DoubleMu_15_7_pRECO;
-   Bool_t          L1_DoubleMu_15_7_Mass_Min1_pRECO;
-   Bool_t          L1_DoubleMu_15_7_SQ_pRECO;
-   Bool_t          L1_DoubleTau70er2p1_pRECO;
-   Bool_t          L1_ETM120_pRECO;
-   Bool_t          L1_ETM150_pRECO;
-   Bool_t          L1_ETMHF100_pRECO;
-   Bool_t          L1_ETMHF100_HTT60er_pRECO;
-   Bool_t          L1_ETMHF110_pRECO;
-   Bool_t          L1_ETMHF110_HTT60er_pRECO;
-   Bool_t          L1_ETMHF120_pRECO;
-   Bool_t          L1_ETMHF120_HTT60er_pRECO;
-   Bool_t          L1_ETMHF130_pRECO;
-   Bool_t          L1_ETMHF130_HTT60er_pRECO;
-   Bool_t          L1_ETMHF140_pRECO;
-   Bool_t          L1_ETMHF150_pRECO;
-   Bool_t          L1_ETMHF70_pRECO;
-   Bool_t          L1_ETMHF70_HTT60er_pRECO;
-   Bool_t          L1_ETMHF80_pRECO;
-   Bool_t          L1_ETMHF80_HTT60er_pRECO;
-   Bool_t          L1_ETMHF80_SingleJet55er2p5_dPhi_Min2p1_pRECO;
-   Bool_t          L1_ETMHF80_SingleJet55er2p5_dPhi_Min2p6_pRECO;
-   Bool_t          L1_ETMHF90_pRECO;
-   Bool_t          L1_ETMHF90_HTT60er_pRECO;
-   Bool_t          L1_ETMHF90_SingleJet60er2p5_dPhi_Min2p1_pRECO;
-   Bool_t          L1_ETMHF90_SingleJet60er2p5_dPhi_Min2p6_pRECO;
-   Bool_t          L1_ETMHF90_SingleJet80er2p5_dPhi_Min2p1_pRECO;
-   Bool_t          L1_ETMHF90_SingleJet80er2p5_dPhi_Min2p6_pRECO;
-   Bool_t          L1_ETT1600_pRECO;
-   Bool_t          L1_ETT2000_pRECO;
-   Bool_t          L1_FirstBunchAfterTrain_pRECO;
-   Bool_t          L1_FirstBunchBeforeTrain_pRECO;
-   Bool_t          L1_FirstBunchInTrain_pRECO;
-   Bool_t          L1_FirstCollisionInOrbit_pRECO;
-   Bool_t          L1_FirstCollisionInTrain_pRECO;
-   Bool_t          L1_HCAL_LaserMon_Trig_pRECO;
-   Bool_t          L1_HCAL_LaserMon_Veto_pRECO;
-   Bool_t          L1_HTT120_SingleLLPJet40_pRECO;
-   Bool_t          L1_HTT120er_pRECO;
-   Bool_t          L1_HTT160_SingleLLPJet50_pRECO;
-   Bool_t          L1_HTT160er_pRECO;
-   Bool_t          L1_HTT200_SingleLLPJet60_pRECO;
-   Bool_t          L1_HTT200er_pRECO;
-   Bool_t          L1_HTT240_SingleLLPJet70_pRECO;
-   Bool_t          L1_HTT255er_pRECO;
-   Bool_t          L1_HTT280er_pRECO;
-   Bool_t          L1_HTT280er_QuadJet_70_55_40_35_er2p5_pRECO;
-   Bool_t          L1_HTT320er_pRECO;
-   Bool_t          L1_HTT320er_QuadJet_70_55_40_40_er2p5_pRECO;
-   Bool_t          L1_HTT320er_QuadJet_80_60_er2p1_45_40_er2p3_pRECO;
-   Bool_t          L1_HTT320er_QuadJet_80_60_er2p1_50_45_er2p3_pRECO;
-   Bool_t          L1_HTT360er_pRECO;
-   Bool_t          L1_HTT400er_pRECO;
-   Bool_t          L1_HTT450er_pRECO;
-   Bool_t          L1_IsoEG32er2p5_Mt40_pRECO;
-   Bool_t          L1_IsoTau52er2p1_QuadJet36er2p5_pRECO;
-   Bool_t          L1_IsolatedBunch_pRECO;
-   Bool_t          L1_LastBunchInTrain_pRECO;
-   Bool_t          L1_LastCollisionInTrain_pRECO;
-   Bool_t          L1_LooseIsoEG22er2p1_IsoTau26er2p1_dR_Min0p3_pRECO;
-   Bool_t          L1_LooseIsoEG22er2p1_Tau70er2p1_dR_Min0p3_pRECO;
-   Bool_t          L1_LooseIsoEG24er2p1_HTT100er_pRECO;
-   Bool_t          L1_LooseIsoEG24er2p1_IsoTau27er2p1_dR_Min0p3_pRECO;
-   Bool_t          L1_LooseIsoEG26er2p1_HTT100er_pRECO;
-   Bool_t          L1_LooseIsoEG26er2p1_Jet34er2p5_dR_Min0p3_pRECO;
-   Bool_t          L1_LooseIsoEG28er2p1_HTT100er_pRECO;
-   Bool_t          L1_LooseIsoEG28er2p1_Jet34er2p5_dR_Min0p3_pRECO;
-   Bool_t          L1_LooseIsoEG30er2p1_HTT100er_pRECO;
-   Bool_t          L1_LooseIsoEG30er2p1_Jet34er2p5_dR_Min0p3_pRECO;
-   Bool_t          L1_MinimumBiasHF0_pRECO;
-   Bool_t          L1_MinimumBiasHF0_AND_BptxAND_pRECO;
-   Bool_t          L1_Mu10er2p3_Jet32er2p3_dR_Max0p4_DoubleJet32er2p3_dEta_Max1p6_pRECO;
-   Bool_t          L1_Mu12er2p3_Jet40er2p1_dR_Max0p4_DoubleJet40er2p1_dEta_Max1p6_pRECO;
-   Bool_t          L1_Mu12er2p3_Jet40er2p3_dR_Max0p4_DoubleJet40er2p3_dEta_Max1p6_pRECO;
-   Bool_t          L1_Mu18er2p1_Tau24er2p1_pRECO;
-   Bool_t          L1_Mu18er2p1_Tau26er2p1_pRECO;
-   Bool_t          L1_Mu18er2p1_Tau26er2p1_Jet55_pRECO;
-   Bool_t          L1_Mu18er2p1_Tau26er2p1_Jet70_pRECO;
-   Bool_t          L1_Mu20_EG10er2p5_pRECO;
-   Bool_t          L1_Mu22er2p1_IsoTau28er2p1_pRECO;
-   Bool_t          L1_Mu22er2p1_IsoTau30er2p1_pRECO;
-   Bool_t          L1_Mu22er2p1_IsoTau32er2p1_pRECO;
-   Bool_t          L1_Mu22er2p1_IsoTau34er2p1_pRECO;
-   Bool_t          L1_Mu22er2p1_IsoTau36er2p1_pRECO;
-   Bool_t          L1_Mu22er2p1_IsoTau40er2p1_pRECO;
-   Bool_t          L1_Mu22er2p1_Tau70er2p1_pRECO;
-   Bool_t          L1_Mu3_Jet120er2p5_dR_Max0p4_pRECO;
-   Bool_t          L1_Mu3_Jet16er2p5_dR_Max0p4_pRECO;
-   Bool_t          L1_Mu3_Jet30er2p5_pRECO;
-   Bool_t          L1_Mu3_Jet60er2p5_dR_Max0p4_pRECO;
-   Bool_t          L1_Mu3er1p5_Jet100er2p5_ETMHF30_pRECO;
-   Bool_t          L1_Mu3er1p5_Jet100er2p5_ETMHF40_pRECO;
-   Bool_t          L1_Mu3er1p5_Jet100er2p5_ETMHF50_pRECO;
-   Bool_t          L1_Mu5_EG23er2p5_pRECO;
-   Bool_t          L1_Mu5_LooseIsoEG20er2p5_pRECO;
-   Bool_t          L1_Mu6_DoubleEG10er2p5_pRECO;
-   Bool_t          L1_Mu6_DoubleEG12er2p5_pRECO;
-   Bool_t          L1_Mu6_DoubleEG15er2p5_pRECO;
-   Bool_t          L1_Mu6_DoubleEG17er2p5_pRECO;
-   Bool_t          L1_Mu6_HTT240er_pRECO;
-   Bool_t          L1_Mu6_HTT250er_pRECO;
-   Bool_t          L1_Mu7_EG20er2p5_pRECO;
-   Bool_t          L1_Mu7_EG23er2p5_pRECO;
-   Bool_t          L1_Mu7_LooseIsoEG20er2p5_pRECO;
-   Bool_t          L1_Mu7_LooseIsoEG23er2p5_pRECO;
-   Bool_t          L1_NotBptxOR_pRECO;
-   Bool_t          L1_QuadJet60er2p5_pRECO;
-   Bool_t          L1_QuadJet_95_75_65_20_DoubleJet_75_65_er2p5_Jet20_FWD3p0_pRECO;
-   Bool_t          L1_QuadMu0_pRECO;
-   Bool_t          L1_QuadMu0_OQ_pRECO;
-   Bool_t          L1_QuadMu0_SQ_pRECO;
-   Bool_t          L1_SecondBunchInTrain_pRECO;
-   Bool_t          L1_SecondLastBunchInTrain_pRECO;
-   Bool_t          L1_SingleEG10er2p5_pRECO;
-   Bool_t          L1_SingleEG15er2p5_pRECO;
-   Bool_t          L1_SingleEG26er2p5_pRECO;
-   Bool_t          L1_SingleEG28_FWD2p5_pRECO;
-   Bool_t          L1_SingleEG28er1p5_pRECO;
-   Bool_t          L1_SingleEG28er2p1_pRECO;
-   Bool_t          L1_SingleEG28er2p5_pRECO;
-   Bool_t          L1_SingleEG34er2p5_pRECO;
-   Bool_t          L1_SingleEG36er2p5_pRECO;
-   Bool_t          L1_SingleEG38er2p5_pRECO;
-   Bool_t          L1_SingleEG40er2p5_pRECO;
-   Bool_t          L1_SingleEG42er2p5_pRECO;
-   Bool_t          L1_SingleEG45er2p5_pRECO;
-   Bool_t          L1_SingleEG50_pRECO;
-   Bool_t          L1_SingleEG60_pRECO;
-   Bool_t          L1_SingleEG8er2p5_pRECO;
-   Bool_t          L1_SingleIsoEG24er2p1_pRECO;
-   Bool_t          L1_SingleIsoEG26er2p1_pRECO;
-   Bool_t          L1_SingleIsoEG26er2p5_pRECO;
-   Bool_t          L1_SingleIsoEG28_FWD2p5_pRECO;
-   Bool_t          L1_SingleIsoEG28er1p5_pRECO;
-   Bool_t          L1_SingleIsoEG28er2p1_pRECO;
-   Bool_t          L1_SingleIsoEG28er2p5_pRECO;
-   Bool_t          L1_SingleIsoEG30er2p1_pRECO;
-   Bool_t          L1_SingleIsoEG30er2p5_pRECO;
-   Bool_t          L1_SingleIsoEG32er2p1_pRECO;
-   Bool_t          L1_SingleIsoEG32er2p5_pRECO;
-   Bool_t          L1_SingleIsoEG34er2p5_pRECO;
-   Bool_t          L1_SingleIsoTau32er2p1_pRECO;
-   Bool_t          L1_SingleJet10erHE_pRECO;
-   Bool_t          L1_SingleJet120_pRECO;
-   Bool_t          L1_SingleJet120_FWD2p5_pRECO;
-   Bool_t          L1_SingleJet120_FWD3p0_pRECO;
-   Bool_t          L1_SingleJet120er2p5_pRECO;
-   Bool_t          L1_SingleJet12erHE_pRECO;
-   Bool_t          L1_SingleJet140er2p5_pRECO;
-   Bool_t          L1_SingleJet140er2p5_ETMHF90_pRECO;
-   Bool_t          L1_SingleJet160er2p5_pRECO;
-   Bool_t          L1_SingleJet180_pRECO;
-   Bool_t          L1_SingleJet180er2p5_pRECO;
-   Bool_t          L1_SingleJet200_pRECO;
-   Bool_t          L1_SingleJet20er2p5_NotBptxOR_pRECO;
-   Bool_t          L1_SingleJet20er2p5_NotBptxOR_3BX_pRECO;
-   Bool_t          L1_SingleJet35_pRECO;
-   Bool_t          L1_SingleJet35_FWD2p5_pRECO;
-   Bool_t          L1_SingleJet35_FWD3p0_pRECO;
-   Bool_t          L1_SingleJet35er2p5_pRECO;
-   Bool_t          L1_SingleJet43er2p5_NotBptxOR_3BX_pRECO;
-   Bool_t          L1_SingleJet46er2p5_NotBptxOR_3BX_pRECO;
-   Bool_t          L1_SingleJet60_pRECO;
-   Bool_t          L1_SingleJet60_FWD2p5_pRECO;
-   Bool_t          L1_SingleJet8erHE_pRECO;
-   Bool_t          L1_SingleJet90_pRECO;
-   Bool_t          L1_SingleJet90_FWD2p5_pRECO;
-   Bool_t          L1_SingleLooseIsoEG26er1p5_pRECO;
-   Bool_t          L1_SingleLooseIsoEG26er2p5_pRECO;
-   Bool_t          L1_SingleLooseIsoEG28_FWD2p5_pRECO;
-   Bool_t          L1_SingleLooseIsoEG28er1p5_pRECO;
-   Bool_t          L1_SingleLooseIsoEG28er2p1_pRECO;
-   Bool_t          L1_SingleLooseIsoEG28er2p5_pRECO;
-   Bool_t          L1_SingleLooseIsoEG30er1p5_pRECO;
-   Bool_t          L1_SingleLooseIsoEG30er2p5_pRECO;
-   Bool_t          L1_SingleMu0_BMTF_pRECO;
-   Bool_t          L1_SingleMu0_DQ_pRECO;
-   Bool_t          L1_SingleMu0_EMTF_pRECO;
-   Bool_t          L1_SingleMu0_OMTF_pRECO;
-   Bool_t          L1_SingleMu0_Upt10_pRECO;
-   Bool_t          L1_SingleMu0_Upt10_BMTF_pRECO;
-   Bool_t          L1_SingleMu0_Upt10_EMTF_pRECO;
-   Bool_t          L1_SingleMu0_Upt10_OMTF_pRECO;
-   Bool_t          L1_SingleMu12_DQ_BMTF_pRECO;
-   Bool_t          L1_SingleMu12_DQ_EMTF_pRECO;
-   Bool_t          L1_SingleMu12_DQ_OMTF_pRECO;
-   Bool_t          L1_SingleMu15_DQ_pRECO;
-   Bool_t          L1_SingleMu18_pRECO;
-   Bool_t          L1_SingleMu20_pRECO;
-   Bool_t          L1_SingleMu22_pRECO;
-   Bool_t          L1_SingleMu22_BMTF_pRECO;
-   Bool_t          L1_SingleMu22_DQ_pRECO;
-   Bool_t          L1_SingleMu22_EMTF_pRECO;
-   Bool_t          L1_SingleMu22_OMTF_pRECO;
-   Bool_t          L1_SingleMu22_OQ_pRECO;
-   Bool_t          L1_SingleMu25_pRECO;
-   Bool_t          L1_SingleMu3_pRECO;
-   Bool_t          L1_SingleMu5_pRECO;
-   Bool_t          L1_SingleMu7_pRECO;
-   Bool_t          L1_SingleMu7_DQ_pRECO;
-   Bool_t          L1_SingleMuCosmics_pRECO;
-   Bool_t          L1_SingleMuCosmics_BMTF_pRECO;
-   Bool_t          L1_SingleMuCosmics_EMTF_pRECO;
-   Bool_t          L1_SingleMuCosmics_OMTF_pRECO;
-   Bool_t          L1_SingleMuOpen_pRECO;
-   Bool_t          L1_SingleMuOpen_BMTF_pRECO;
-   Bool_t          L1_SingleMuOpen_EMTF_pRECO;
-   Bool_t          L1_SingleMuOpen_NotBptxOR_pRECO;
-   Bool_t          L1_SingleMuOpen_OMTF_pRECO;
-   Bool_t          L1_SingleMuOpen_er1p1_NotBptxOR_3BX_pRECO;
-   Bool_t          L1_SingleMuOpen_er1p4_NotBptxOR_3BX_pRECO;
-   Bool_t          L1_SingleMuShower_Nominal_pRECO;
-   Bool_t          L1_SingleMuShower_Tight_pRECO;
-   Bool_t          L1_SingleTau120er2p1_pRECO;
-   Bool_t          L1_SingleTau130er2p1_pRECO;
-   Bool_t          L1_SingleTau70er2p1_pRECO;
-   Bool_t          L1_TOTEM_1_pRECO;
-   Bool_t          L1_TOTEM_2_pRECO;
-   Bool_t          L1_TOTEM_3_pRECO;
-   Bool_t          L1_TOTEM_4_pRECO;
-   Bool_t          L1_TripleEG16er2p5_pRECO;
-   Bool_t          L1_TripleEG_18_17_8_er2p5_pRECO;
-   Bool_t          L1_TripleEG_18_18_12_er2p5_pRECO;
-   Bool_t          L1_TripleJet_100_80_70_DoubleJet_80_70_er2p5_pRECO;
-   Bool_t          L1_TripleJet_105_85_75_DoubleJet_85_75_er2p5_pRECO;
-   Bool_t          L1_TripleJet_95_75_65_DoubleJet_75_65_er2p5_pRECO;
-   Bool_t          L1_TripleMu0_pRECO;
-   Bool_t          L1_TripleMu0_OQ_pRECO;
-   Bool_t          L1_TripleMu0_SQ_pRECO;
-   Bool_t          L1_TripleMu3_pRECO;
-   Bool_t          L1_TripleMu3_SQ_pRECO;
-   Bool_t          L1_TripleMu_3SQ_2p5SQ_0_pRECO;
-   Bool_t          L1_TripleMu_3SQ_2p5SQ_0_Mass_Max12_pRECO;
-   Bool_t          L1_TripleMu_3SQ_2p5SQ_0_OS_Mass_Max12_pRECO;
-   Bool_t          L1_TripleMu_4SQ_2p5SQ_0_OS_Mass_Max12_pRECO;
-   Bool_t          L1_TripleMu_5SQ_3SQ_0OQ_pRECO;
-   Bool_t          L1_TripleMu_5SQ_3SQ_0OQ_DoubleMu_5_3_SQ_OS_Mass_Max9_pRECO;
-   Bool_t          L1_TripleMu_5SQ_3SQ_0_DoubleMu_5_3_SQ_OS_Mass_Max9_pRECO;
-   Bool_t          L1_TripleMu_5_3_3_pRECO;
-   Bool_t          L1_TripleMu_5_3_3_SQ_pRECO;
-   Bool_t          L1_TripleMu_5_3p5_2p5_pRECO;
-   Bool_t          L1_TripleMu_5_3p5_2p5_DoubleMu_5_2p5_OS_Mass_5to17_pRECO;
-   Bool_t          L1_TripleMu_5_4_2p5_DoubleMu_5_2p5_OS_Mass_5to17_pRECO;
-   Bool_t          L1_TripleMu_5_5_3_pRECO;
-   Bool_t          L1_TwoMuShower_Loose_pRECO;
-   Bool_t          L1_UnpairedBunchBptxMinus_pRECO;
-   Bool_t          L1_UnpairedBunchBptxPlus_pRECO;
-   Bool_t          L1_ZeroBias_pRECO;
-   Bool_t          L1_ZeroBias_copy_pRECO;
-   Bool_t          L1_UnprefireableEvent_pRECO;
+
    Bool_t          HLTriggerFirstPath;
-   Bool_t          HLT_EphemeralPhysics;
-   Bool_t          HLT_EphemeralZeroBias;
    Bool_t          HLT_EcalCalibration;
    Bool_t          HLT_HcalCalibration;
    Bool_t          HLT_HcalNZS;
@@ -1359,191 +486,144 @@ public :
    Bool_t          HLT_HT300_Beamspot;
    Bool_t          HLT_IsoTrackHB;
    Bool_t          HLT_IsoTrackHE;
-   Bool_t          HLT_PFJet40_GPUvsCPU;
-   Bool_t          HLT_AK8PFJet400_MassSD30;
-   Bool_t          HLT_AK8PFJet420_MassSD30;
-   Bool_t          HLT_AK8PFJet450_MassSD30;
-   Bool_t          HLT_AK8PFJet470_MassSD30;
-   Bool_t          HLT_AK8PFJet500_MassSD30;
-   Bool_t          HLT_AK8DiPFJet250_250_MassSD30;
-   Bool_t          HLT_AK8DiPFJet260_260_MassSD30;
-   Bool_t          HLT_AK8DiPFJet270_270_MassSD30;
-   Bool_t          HLT_AK8DiPFJet280_280_MassSD30;
-   Bool_t          HLT_AK8DiPFJet290_290_MassSD30;
-   Bool_t          HLT_AK8DiPFJet250_250_MassSD50;
-   Bool_t          HLT_AK8DiPFJet260_260_MassSD50;
-   Bool_t          HLT_CaloJet500_NoJetID;
-   Bool_t          HLT_CaloJet550_NoJetID;
-   Bool_t          HLT_DoubleMu5_Upsilon_DoubleEle3_CaloIdL_TrackIdL;
-   Bool_t          HLT_DoubleMu3_DoubleEle7p5_CaloIdL_TrackIdL_Upsilon;
-   Bool_t          HLT_Trimuon5_3p5_2_Upsilon_Muon;
-   Bool_t          HLT_TrimuonOpen_5_3p5_2_Upsilon_Muon;
-   Bool_t          HLT_DoubleEle25_CaloIdL_MW;
-   Bool_t          HLT_DoubleEle27_CaloIdL_MW;
-   Bool_t          HLT_DoubleEle33_CaloIdL_MW;
-   Bool_t          HLT_DoubleEle24_eta2p1_WPTight_Gsf;
-   Bool_t          HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_DZ_PFHT350;
-   Bool_t          HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_PFHT350;
-   Bool_t          HLT_Mu27_Ele37_CaloIdL_MW;
-   Bool_t          HLT_Mu37_Ele27_CaloIdL_MW;
-   Bool_t          HLT_Mu37_TkMu27;
-   Bool_t          HLT_DoubleMu4_3_Bs;
-   Bool_t          HLT_DoubleMu4_3_Jpsi;
-   Bool_t          HLT_DoubleMu4_3_LowMass;
-   Bool_t          HLT_DoubleMu4_LowMass_Displaced;
-   Bool_t          HLT_Mu0_L1DoubleMu;
-   Bool_t          HLT_Mu4_L1DoubleMu;
-   Bool_t          HLT_DoubleMu4_3_Photon4_BsToMMG;
-   Bool_t          HLT_DoubleMu4_3_Displaced_Photon4_BsToMMG;
-   Bool_t          HLT_DoubleMu3_Trk_Tau3mu;
-   Bool_t          HLT_DoubleMu3_TkMu_DsTau3Mu;
-   Bool_t          HLT_DoubleMu4_Mass3p8_DZ_PFHT350;
-   Bool_t          HLT_DoubleMu4_MuMuTrk_Displaced;
-   Bool_t          HLT_Mu3_PFJet40;
-   Bool_t          HLT_Mu7p5_L2Mu2_Jpsi;
-   Bool_t          HLT_Mu7p5_L2Mu2_Upsilon;
-   Bool_t          HLT_Mu3_L1SingleMu5orSingleMu7;
-   Bool_t          HLT_DoublePhoton33_CaloIdL;
-   Bool_t          HLT_DoublePhoton70;
-   Bool_t          HLT_DoublePhoton85;
-   Bool_t          HLT_DiEle27_WPTightCaloOnly_L1DoubleEG;
-   Bool_t          HLT_Ele30_WPTight_Gsf;
-   Bool_t          HLT_Ele32_WPTight_Gsf;
-   Bool_t          HLT_Ele35_WPTight_Gsf;
-   Bool_t          HLT_Ele38_WPTight_Gsf;
-   Bool_t          HLT_Ele40_WPTight_Gsf;
-   Bool_t          HLT_Ele32_WPTight_Gsf_L1DoubleEG;
-   Bool_t          HLT_IsoMu27_MediumDeepTauPFTauHPS20_eta2p1_SingleL1;
-   Bool_t          HLT_IsoMu20;
-   Bool_t          HLT_IsoMu24;
-   Bool_t          HLT_IsoMu24_eta2p1;
-   Bool_t          HLT_IsoMu27;
-   Bool_t          HLT_UncorrectedJetE30_NoBPTX;
-   Bool_t          HLT_UncorrectedJetE30_NoBPTX3BX;
-   Bool_t          HLT_UncorrectedJetE60_NoBPTX3BX;
-   Bool_t          HLT_UncorrectedJetE70_NoBPTX3BX;
-   Bool_t          HLT_L1SingleMuCosmics;
-   Bool_t          HLT_L2Mu10_NoVertex_NoBPTX3BX;
-   Bool_t          HLT_L2Mu10_NoVertex_NoBPTX;
-   Bool_t          HLT_L2Mu45_NoVertex_3Sta_NoBPTX3BX;
-   Bool_t          HLT_L2Mu40_NoVertex_3Sta_NoBPTX3BX;
-   Bool_t          HLT_L2Mu23NoVtx_2Cha;
-   Bool_t          HLT_L2Mu23NoVtx_2Cha_CosmicSeed;
-   Bool_t          HLT_DoubleL2Mu30NoVtx_2Cha_CosmicSeed_Eta2p4;
-   Bool_t          HLT_DoubleL2Mu30NoVtx_2Cha_Eta2p4;
-   Bool_t          HLT_DoubleL2Mu50;
-   Bool_t          HLT_DoubleL2Mu23NoVtx_2Cha_CosmicSeed;
-   Bool_t          HLT_DoubleL2Mu25NoVtx_2Cha_CosmicSeed;
-   Bool_t          HLT_DoubleL2Mu25NoVtx_2Cha_CosmicSeed_Eta2p4;
-   Bool_t          HLT_DoubleL2Mu23NoVtx_2Cha;
-   Bool_t          HLT_DoubleL2Mu25NoVtx_2Cha;
-   Bool_t          HLT_DoubleL2Mu25NoVtx_2Cha_Eta2p4;
-   Bool_t          HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL;
-   Bool_t          HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL;
-   Bool_t          HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ;
-   Bool_t          HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL_DZ;
-   Bool_t          HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8;
-   Bool_t          HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL_DZ_Mass8;
-   Bool_t          HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8;
-   Bool_t          HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL_DZ_Mass3p8;
-   Bool_t          HLT_Mu30_TkMu0_Psi;
-   Bool_t          HLT_Mu30_TkMu0_Upsilon;
-   Bool_t          HLT_Mu25_TkMu0_Phi;
-   Bool_t          HLT_Mu15;
-   Bool_t          HLT_Mu20;
-   Bool_t          HLT_Mu27;
-   Bool_t          HLT_Mu50;
-   Bool_t          HLT_Mu55;
-   Bool_t          HLT_CascadeMu100;
-   Bool_t          HLT_HighPtTkMu100;
-   Bool_t          HLT_DiPFJetAve40;
-   Bool_t          HLT_DiPFJetAve60;
-   Bool_t          HLT_DiPFJetAve80;
-   Bool_t          HLT_DiPFJetAve140;
-   Bool_t          HLT_DiPFJetAve200;
-   Bool_t          HLT_DiPFJetAve260;
-   Bool_t          HLT_DiPFJetAve320;
-   Bool_t          HLT_DiPFJetAve400;
-   Bool_t          HLT_DiPFJetAve500;
-   Bool_t          HLT_DiPFJetAve60_HFJEC;
-   Bool_t          HLT_DiPFJetAve80_HFJEC;
-   Bool_t          HLT_DiPFJetAve100_HFJEC;
-   Bool_t          HLT_DiPFJetAve160_HFJEC;
-   Bool_t          HLT_DiPFJetAve220_HFJEC;
-   Bool_t          HLT_DiPFJetAve260_HFJEC;
-   Bool_t          HLT_DiPFJetAve300_HFJEC;
-   Bool_t          HLT_AK8PFJet40;
-   Bool_t          HLT_AK8PFJet60;
-   Bool_t          HLT_AK8PFJet80;
-   Bool_t          HLT_AK8PFJet140;
-   Bool_t          HLT_AK8PFJet200;
-   Bool_t          HLT_AK8PFJet260;
-   Bool_t          HLT_AK8PFJet320;
-   Bool_t          HLT_AK8PFJet400;
-   Bool_t          HLT_AK8PFJet450;
-   Bool_t          HLT_AK8PFJet500;
-   Bool_t          HLT_AK8PFJet550;
-   Bool_t          HLT_PFJet40;
-   Bool_t          HLT_PFJet60;
-   Bool_t          HLT_PFJet80;
-   Bool_t          HLT_PFJet110;
-   Bool_t          HLT_PFJet140;
-   Bool_t          HLT_PFJet200;
-   Bool_t          HLT_PFJet260;
-   Bool_t          HLT_PFJet320;
-   Bool_t          HLT_PFJet400;
-   Bool_t          HLT_PFJet450;
-   Bool_t          HLT_PFJet500;
-   Bool_t          HLT_PFJet550;
-   Bool_t          HLT_PFJetFwd40;
-   Bool_t          HLT_PFJetFwd60;
-   Bool_t          HLT_PFJetFwd80;
-   Bool_t          HLT_PFJetFwd140;
-   Bool_t          HLT_PFJetFwd200;
-   Bool_t          HLT_PFJetFwd260;
-   Bool_t          HLT_PFJetFwd320;
-   Bool_t          HLT_PFJetFwd400;
-   Bool_t          HLT_PFJetFwd450;
-   Bool_t          HLT_PFJetFwd500;
-   Bool_t          HLT_AK8PFJetFwd15;
-   Bool_t          HLT_AK8PFJetFwd25;
-   Bool_t          HLT_AK8PFJetFwd40;
-   Bool_t          HLT_AK8PFJetFwd60;
-   Bool_t          HLT_AK8PFJetFwd80;
-   Bool_t          HLT_AK8PFJetFwd140;
-   Bool_t          HLT_AK8PFJetFwd200;
-   Bool_t          HLT_AK8PFJetFwd260;
-   Bool_t          HLT_AK8PFJetFwd320;
-   Bool_t          HLT_AK8PFJetFwd400;
-   Bool_t          HLT_AK8PFJetFwd450;
-   Bool_t          HLT_AK8PFJetFwd500;
-   Bool_t          HLT_PFHT180;
-   Bool_t          HLT_PFHT250;
-   Bool_t          HLT_PFHT370;
-   Bool_t          HLT_PFHT430;
-   Bool_t          HLT_PFHT510;
-   Bool_t          HLT_PFHT590;
-   Bool_t          HLT_PFHT680;
-   Bool_t          HLT_PFHT780;
-   Bool_t          HLT_PFHT890;
-   Bool_t          HLT_PFHT1050;
-   Bool_t          HLT_PFHT500_PFMET100_PFMHT100_IDTight;
-   Bool_t          HLT_PFHT500_PFMET110_PFMHT110_IDTight;
-   Bool_t          HLT_PFHT700_PFMET85_PFMHT85_IDTight;
-   Bool_t          HLT_PFHT800_PFMET75_PFMHT75_IDTight;
-   Bool_t          HLT_PFMET120_PFMHT120_IDTight;
-   Bool_t          HLT_PFMET130_PFMHT130_IDTight;
-   Bool_t          HLT_PFMET140_PFMHT140_IDTight;
-   Bool_t          HLT_PFMET120_PFMHT120_IDTight_PFHT60;
-   Bool_t          HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60;
-   Bool_t          HLT_PFMETTypeOne140_PFMHT140_IDTight;
-   Bool_t          HLT_PFMETNoMu120_PFMHTNoMu120_IDTight;
-   Bool_t          HLT_PFMETNoMu130_PFMHTNoMu130_IDTight;
-   Bool_t          HLT_PFMETNoMu140_PFMHTNoMu140_IDTight;
-   Bool_t          HLT_PFMETNoMu110_PFMHTNoMu110_IDTight_FilterHF;
-   Bool_t          HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_FilterHF;
-   Bool_t          HLT_PFMETNoMu130_PFMHTNoMu130_IDTight_FilterHF;
-   Bool_t          HLT_PFMETNoMu140_PFMHTNoMu140_IDTight_FilterHF;
+
+   //comment these out for now, but could probably even remove from photon analysis! (TO DO)
+   //Bool_t          HLT_PFJet40_GPUvsCPU;
+   //Bool_t          HLT_AK8PFJet400_MassSD30;
+   //Bool_t          HLT_AK8PFJet420_MassSD30;
+   //Bool_t          HLT_AK8PFJet450_MassSD30;
+   //Bool_t          HLT_AK8PFJet470_MassSD30;
+   //Bool_t          HLT_AK8PFJet500_MassSD30;
+   //Bool_t          HLT_CaloJet500_NoJetID;
+   //Bool_t          HLT_CaloJet550_NoJetID;
+   //Bool_t          HLT_DoubleEle25_CaloIdL_MW;
+   //Bool_t          HLT_DoubleEle27_CaloIdL_MW;
+   //Bool_t          HLT_DoubleEle33_CaloIdL_MW;
+   //Bool_t          HLT_DoubleEle24_eta2p1_WPTight_Gsf;
+   //Bool_t          HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_DZ_PFHT350;
+   //Bool_t          HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_PFHT350;
+   //Bool_t          HLT_Mu27_Ele37_CaloIdL_MW;
+   //Bool_t          HLT_Mu37_Ele27_CaloIdL_MW;
+   //Bool_t          HLT_Mu37_TkMu27;
+   //Bool_t          HLT_DoubleMu4_3_Bs;
+   //Bool_t          HLT_DoubleMu4_3_Jpsi;
+   //Bool_t          HLT_DoubleMu4_3_LowMass;
+   //Bool_t          HLT_DoubleMu4_LowMass_Displaced;
+   //Bool_t          HLT_Mu0_L1DoubleMu;
+   //Bool_t          HLT_Mu4_L1DoubleMu;
+   //Bool_t          HLT_DoubleMu4_3_Photon4_BsToMMG;
+   //Bool_t          HLT_DoubleMu4_3_Displaced_Photon4_BsToMMG;
+   //Bool_t          HLT_DoubleMu3_Trk_Tau3mu;
+   //Bool_t          HLT_DoubleMu3_TkMu_DsTau3Mu;
+   //Bool_t          HLT_DoubleMu4_Mass3p8_DZ_PFHT350;
+   //Bool_t          HLT_DoubleMu4_MuMuTrk_Displaced;
+   //Bool_t          HLT_Mu3_PFJet40;
+   //Bool_t          HLT_Mu7p5_L2Mu2_Jpsi;
+   //Bool_t          HLT_Mu7p5_L2Mu2_Upsilon;
+   //Bool_t          HLT_Mu3_L1SingleMu5orSingleMu7;
+   //Bool_t          HLT_DoublePhoton33_CaloIdL;
+   //Bool_t          HLT_DoublePhoton70;
+   //Bool_t          HLT_DoublePhoton85;
+   //Bool_t          HLT_DiEle27_WPTightCaloOnly_L1DoubleEG;
+   //Bool_t          HLT_Ele30_WPTight_Gsf;
+   //Bool_t          HLT_Ele32_WPTight_Gsf;
+   //Bool_t          HLT_Ele35_WPTight_Gsf;
+   //Bool_t          HLT_Ele38_WPTight_Gsf;
+   //Bool_t          HLT_Ele40_WPTight_Gsf;
+   //Bool_t          HLT_Ele32_WPTight_Gsf_L1DoubleEG;
+   //Bool_t          HLT_IsoMu27_MediumDeepTauPFTauHPS20_eta2p1_SingleL1;
+   //Bool_t          HLT_IsoMu20;
+   //Bool_t          HLT_IsoMu24;
+   //Bool_t          HLT_IsoMu24_eta2p1;
+   //Bool_t          HLT_IsoMu27;
+   
+   //Bool_t          HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL;
+   //Bool_t          HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL;
+   //Bool_t          HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ;
+   //Bool_t          HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL_DZ;
+   //Bool_t          HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8;
+   //Bool_t          HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL_DZ_Mass8;
+   //Bool_t          HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8;
+   //Bool_t          HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL_DZ_Mass3p8;
+   //Bool_t          HLT_Mu30_TkMu0_Psi;
+   //Bool_t          HLT_Mu30_TkMu0_Upsilon;
+   //Bool_t          HLT_Mu25_TkMu0_Phi;
+   //Bool_t          HLT_Mu15;
+   //Bool_t          HLT_Mu20;
+   //Bool_t          HLT_Mu27;
+   //Bool_t          HLT_Mu50;
+   //Bool_t          HLT_Mu55;
+   //Bool_t          HLT_CascadeMu100;
+   //Bool_t          HLT_HighPtTkMu100;
+   
+   //Bool_t          HLT_AK8PFJet40;
+   //Bool_t          HLT_AK8PFJet60;
+   //Bool_t          HLT_AK8PFJet80;
+   //Bool_t          HLT_AK8PFJet140;
+   //Bool_t          HLT_AK8PFJet200;
+   //Bool_t          HLT_AK8PFJet260;
+   //Bool_t          HLT_AK8PFJet320;
+   //Bool_t          HLT_AK8PFJet400;
+   //Bool_t          HLT_AK8PFJet450;
+   //Bool_t          HLT_AK8PFJet500;
+   //Bool_t          HLT_AK8PFJet550;
+   //Bool_t          HLT_PFJet40;
+   //Bool_t          HLT_PFJet60;
+   //Bool_t          HLT_PFJet80;
+   //Bool_t          HLT_PFJet110;
+   //Bool_t          HLT_PFJet140;
+   //Bool_t          HLT_PFJet200;
+   //Bool_t          HLT_PFJet260;
+   //Bool_t          HLT_PFJet320;
+   //Bool_t          HLT_PFJet400;
+   //Bool_t          HLT_PFJet450;
+   //Bool_t          HLT_PFJet500;
+   //Bool_t          HLT_PFJet550;
+   //Bool_t          HLT_PFJetFwd40;
+   //Bool_t          HLT_PFJetFwd60;
+   //Bool_t          HLT_PFJetFwd80;
+   //Bool_t          HLT_PFJetFwd140;
+   //Bool_t          HLT_PFJetFwd200;
+   //Bool_t          HLT_PFJetFwd260;
+   //Bool_t          HLT_PFJetFwd320;
+   //Bool_t          HLT_PFJetFwd400;
+   //Bool_t          HLT_PFJetFwd450;
+   //Bool_t          HLT_PFJetFwd500;
+   //Bool_t          HLT_AK8PFJetFwd15;
+   //Bool_t          HLT_AK8PFJetFwd25;
+   //Bool_t          HLT_AK8PFJetFwd40;
+   //Bool_t          HLT_AK8PFJetFwd60;
+   //Bool_t          HLT_AK8PFJetFwd80;
+   //Bool_t          HLT_AK8PFJetFwd140;
+   //Bool_t          HLT_AK8PFJetFwd200;
+   //Bool_t          HLT_AK8PFJetFwd260;
+   //Bool_t          HLT_AK8PFJetFwd320;
+   //Bool_t          HLT_AK8PFJetFwd400;
+   //Bool_t          HLT_AK8PFJetFwd450;
+   //Bool_t          HLT_AK8PFJetFwd500;
+   
+   //Bool_t          HLT_PFHT180;
+   //Bool_t          HLT_PFHT250;
+   //Bool_t          HLT_PFHT370;
+   //Bool_t          HLT_PFHT430;
+   //Bool_t          HLT_PFHT510;
+   //Bool_t          HLT_PFHT590;
+   //Bool_t          HLT_PFHT680;
+   //Bool_t          HLT_PFHT780;
+   //Bool_t          HLT_PFHT890;
+   //Bool_t          HLT_PFHT1050;
+   //Bool_t          HLT_PFHT500_PFMET100_PFMHT100_IDTight;
+   //Bool_t          HLT_PFHT500_PFMET110_PFMHT110_IDTight;
+   //Bool_t          HLT_PFHT700_PFMET85_PFMHT85_IDTight;
+   //Bool_t          HLT_PFHT800_PFMET75_PFMHT75_IDTight;
+   //Bool_t          HLT_PFMET120_PFMHT120_IDTight;
+   //Bool_t          HLT_PFMET130_PFMHT130_IDTight;
+   //Bool_t          HLT_PFMET140_PFMHT140_IDTight;
+   //Bool_t          HLT_PFMET120_PFMHT120_IDTight_PFHT60;
+   
+
+   //TODO: continue to remove branches below this (of course only the ones that are not needed, keep photon stuff)
+   
    Bool_t          HLT_L1ETMHadSeeds;
    Bool_t          HLT_CaloMHT90;
    Bool_t          HLT_CaloMET90_NotCleaned;
@@ -1563,12 +643,7 @@ public :
    Bool_t          HLT_Mu12_DoublePFJets350_PFBTagDeepJet_p71;
    Bool_t          HLT_Mu12_DoublePFJets40MaxDeta1p6_DoublePFBTagDeepJet_p71;
    Bool_t          HLT_Mu12_DoublePFJets54MaxDeta1p6_DoublePFBTagDeepJet_p71;
-   Bool_t          HLT_DoublePFJets40_PFBTagDeepJet_p71;
-   Bool_t          HLT_DoublePFJets100_PFBTagDeepJet_p71;
-   Bool_t          HLT_DoublePFJets200_PFBTagDeepJet_p71;
-   Bool_t          HLT_DoublePFJets350_PFBTagDeepJet_p71;
-   Bool_t          HLT_DoublePFJets116MaxDeta1p6_DoublePFBTagDeepJet_p71;
-   Bool_t          HLT_DoublePFJets128MaxDeta1p6_DoublePFBTagDeepJet_p71;
+
    Bool_t          HLT_Photon300_NoHE;
    Bool_t          HLT_Mu8_TrkIsoVVL;
    Bool_t          HLT_Mu8_DiEle12_CaloIdL_TrackIdL_DZ;
@@ -1596,6 +671,7 @@ public :
    Bool_t          HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL;
    Bool_t          HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL;
    Bool_t          HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ;
+
    Bool_t          HLT_Photon33;
    Bool_t          HLT_Photon50;
    Bool_t          HLT_Photon75;
