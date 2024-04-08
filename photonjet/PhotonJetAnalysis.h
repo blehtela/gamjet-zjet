@@ -162,37 +162,7 @@ public :
    Float_t         Jet_phi[];   //[nJet]
    Float_t         Jet_pt[];   //[nJet]
    Float_t         Jet_rawFactor[];   //[nJet]
-				      //
-   Int_t           nLowPtElectron;
-   Bool_t          LowPtElectron_convVeto[8];   //[nLowPtElectron]
-   UChar_t         LowPtElectron_convWP[8];   //[nLowPtElectron]
-   UChar_t         LowPtElectron_lostHits[8];   //[nLowPtElectron]
-   Short_t         LowPtElectron_electronIdx[8];   //[nLowPtElectron]
-   Short_t         LowPtElectron_photonIdx[8];   //[nLowPtElectron]
-   Int_t           LowPtElectron_charge[8];   //[nLowPtElectron]
-   Int_t           LowPtElectron_pdgId[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_ID[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_convVtxRadius[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_deltaEtaSC[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_dxy[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_dxyErr[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_dz[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_dzErr[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_eInvMinusPInv[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_energyErr[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_eta[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_hoe[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_mass[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_miniPFRelIso_all[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_miniPFRelIso_chg[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_phi[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_pt[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_ptbiased[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_r9[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_scEtOverPt[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_sieie[8];   //[nLowPtElectron]
-   Float_t         LowPtElectron_unbiased[8];   //[nLowPtElectron]
-						//
+				      
    Float_t         MET_MetUnclustEnUpDeltaX;
    Float_t         MET_MetUnclustEnUpDeltaY;
    Float_t         MET_covXX;
@@ -204,66 +174,6 @@ public :
    Float_t         MET_sumEt;
    Float_t         MET_sumPtUnclustered;
 
-   Int_t           nMuon;
-   UChar_t         Muon_highPtId[12];   //[nMuon]
-   Bool_t          Muon_highPurity[12];   //[nMuon]
-   Bool_t          Muon_inTimeMuon[12];   //[nMuon]
-   Bool_t          Muon_isGlobal[12];   //[nMuon]
-   Bool_t          Muon_isPFcand[12];   //[nMuon]
-   Bool_t          Muon_isStandalone[12];   //[nMuon]
-   Bool_t          Muon_isTracker[12];   //[nMuon]
-   UChar_t         Muon_jetNDauCharged[12];   //[nMuon]
-   Bool_t          Muon_looseId[12];   //[nMuon]
-   Bool_t          Muon_mediumId[12];   //[nMuon]
-   Bool_t          Muon_mediumPromptId[12];   //[nMuon]
-   UChar_t         Muon_miniIsoId[12];   //[nMuon]
-   UChar_t         Muon_multiIsoId[12];   //[nMuon]
-   UChar_t         Muon_mvaMuID_WP[12];   //[nMuon]
-   UChar_t         Muon_nStations[12];   //[nMuon]
-   UChar_t         Muon_nTrackerLayers[12];   //[nMuon]
-   UChar_t         Muon_pfIsoId[12];   //[nMuon]
-   UChar_t         Muon_puppiIsoId[12];   //[nMuon]
-   Bool_t          Muon_softId[12];   //[nMuon]
-   Bool_t          Muon_softMvaId[12];   //[nMuon]
-   UChar_t         Muon_tightCharge[12];   //[nMuon]
-   Bool_t          Muon_tightId[12];   //[nMuon]
-   UChar_t         Muon_tkIsoId[12];   //[nMuon]
-   Bool_t          Muon_triggerIdLoose[12];   //[nMuon]
-   Short_t         Muon_jetIdx[12];   //[nMuon]
-   Short_t         Muon_svIdx[12];   //[nMuon]
-   Short_t         Muon_fsrPhotonIdx[12];   //[nMuon]
-   Int_t           Muon_charge[12];   //[nMuon]
-   Int_t           Muon_pdgId[12];   //[nMuon]
-   Float_t         Muon_dxy[12];   //[nMuon]
-   Float_t         Muon_dxyErr[12];   //[nMuon]
-   Float_t         Muon_dxybs[12];   //[nMuon]
-   Float_t         Muon_dz[12];   //[nMuon]
-   Float_t         Muon_dzErr[12];   //[nMuon]
-   Float_t         Muon_eta[12];   //[nMuon]
-   Float_t         Muon_ip3d[12];   //[nMuon]
-   Float_t         Muon_jetPtRelv2[12];   //[nMuon]
-   Float_t         Muon_jetRelIso[12];   //[nMuon]
-   Float_t         Muon_mass[12];   //[nMuon]
-   Float_t         Muon_miniPFRelIso_all[12];   //[nMuon]
-   Float_t         Muon_miniPFRelIso_chg[12];   //[nMuon]
-   Float_t         Muon_mvaMuID[12];   //[nMuon]
-   Float_t         Muon_pfRelIso03_all[12];   //[nMuon]
-   Float_t         Muon_pfRelIso03_chg[12];   //[nMuon]
-   Float_t         Muon_pfRelIso04_all[12];   //[nMuon]
-   Float_t         Muon_phi[12];   //[nMuon]
-   Float_t         Muon_pt[12];   //[nMuon]
-   Float_t         Muon_ptErr[12];   //[nMuon]
-   Float_t         Muon_segmentComp[12];   //[nMuon]
-   Float_t         Muon_sip3d[12];   //[nMuon]
-   Float_t         Muon_softMva[12];   //[nMuon]
-   Float_t         Muon_tkRelIso[12];   //[nMuon]
-   Float_t         Muon_tunepRelPt[12];   //[nMuon]
-   Float_t         Muon_bsConstrainedChi2[12];   //[nMuon]
-   Float_t         Muon_bsConstrainedPt[12];   //[nMuon]
-   Float_t         Muon_bsConstrainedPtErr[12];   //[nMuon]
-   Float_t         Muon_mvaLowPt[12];   //[nMuon]
-   Float_t         Muon_mvaTTH[12];   //[nMuon]
-				      //
    Int_t           nPhoton;
    Char_t          Photon_seediEtaOriX[10];   //[nPhoton]
    UChar_t         Photon_cutBased[10];   //[nPhoton]
@@ -339,7 +249,7 @@ public :
    Float_t         Rho_fixedGridRhoFastjetCentralChargedPileUp;
    Float_t         Rho_fixedGridRhoFastjetCentralNeutral;
 
-   Int_t           nSoftActivityJet;
+   Int_t           nSoftActivityJet; //--> remove corresponding variables?
    Float_t         SoftActivityJet_eta[6];   //[nSoftActivityJet]
    Float_t         SoftActivityJet_phi[6];   //[nSoftActivityJet]
    Float_t         SoftActivityJet_pt[6];   //[nSoftActivityJet]
@@ -351,7 +261,7 @@ public :
    Float_t         SoftActivityJetHT2;
    Float_t         SoftActivityJetHT5;
 
-   Int_t           nSubJet;
+   Int_t           nSubJet; //--> remove corresponding variables?
    Float_t         SubJet_btagDeepB[10];   //[nSubJet]
    Float_t         SubJet_eta[10];   //[nSubJet]
    Float_t         SubJet_mass[10];   //[nSubJet]
@@ -635,43 +545,8 @@ public :
    //Bool_t          HLT_PFMETTypeOne200_BeamHaloCleaned;
    //Bool_t          HLT_MET105_IsoTrk50;
    //Bool_t          HLT_MET120_IsoTrk50;
-   //Bool_t          HLT_Mu12eta2p3;
-   //Bool_t          HLT_Mu12eta2p3_PFJet40;
-   //Bool_t          HLT_Mu12_DoublePFJets40_PFBTagDeepJet_p71;
-   //Bool_t          HLT_Mu12_DoublePFJets100_PFBTagDeepJet_p71;
-   //Bool_t          HLT_Mu12_DoublePFJets200_PFBTagDeepJet_p71;
-   //Bool_t          HLT_Mu12_DoublePFJets350_PFBTagDeepJet_p71;
-   //Bool_t          HLT_Mu12_DoublePFJets40MaxDeta1p6_DoublePFBTagDeepJet_p71;
-   //Bool_t          HLT_Mu12_DoublePFJets54MaxDeta1p6_DoublePFBTagDeepJet_p71;
 
    Bool_t          HLT_Photon300_NoHE;
-
-   //Bool_t          HLT_Mu8_TrkIsoVVL;
-   //Bool_t          HLT_Mu8_DiEle12_CaloIdL_TrackIdL_DZ;
-   //Bool_t          HLT_Mu8_DiEle12_CaloIdL_TrackIdL;
-   //Bool_t          HLT_Mu8_Ele8_CaloIdM_TrackIdM_Mass8_PFHT350_DZ;
-   //Bool_t          HLT_Mu8_Ele8_CaloIdM_TrackIdM_Mass8_PFHT350;
-   //Bool_t          HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ;
-   //Bool_t          HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_PFDiJet30;
-   //Bool_t          HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_CaloDiJet30;
-   //Bool_t          HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL;
-   //Bool_t          HLT_Mu17_TrkIsoVVL;
-   //Bool_t          HLT_Mu19_TrkIsoVVL;
-   //Bool_t          HLT_BTagMu_AK4DiJet20_Mu5;
-   //Bool_t          HLT_BTagMu_AK4DiJet40_Mu5;
-   //Bool_t          HLT_BTagMu_AK4DiJet70_Mu5;
-   //Bool_t          HLT_BTagMu_AK4DiJet110_Mu5;
-   //Bool_t          HLT_BTagMu_AK4DiJet170_Mu5;
-   //Bool_t          HLT_BTagMu_AK4Jet300_Mu5;
-   //Bool_t          HLT_BTagMu_AK8DiJet170_Mu5;
-   //Bool_t          HLT_BTagMu_AK8Jet170_DoubleMu5;
-   //Bool_t          HLT_BTagMu_AK8Jet300_Mu5;
-   //Bool_t          HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ;
-   //Bool_t          HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL;
-   //Bool_t          HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ;
-   //Bool_t          HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL;
-   //Bool_t          HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL;
-   //Bool_t          HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ;
 
    Bool_t          HLT_Photon33;
    Bool_t          HLT_Photon50;
@@ -710,16 +585,10 @@ public :
    Bool_t          HLT_DiSC30_18_EIso_AND_HE_Mass70;
    Bool_t          HLT_Photon20_HoverELoose;
    Bool_t          HLT_Photon30_HoverELoose;
-   //Bool_t          HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL;
    
    Bool_t          HLT_Photon60_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3;
    Bool_t          HLT_Photon75_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3;
 
-   //Bool_t          HLT_Mu18_Mu9_SameSign;
-   //Bool_t          HLT_DoubleMu2_Jpsi_DoubleTrk1_Phi1p05;
-   //Bool_t          HLT_DoubleMu3_DCA_PFMET50_PFMHT60;
-   //Bool_t          HLT_TripleMu_5_3_3_Mass3p8_DCA;
-   //
    Bool_t          HLT_Diphoton30_18_R9IdL_AND_HE_AND_IsoCaloId;
    Bool_t          HLT_Diphoton30_18_R9IdL_AND_HE_AND_IsoCaloId_Mass55;
 
@@ -777,31 +646,7 @@ public :
    TBranch        *b_BeamSpot_sigmaZError;   //!
    TBranch        *b_BeamSpot_z;   //!
    TBranch        *b_BeamSpot_zError;   //!
-   TBranch        *b_nboostedTau;   //!
-   TBranch        *b_boostedTau_idAntiEle2018;   //!
-   TBranch        *b_boostedTau_idAntiMu;   //!
-   TBranch        *b_boostedTau_idMVAnewDM2017v2;   //!
-   TBranch        *b_boostedTau_idMVAoldDM2017v2;   //!
-   TBranch        *b_boostedTau_jetIdx;   //!
-   TBranch        *b_boostedTau_rawAntiEleCat2018;   //!
-   TBranch        *b_boostedTau_charge;   //!
-   TBranch        *b_boostedTau_decayMode;   //!
-   TBranch        *b_boostedTau_chargedIso;   //!
-   TBranch        *b_boostedTau_eta;   //!
-   TBranch        *b_boostedTau_leadTkDeltaEta;   //!
-   TBranch        *b_boostedTau_leadTkDeltaPhi;   //!
-   TBranch        *b_boostedTau_leadTkPtOverTauPt;   //!
-   TBranch        *b_boostedTau_mass;   //!
-   TBranch        *b_boostedTau_neutralIso;   //!
-   TBranch        *b_boostedTau_phi;   //!
-   TBranch        *b_boostedTau_photonsOutsideSignalCone;   //!
-   TBranch        *b_boostedTau_pt;   //!
-   TBranch        *b_boostedTau_puCorr;   //!
-   TBranch        *b_boostedTau_rawAntiEle2018;   //!
-   TBranch        *b_boostedTau_rawIso;   //!
-   TBranch        *b_boostedTau_rawIsodR03;   //!
-   TBranch        *b_boostedTau_rawMVAnewDM2017v2;   //!
-   TBranch        *b_boostedTau_rawMVAoldDM2017v2;   //!
+					
    TBranch        *b_CaloMET_phi;   //!
    TBranch        *b_CaloMET_pt;   //!
    TBranch        *b_CaloMET_sumEt;   //!
@@ -818,105 +663,7 @@ public :
    TBranch        *b_DeepMETResolutionTune_pt;   //!
    TBranch        *b_DeepMETResponseTune_phi;   //!
    TBranch        *b_DeepMETResponseTune_pt;   //!
-   TBranch        *b_nElectron;   //!
-   TBranch        *b_Electron_seediEtaOriX;   //!
-   TBranch        *b_Electron_convVeto;   //!
-   TBranch        *b_Electron_cutBased;   //!
-   TBranch        *b_Electron_cutBased_HEEP;   //!
-   TBranch        *b_Electron_isPFcand;   //!
-   TBranch        *b_Electron_jetNDauCharged;   //!
-   TBranch        *b_Electron_lostHits;   //!
-   TBranch        *b_Electron_mvaIso_WP80;   //!
-   TBranch        *b_Electron_mvaIso_WP90;   //!
-   TBranch        *b_Electron_mvaNoIso_WP80;   //!
-   TBranch        *b_Electron_mvaNoIso_WP90;   //!
-   TBranch        *b_Electron_seedGain;   //!
-   TBranch        *b_Electron_tightCharge;   //!
-   TBranch        *b_Electron_jetIdx;   //!
-   TBranch        *b_Electron_photonIdx;   //!
-   TBranch        *b_Electron_svIdx;   //!
-   TBranch        *b_Electron_fsrPhotonIdx;   //!
-   TBranch        *b_Electron_charge;   //!
-   TBranch        *b_Electron_pdgId;   //!
-   TBranch        *b_Electron_seediPhiOriY;   //!
-   TBranch        *b_Electron_vidNestedWPBitmap;   //!
-   TBranch        *b_Electron_vidNestedWPBitmapHEEP;   //!
-   TBranch        *b_Electron_deltaEtaSC;   //!
-   TBranch        *b_Electron_dr03EcalRecHitSumEt;   //!
-   TBranch        *b_Electron_dr03HcalDepth1TowerSumEt;   //!
-   TBranch        *b_Electron_dr03TkSumPt;   //!
-   TBranch        *b_Electron_dr03TkSumPtHEEP;   //!
-   TBranch        *b_Electron_dxy;   //!
-   TBranch        *b_Electron_dxyErr;   //!
-   TBranch        *b_Electron_dz;   //!
-   TBranch        *b_Electron_dzErr;   //!
-   TBranch        *b_Electron_eInvMinusPInv;   //!
-   TBranch        *b_Electron_energyErr;   //!
-   TBranch        *b_Electron_eta;   //!
-   TBranch        *b_Electron_hoe;   //!
-   TBranch        *b_Electron_ip3d;   //!
-   TBranch        *b_Electron_jetPtRelv2;   //!
-   TBranch        *b_Electron_jetRelIso;   //!
-   TBranch        *b_Electron_mass;   //!
-   TBranch        *b_Electron_miniPFRelIso_all;   //!
-   TBranch        *b_Electron_miniPFRelIso_chg;   //!
-   TBranch        *b_Electron_mvaHZZIso;   //!
-   TBranch        *b_Electron_mvaIso;   //!
-   TBranch        *b_Electron_mvaNoIso;   //!
-   TBranch        *b_Electron_pfRelIso03_all;   //!
-   TBranch        *b_Electron_pfRelIso03_chg;   //!
-   TBranch        *b_Electron_phi;   //!
-   TBranch        *b_Electron_pt;   //!
-   TBranch        *b_Electron_r9;   //!
-   TBranch        *b_Electron_scEtOverPt;   //!
-   TBranch        *b_Electron_sieie;   //!
-   TBranch        *b_Electron_sip3d;   //!
-   TBranch        *b_Electron_mvaTTH;   //!
-   TBranch        *b_nFatJet;   //!
-   TBranch        *b_FatJet_jetId;   //!
-   TBranch        *b_FatJet_nConstituents;   //!
-   TBranch        *b_FatJet_subJetIdx1;   //!
-   TBranch        *b_FatJet_subJetIdx2;   //!
-   TBranch        *b_FatJet_electronIdx3SJ;   //!
-   TBranch        *b_FatJet_muonIdx3SJ;   //!
-   TBranch        *b_FatJet_area;   //!
-   TBranch        *b_FatJet_btagDDBvLV2;   //!
-   TBranch        *b_FatJet_btagDDCvBV2;   //!
-   TBranch        *b_FatJet_btagDDCvLV2;   //!
-   TBranch        *b_FatJet_btagDeepB;   //!
-   TBranch        *b_FatJet_btagHbb;   //!
-   TBranch        *b_FatJet_eta;   //!
-   TBranch        *b_FatJet_mass;   //!
-   TBranch        *b_FatJet_msoftdrop;   //!
-   TBranch        *b_FatJet_n2b1;   //!
-   TBranch        *b_FatJet_n3b1;   //!
-   TBranch        *b_FatJet_particleNetWithMass_H4qvsQCD;   //!
-   TBranch        *b_FatJet_particleNetWithMass_HbbvsQCD;   //!
-   TBranch        *b_FatJet_particleNetWithMass_HccvsQCD;   //!
-   TBranch        *b_FatJet_particleNetWithMass_QCD;   //!
-   TBranch        *b_FatJet_particleNetWithMass_TvsQCD;   //!
-   TBranch        *b_FatJet_particleNetWithMass_WvsQCD;   //!
-   TBranch        *b_FatJet_particleNetWithMass_ZvsQCD;   //!
-   TBranch        *b_FatJet_particleNet_QCD;   //!
-   TBranch        *b_FatJet_particleNet_QCD0HF;   //!
-   TBranch        *b_FatJet_particleNet_QCD1HF;   //!
-   TBranch        *b_FatJet_particleNet_QCD2HF;   //!
-   TBranch        *b_FatJet_particleNet_XbbVsQCD;   //!
-   TBranch        *b_FatJet_particleNet_XccVsQCD;   //!
-   TBranch        *b_FatJet_particleNet_XggVsQCD;   //!
-   TBranch        *b_FatJet_particleNet_XqqVsQCD;   //!
-   TBranch        *b_FatJet_particleNet_XteVsQCD;   //!
-   TBranch        *b_FatJet_particleNet_XtmVsQCD;   //!
-   TBranch        *b_FatJet_particleNet_XttVsQCD;   //!
-   TBranch        *b_FatJet_particleNet_massCorr;   //!
-   TBranch        *b_FatJet_phi;   //!
-   TBranch        *b_FatJet_pt;   //!
-   TBranch        *b_FatJet_rawFactor;   //!
-   TBranch        *b_FatJet_tau1;   //!
-   TBranch        *b_FatJet_tau2;   //!
-   TBranch        *b_FatJet_tau3;   //!
-   TBranch        *b_FatJet_tau4;   //!
-   TBranch        *b_FatJet_lsf3;   //!
+					       
    TBranch        *b_nFsrPhoton;   //!
    TBranch        *b_FsrPhoton_electronIdx;   //!
    TBranch        *b_FsrPhoton_muonIdx;   //!
@@ -925,6 +672,7 @@ public :
    TBranch        *b_FsrPhoton_phi;   //!
    TBranch        *b_FsrPhoton_pt;   //!
    TBranch        *b_FsrPhoton_relIso03;   //!
+					   
    TBranch        *b_nIsoTrack;   //!
    TBranch        *b_IsoTrack_isHighPurityTrack;   //!
    TBranch        *b_IsoTrack_isPFcand;   //!
@@ -941,6 +689,7 @@ public :
    TBranch        *b_IsoTrack_pt;   //!
    TBranch        *b_IsoTrack_miniPFRelIso_all;   //!
    TBranch        *b_IsoTrack_miniPFRelIso_chg;   //!
+						  
    TBranch        *b_nJet;   //!
    TBranch        *b_Jet_jetId;   //!
    TBranch        *b_Jet_nConstituents;   //!
@@ -985,35 +734,8 @@ public :
    TBranch        *b_Jet_phi;   //!
    TBranch        *b_Jet_pt;   //!
    TBranch        *b_Jet_rawFactor;   //!
-   TBranch        *b_nLowPtElectron;   //!
-   TBranch        *b_LowPtElectron_convVeto;   //!
-   TBranch        *b_LowPtElectron_convWP;   //!
-   TBranch        *b_LowPtElectron_lostHits;   //!
-   TBranch        *b_LowPtElectron_electronIdx;   //!
-   TBranch        *b_LowPtElectron_photonIdx;   //!
-   TBranch        *b_LowPtElectron_charge;   //!
-   TBranch        *b_LowPtElectron_pdgId;   //!
-   TBranch        *b_LowPtElectron_ID;   //!
-   TBranch        *b_LowPtElectron_convVtxRadius;   //!
-   TBranch        *b_LowPtElectron_deltaEtaSC;   //!
-   TBranch        *b_LowPtElectron_dxy;   //!
-   TBranch        *b_LowPtElectron_dxyErr;   //!
-   TBranch        *b_LowPtElectron_dz;   //!
-   TBranch        *b_LowPtElectron_dzErr;   //!
-   TBranch        *b_LowPtElectron_eInvMinusPInv;   //!
-   TBranch        *b_LowPtElectron_energyErr;   //!
-   TBranch        *b_LowPtElectron_eta;   //!
-   TBranch        *b_LowPtElectron_hoe;   //!
-   TBranch        *b_LowPtElectron_mass;   //!
-   TBranch        *b_LowPtElectron_miniPFRelIso_all;   //!
-   TBranch        *b_LowPtElectron_miniPFRelIso_chg;   //!
-   TBranch        *b_LowPtElectron_phi;   //!
-   TBranch        *b_LowPtElectron_pt;   //!
-   TBranch        *b_LowPtElectron_ptbiased;   //!
-   TBranch        *b_LowPtElectron_r9;   //!
-   TBranch        *b_LowPtElectron_scEtOverPt;   //!
-   TBranch        *b_LowPtElectron_sieie;   //!
-   TBranch        *b_LowPtElectron_unbiased;   //!
+				      
+
    TBranch        *b_MET_MetUnclustEnUpDeltaX;   //!
    TBranch        *b_MET_MetUnclustEnUpDeltaY;   //!
    TBranch        *b_MET_covXX;   //!
@@ -1024,73 +746,7 @@ public :
    TBranch        *b_MET_significance;   //!
    TBranch        *b_MET_sumEt;   //!
    TBranch        *b_MET_sumPtUnclustered;   //!
-   TBranch        *b_nProton_multiRP;   //!
-   TBranch        *b_Proton_multiRP_arm;   //!
-   TBranch        *b_Proton_multiRP_t;   //!
-   TBranch        *b_Proton_multiRP_thetaX;   //!
-   TBranch        *b_Proton_multiRP_thetaY;   //!
-   TBranch        *b_Proton_multiRP_time;   //!
-   TBranch        *b_Proton_multiRP_timeUnc;   //!
-   TBranch        *b_Proton_multiRP_xi;   //!
-   TBranch        *b_nMuon;   //!
-   TBranch        *b_Muon_highPtId;   //!
-   TBranch        *b_Muon_highPurity;   //!
-   TBranch        *b_Muon_inTimeMuon;   //!
-   TBranch        *b_Muon_isGlobal;   //!
-   TBranch        *b_Muon_isPFcand;   //!
-   TBranch        *b_Muon_isStandalone;   //!
-   TBranch        *b_Muon_isTracker;   //!
-   TBranch        *b_Muon_jetNDauCharged;   //!
-   TBranch        *b_Muon_looseId;   //!
-   TBranch        *b_Muon_mediumId;   //!
-   TBranch        *b_Muon_mediumPromptId;   //!
-   TBranch        *b_Muon_miniIsoId;   //!
-   TBranch        *b_Muon_multiIsoId;   //!
-   TBranch        *b_Muon_mvaMuID_WP;   //!
-   TBranch        *b_Muon_nStations;   //!
-   TBranch        *b_Muon_nTrackerLayers;   //!
-   TBranch        *b_Muon_pfIsoId;   //!
-   TBranch        *b_Muon_puppiIsoId;   //!
-   TBranch        *b_Muon_softId;   //!
-   TBranch        *b_Muon_softMvaId;   //!
-   TBranch        *b_Muon_tightCharge;   //!
-   TBranch        *b_Muon_tightId;   //!
-   TBranch        *b_Muon_tkIsoId;   //!
-   TBranch        *b_Muon_triggerIdLoose;   //!
-   TBranch        *b_Muon_jetIdx;   //!
-   TBranch        *b_Muon_svIdx;   //!
-   TBranch        *b_Muon_fsrPhotonIdx;   //!
-   TBranch        *b_Muon_charge;   //!
-   TBranch        *b_Muon_pdgId;   //!
-   TBranch        *b_Muon_dxy;   //!
-   TBranch        *b_Muon_dxyErr;   //!
-   TBranch        *b_Muon_dxybs;   //!
-   TBranch        *b_Muon_dz;   //!
-   TBranch        *b_Muon_dzErr;   //!
-   TBranch        *b_Muon_eta;   //!
-   TBranch        *b_Muon_ip3d;   //!
-   TBranch        *b_Muon_jetPtRelv2;   //!
-   TBranch        *b_Muon_jetRelIso;   //!
-   TBranch        *b_Muon_mass;   //!
-   TBranch        *b_Muon_miniPFRelIso_all;   //!
-   TBranch        *b_Muon_miniPFRelIso_chg;   //!
-   TBranch        *b_Muon_mvaMuID;   //!
-   TBranch        *b_Muon_pfRelIso03_all;   //!
-   TBranch        *b_Muon_pfRelIso03_chg;   //!
-   TBranch        *b_Muon_pfRelIso04_all;   //!
-   TBranch        *b_Muon_phi;   //!
-   TBranch        *b_Muon_pt;   //!
-   TBranch        *b_Muon_ptErr;   //!
-   TBranch        *b_Muon_segmentComp;   //!
-   TBranch        *b_Muon_sip3d;   //!
-   TBranch        *b_Muon_softMva;   //!
-   TBranch        *b_Muon_tkRelIso;   //!
-   TBranch        *b_Muon_tunepRelPt;   //!
-   TBranch        *b_Muon_bsConstrainedChi2;   //!
-   TBranch        *b_Muon_bsConstrainedPt;   //!
-   TBranch        *b_Muon_bsConstrainedPtErr;   //!
-   TBranch        *b_Muon_mvaLowPt;   //!
-   TBranch        *b_Muon_mvaTTH;   //!
+					  
    TBranch        *b_nPhoton;   //!
    TBranch        *b_Photon_seediEtaOriX;   //!
    TBranch        *b_Photon_cutBased;   //!
@@ -1137,6 +793,7 @@ public :
    TBranch        *b_Photon_x_calo;   //!
    TBranch        *b_Photon_y_calo;   //!
    TBranch        *b_Photon_z_calo;   //!
+				      
    TBranch        *b_nPPSLocalTrack;   //!
    TBranch        *b_PPSLocalTrack_multiRPProtonIdx;   //!
    TBranch        *b_PPSLocalTrack_singleRPProtonIdx;   //!
@@ -1173,88 +830,13 @@ public :
    TBranch        *b_Rho_fixedGridRhoFastjetCentralCalo;   //!
    TBranch        *b_Rho_fixedGridRhoFastjetCentralChargedPileUp;   //!
    TBranch        *b_Rho_fixedGridRhoFastjetCentralNeutral;   //!
-   TBranch        *b_nSoftActivityJet;   //!
-   TBranch        *b_SoftActivityJet_eta;   //!
-   TBranch        *b_SoftActivityJet_phi;   //!
-   TBranch        *b_SoftActivityJet_pt;   //!
-   TBranch        *b_SoftActivityJetNjets10;   //!
-   TBranch        *b_SoftActivityJetNjets2;   //!
-   TBranch        *b_SoftActivityJetNjets5;   //!
-   TBranch        *b_SoftActivityJetHT;   //!
-   TBranch        *b_SoftActivityJetHT10;   //!
-   TBranch        *b_SoftActivityJetHT2;   //!
-   TBranch        *b_SoftActivityJetHT5;   //!
-   TBranch        *b_nProton_singleRP;   //!
-   TBranch        *b_Proton_singleRP_decRPId;   //!
-   TBranch        *b_Proton_singleRP_thetaY;   //!
-   TBranch        *b_Proton_singleRP_xi;   //!
-   TBranch        *b_nSubJet;   //!
-   TBranch        *b_SubJet_btagDeepB;   //!
-   TBranch        *b_SubJet_eta;   //!
-   TBranch        *b_SubJet_mass;   //!
-   TBranch        *b_SubJet_n2b1;   //!
-   TBranch        *b_SubJet_n3b1;   //!
-   TBranch        *b_SubJet_phi;   //!
-   TBranch        *b_SubJet_pt;   //!
-   TBranch        *b_SubJet_rawFactor;   //!
-   TBranch        *b_SubJet_tau1;   //!
-   TBranch        *b_SubJet_tau2;   //!
-   TBranch        *b_SubJet_tau3;   //!
-   TBranch        *b_SubJet_tau4;   //!
-   TBranch        *b_nTau;   //!
-   TBranch        *b_Tau_decayMode;   //!
-   TBranch        *b_Tau_idAntiEleDeadECal;   //!
-   TBranch        *b_Tau_idAntiMu;   //!
-   TBranch        *b_Tau_idDecayModeNewDMs;   //!
-   TBranch        *b_Tau_idDecayModeOldDMs;   //!
-   TBranch        *b_Tau_idDeepTau2017v2p1VSe;   //!
-   TBranch        *b_Tau_idDeepTau2017v2p1VSjet;   //!
-   TBranch        *b_Tau_idDeepTau2017v2p1VSmu;   //!
-   TBranch        *b_Tau_idDeepTau2018v2p5VSe;   //!
-   TBranch        *b_Tau_idDeepTau2018v2p5VSjet;   //!
-   TBranch        *b_Tau_idDeepTau2018v2p5VSmu;   //!
-   TBranch        *b_Tau_nSVs;   //!
-   TBranch        *b_Tau_charge;   //!
-   TBranch        *b_Tau_decayModePNet;   //!
-   TBranch        *b_Tau_eleIdx;   //!
-   TBranch        *b_Tau_jetIdx;   //!
-   TBranch        *b_Tau_muIdx;   //!
-   TBranch        *b_Tau_svIdx1;   //!
-   TBranch        *b_Tau_svIdx2;   //!
-   TBranch        *b_Tau_chargedIso;   //!
-   TBranch        *b_Tau_dxy;   //!
-   TBranch        *b_Tau_dz;   //!
-   TBranch        *b_Tau_eta;   //!
-   TBranch        *b_Tau_leadTkDeltaEta;   //!
-   TBranch        *b_Tau_leadTkDeltaPhi;   //!
-   TBranch        *b_Tau_leadTkPtOverTauPt;   //!
-   TBranch        *b_Tau_mass;   //!
-   TBranch        *b_Tau_neutralIso;   //!
-   TBranch        *b_Tau_phi;   //!
-   TBranch        *b_Tau_photonsOutsideSignalCone;   //!
-   TBranch        *b_Tau_probDM0PNet;   //!
-   TBranch        *b_Tau_probDM10PNet;   //!
-   TBranch        *b_Tau_probDM11PNet;   //!
-   TBranch        *b_Tau_probDM1PNet;   //!
-   TBranch        *b_Tau_probDM2PNet;   //!
-   TBranch        *b_Tau_pt;   //!
-   TBranch        *b_Tau_ptCorrPNet;   //!
-   TBranch        *b_Tau_puCorr;   //!
-   TBranch        *b_Tau_qConfPNet;   //!
-   TBranch        *b_Tau_rawDeepTau2017v2p1VSe;   //!
-   TBranch        *b_Tau_rawDeepTau2017v2p1VSjet;   //!
-   TBranch        *b_Tau_rawDeepTau2017v2p1VSmu;   //!
-   TBranch        *b_Tau_rawDeepTau2018v2p5VSe;   //!
-   TBranch        *b_Tau_rawDeepTau2018v2p5VSjet;   //!
-   TBranch        *b_Tau_rawDeepTau2018v2p5VSmu;   //!
-   TBranch        *b_Tau_rawIso;   //!
-   TBranch        *b_Tau_rawIsodR03;   //!
-   TBranch        *b_Tau_rawPNetVSe;   //!
-   TBranch        *b_Tau_rawPNetVSjet;   //!
-   TBranch        *b_Tau_rawPNetVSmu;   //!
+							      
+   //TBranch        *b_nSoftActivityJet;   //!
+
    TBranch        *b_TkMET_phi;   //!
    TBranch        *b_TkMET_pt;   //!
    TBranch        *b_TkMET_sumEt;   //!
+				    
    TBranch        *b_nTrigObj;   //!
    TBranch        *b_TrigObj_l1charge;   //!
    TBranch        *b_TrigObj_id;   //!
@@ -1266,6 +848,7 @@ public :
    TBranch        *b_TrigObj_l1pt;   //!
    TBranch        *b_TrigObj_l1pt_2;   //!
    TBranch        *b_TrigObj_l2pt;   //!
+				     //
    TBranch        *b_nOtherPV;   //!
    TBranch        *b_OtherPV_z;   //!
    TBranch        *b_OtherPV_score;   //!
@@ -1294,6 +877,7 @@ public :
    TBranch        *b_SV_x;   //!
    TBranch        *b_SV_y;   //!
    TBranch        *b_SV_z;   //!
+
    TBranch        *b_Flag_HBHENoiseFilter;   //!
    TBranch        *b_Flag_HBHENoiseIsoFilter;   //!
    TBranch        *b_Flag_CSCTightHaloFilter;   //!
@@ -1322,419 +906,8 @@ public :
    TBranch        *b_Flag_trkPOG_toomanystripclus53X;   //!
    TBranch        *b_Flag_trkPOG_logErrorTooManyClusters;   //!
    TBranch        *b_Flag_METFilters;   //!
-   TBranch        *b_L1_AlwaysTrue;   //!
-   TBranch        *b_L1_BPTX_AND_Ref1_VME;   //!
-   TBranch        *b_L1_BPTX_AND_Ref3_VME;   //!
-   TBranch        *b_L1_BPTX_AND_Ref4_VME;   //!
-   TBranch        *b_L1_BPTX_BeamGas_B1_VME;   //!
-   TBranch        *b_L1_BPTX_BeamGas_B2_VME;   //!
-   TBranch        *b_L1_BPTX_BeamGas_Ref1_VME;   //!
-   TBranch        *b_L1_BPTX_BeamGas_Ref2_VME;   //!
-   TBranch        *b_L1_BPTX_NotOR_VME;   //!
-   TBranch        *b_L1_BPTX_OR_Ref3_VME;   //!
-   TBranch        *b_L1_BPTX_OR_Ref4_VME;   //!
-   TBranch        *b_L1_BPTX_RefAND_VME;   //!
-   TBranch        *b_L1_BptxMinus;   //!
-   TBranch        *b_L1_BptxOR;   //!
-   TBranch        *b_L1_BptxPlus;   //!
-   TBranch        *b_L1_BptxXOR;   //!
-   TBranch        *b_L1_CDC_SingleMu_3_er1p2_TOP120_DPHI2p618_3p142;   //!
-   TBranch        *b_L1_DoubleEG10_er1p2_dR_Max0p6;   //!
-   TBranch        *b_L1_DoubleEG10p5_er1p2_dR_Max0p6;   //!
-   TBranch        *b_L1_DoubleEG11_er1p2_dR_Max0p6;   //!
-   TBranch        *b_L1_DoubleEG4_er1p2_dR_Max0p9;   //!
-   TBranch        *b_L1_DoubleEG4p5_er1p2_dR_Max0p9;   //!
-   TBranch        *b_L1_DoubleEG5_er1p2_dR_Max0p9;   //!
-   TBranch        *b_L1_DoubleEG5p5_er1p2_dR_Max0p8;   //!
-   TBranch        *b_L1_DoubleEG6_er1p2_dR_Max0p8;   //!
-   TBranch        *b_L1_DoubleEG6p5_er1p2_dR_Max0p8;   //!
-   TBranch        *b_L1_DoubleEG7_er1p2_dR_Max0p8;   //!
-   TBranch        *b_L1_DoubleEG7p5_er1p2_dR_Max0p7;   //!
-   TBranch        *b_L1_DoubleEG8_er1p2_dR_Max0p7;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT260er;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT280er;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT300er;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT320er;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT340er;   //!
-   TBranch        *b_L1_DoubleEG8p5_er1p2_dR_Max0p7;   //!
-   TBranch        *b_L1_DoubleEG9_er1p2_dR_Max0p7;   //!
-   TBranch        *b_L1_DoubleEG9p5_er1p2_dR_Max0p6;   //!
-   TBranch        *b_L1_DoubleEG_15_10_er2p5;   //!
-   TBranch        *b_L1_DoubleEG_20_10_er2p5;   //!
-   TBranch        *b_L1_DoubleEG_22_10_er2p5;   //!
-   TBranch        *b_L1_DoubleEG_25_12_er2p5;   //!
-   TBranch        *b_L1_DoubleEG_25_14_er2p5;   //!
-   TBranch        *b_L1_DoubleEG_27_14_er2p5;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso16_LooseIso12_er1p5;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso18_LooseIso12_er1p5;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso20_LooseIso12_er1p5;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso22_12_er2p5;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso22_LooseIso12_er1p5;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso25_12_er2p5;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso25_LooseIso12_er1p5;   //!
-   TBranch        *b_L1_DoubleIsoTau26er2p1_Jet55_RmOvlp_dR0p5;   //!
-   TBranch        *b_L1_DoubleIsoTau26er2p1_Jet70_RmOvlp_dR0p5;   //!
-   TBranch        *b_L1_DoubleIsoTau28er2p1;   //!
-   TBranch        *b_L1_DoubleIsoTau28er2p1_Mass_Max80;   //!
-   TBranch        *b_L1_DoubleIsoTau28er2p1_Mass_Max90;   //!
-   TBranch        *b_L1_DoubleIsoTau30er2p1;   //!
-   TBranch        *b_L1_DoubleIsoTau30er2p1_Mass_Max80;   //!
-   TBranch        *b_L1_DoubleIsoTau30er2p1_Mass_Max90;   //!
-   TBranch        *b_L1_DoubleIsoTau32er2p1;   //!
-   TBranch        *b_L1_DoubleIsoTau32er2p1_Mass_Max80;   //!
-   TBranch        *b_L1_DoubleIsoTau34er2p1;   //!
-   TBranch        *b_L1_DoubleIsoTau35er2p1;   //!
-   TBranch        *b_L1_DoubleIsoTau36er2p1;   //!
-   TBranch        *b_L1_DoubleJet100er2p3_dEta_Max1p6;   //!
-   TBranch        *b_L1_DoubleJet100er2p5;   //!
-   TBranch        *b_L1_DoubleJet112er2p3_dEta_Max1p6;   //!
-   TBranch        *b_L1_DoubleJet120er2p5;   //!
-   TBranch        *b_L1_DoubleJet120er2p5_Mu3_dR_Max0p8;   //!
-   TBranch        *b_L1_DoubleJet150er2p5;   //!
-   TBranch        *b_L1_DoubleJet16er2p5_Mu3_dR_Max0p4;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min225_dEta_Max1p5;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min250_dEta_Max1p5;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min300_dEta_Max1p5;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min330_dEta_Max1p5;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min360_dEta_Max1p5;   //!
-   TBranch        *b_L1_DoubleJet35_Mass_Min450_IsoTau45_RmOvlp;   //!
-   TBranch        *b_L1_DoubleJet35_Mass_Min450_IsoTau45er2p1_RmOvlp_dR0p5;   //!
-   TBranch        *b_L1_DoubleJet35er2p5_Mu3_dR_Max0p4;   //!
-   TBranch        *b_L1_DoubleJet40_Mass_Min450_IsoEG10er2p1_RmOvlp_dR0p2;   //!
-   TBranch        *b_L1_DoubleJet40_Mass_Min450_LooseIsoEG15er2p1_RmOvlp_dR0p2;   //!
-   TBranch        *b_L1_DoubleJet40er2p5;   //!
-   TBranch        *b_L1_DoubleJet45_Mass_Min450_IsoTau45er2p1_RmOvlp_dR0p5;   //!
-   TBranch        *b_L1_DoubleJet45_Mass_Min450_LooseIsoEG20er2p1_RmOvlp_dR0p2;   //!
-   TBranch        *b_L1_DoubleJet60er2p5_Mu3_dR_Max0p4;   //!
-   TBranch        *b_L1_DoubleJet80er2p5_Mu3_dR_Max0p4;   //!
-   TBranch        *b_L1_DoubleJet_100_30_DoubleJet30_Mass_Min620;   //!
-   TBranch        *b_L1_DoubleJet_100_30_DoubleJet30_Mass_Min800;   //!
-   TBranch        *b_L1_DoubleJet_110_35_DoubleJet35_Mass_Min620;   //!
-   TBranch        *b_L1_DoubleJet_110_35_DoubleJet35_Mass_Min800;   //!
-   TBranch        *b_L1_DoubleJet_115_40_DoubleJet40_Mass_Min620;   //!
-   TBranch        *b_L1_DoubleJet_115_40_DoubleJet40_Mass_Min620_Jet60TT28;   //!
-   TBranch        *b_L1_DoubleJet_120_45_DoubleJet45_Mass_Min620;   //!
-   TBranch        *b_L1_DoubleJet_120_45_DoubleJet45_Mass_Min620_Jet60TT28;   //!
-   TBranch        *b_L1_DoubleJet_60_30_DoubleJet30_Mass_Min500_DoubleJetCentral50;   //!
-   TBranch        *b_L1_DoubleJet_65_30_DoubleJet30_Mass_Min400_ETMHF65;   //!
-   TBranch        *b_L1_DoubleJet_65_35_DoubleJet35_Mass_Min500_DoubleJetCentral50;   //!
-   TBranch        *b_L1_DoubleJet_70_35_DoubleJet35_Mass_Min400_ETMHF65;   //!
-   TBranch        *b_L1_DoubleJet_80_30_DoubleJet30_Mass_Min500_Mu3OQ;   //!
-   TBranch        *b_L1_DoubleJet_80_30_Mass_Min420_DoubleMu0_SQ;   //!
-   TBranch        *b_L1_DoubleJet_80_30_Mass_Min420_IsoTau40_RmOvlp;   //!
-   TBranch        *b_L1_DoubleJet_80_30_Mass_Min420_Mu8;   //!
-   TBranch        *b_L1_DoubleJet_85_35_DoubleJet35_Mass_Min500_Mu3OQ;   //!
-   TBranch        *b_L1_DoubleJet_90_30_DoubleJet30_Mass_Min620;   //!
-   TBranch        *b_L1_DoubleJet_90_30_DoubleJet30_Mass_Min800;   //!
-   TBranch        *b_L1_DoubleLLPJet40;   //!
-   TBranch        *b_L1_DoubleLooseIsoEG22er2p1;   //!
-   TBranch        *b_L1_DoubleLooseIsoEG24er2p1;   //!
-   TBranch        *b_L1_DoubleMu0;   //!
-   TBranch        *b_L1_DoubleMu0_Mass_Min1;   //!
-   TBranch        *b_L1_DoubleMu0_OQ;   //!
-   TBranch        *b_L1_DoubleMu0_SQ;   //!
-   TBranch        *b_L1_DoubleMu0_SQ_OS;   //!
-   TBranch        *b_L1_DoubleMu0_Upt15_Upt7;   //!
-   TBranch        *b_L1_DoubleMu0_Upt15_Upt7_BMTF_EMTF;   //!
-   TBranch        *b_L1_DoubleMu0_Upt5_Upt5;   //!
-   TBranch        *b_L1_DoubleMu0_Upt5_Upt5_BMTF_EMTF;   //!
-   TBranch        *b_L1_DoubleMu0_Upt6_IP_Min1_Upt4;   //!
-   TBranch        *b_L1_DoubleMu0_Upt6_IP_Min1_Upt4_BMTF_EMTF;   //!
-   TBranch        *b_L1_DoubleMu0_dR_Max1p6_Jet90er2p5_dR_Max0p8;   //!
-   TBranch        *b_L1_DoubleMu0er1p4_OQ_OS_dEta_Max1p6;   //!
-   TBranch        *b_L1_DoubleMu0er1p4_SQ_OS_dEta_Max1p2;   //!
-   TBranch        *b_L1_DoubleMu0er1p4_SQ_OS_dR_Max1p4;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ_OS;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ_OS_dEta_Max1p2;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ_OS_dR_Max1p4;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ_dR_Max1p4;   //!
-   TBranch        *b_L1_DoubleMu0er2p0_SQ_OS_dEta_Max1p5;   //!
-   TBranch        *b_L1_DoubleMu0er2p0_SQ_OS_dEta_Max1p6;   //!
-   TBranch        *b_L1_DoubleMu0er2p0_SQ_dEta_Max1p5;   //!
-   TBranch        *b_L1_DoubleMu0er2p0_SQ_dEta_Max1p6;   //!
-   TBranch        *b_L1_DoubleMu18er2p1_SQ;   //!
-   TBranch        *b_L1_DoubleMu3_OS_er2p3_Mass_Max14_DoubleEG7p5_er2p1_Mass_Max20;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF30_HTT60er;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF30_Jet60er2p5_OR_DoubleJet40er2p5;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF40_HTT60er;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF40_Jet60er2p5_OR_DoubleJet40er2p5;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF50_HTT60er;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF50_Jet60er2p5;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF50_Jet60er2p5_OR_DoubleJet40er2p5;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF60_Jet60er2p5;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_HTT220er;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_HTT240er;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_HTT260er;   //!
-   TBranch        *b_L1_DoubleMu3_dR_Max1p6_Jet90er2p5_dR_Max0p8;   //!
-   TBranch        *b_L1_DoubleMu3er2p0_SQ_OS_dR_Max1p6;   //!
-   TBranch        *b_L1_DoubleMu4_SQ_EG9er2p5;   //!
-   TBranch        *b_L1_DoubleMu4_SQ_OS;   //!
-   TBranch        *b_L1_DoubleMu4_SQ_OS_dR_Max1p2;   //!
-   TBranch        *b_L1_DoubleMu4er2p0_SQ_OS_dR_Max1p6;   //!
-   TBranch        *b_L1_DoubleMu4p5_SQ_OS;   //!
-   TBranch        *b_L1_DoubleMu4p5_SQ_OS_dR_Max1p2;   //!
-   TBranch        *b_L1_DoubleMu4p5er2p0_SQ_OS;   //!
-   TBranch        *b_L1_DoubleMu4p5er2p0_SQ_OS_Mass_7to18;   //!
-   TBranch        *b_L1_DoubleMu4p5er2p0_SQ_OS_Mass_Min7;   //!
-   TBranch        *b_L1_DoubleMu5_OS_er2p3_Mass_8to14_DoubleEG3er2p1_Mass_Max20;   //!
-   TBranch        *b_L1_DoubleMu5_SQ_EG9er2p5;   //!
-   TBranch        *b_L1_DoubleMu5_SQ_OS_dR_Max1p6;   //!
-   TBranch        *b_L1_DoubleMu8_SQ;   //!
-   TBranch        *b_L1_DoubleMu9_SQ;   //!
-   TBranch        *b_L1_DoubleMu_12_5;   //!
-   TBranch        *b_L1_DoubleMu_15_5_SQ;   //!
-   TBranch        *b_L1_DoubleMu_15_7;   //!
-   TBranch        *b_L1_DoubleMu_15_7_Mass_Min1;   //!
-   TBranch        *b_L1_DoubleMu_15_7_SQ;   //!
-   TBranch        *b_L1_DoubleTau70er2p1;   //!
-   TBranch        *b_L1_ETM120;   //!
-   TBranch        *b_L1_ETM150;   //!
-   TBranch        *b_L1_ETMHF100;   //!
-   TBranch        *b_L1_ETMHF100_HTT60er;   //!
-   TBranch        *b_L1_ETMHF110;   //!
-   TBranch        *b_L1_ETMHF110_HTT60er;   //!
-   TBranch        *b_L1_ETMHF120;   //!
-   TBranch        *b_L1_ETMHF120_HTT60er;   //!
-   TBranch        *b_L1_ETMHF130;   //!
-   TBranch        *b_L1_ETMHF130_HTT60er;   //!
-   TBranch        *b_L1_ETMHF140;   //!
-   TBranch        *b_L1_ETMHF150;   //!
-   TBranch        *b_L1_ETMHF70;   //!
-   TBranch        *b_L1_ETMHF70_HTT60er;   //!
-   TBranch        *b_L1_ETMHF80;   //!
-   TBranch        *b_L1_ETMHF80_HTT60er;   //!
-   TBranch        *b_L1_ETMHF80_SingleJet55er2p5_dPhi_Min2p1;   //!
-   TBranch        *b_L1_ETMHF80_SingleJet55er2p5_dPhi_Min2p6;   //!
-   TBranch        *b_L1_ETMHF90;   //!
-   TBranch        *b_L1_ETMHF90_HTT60er;   //!
-   TBranch        *b_L1_ETMHF90_SingleJet60er2p5_dPhi_Min2p1;   //!
-   TBranch        *b_L1_ETMHF90_SingleJet60er2p5_dPhi_Min2p6;   //!
-   TBranch        *b_L1_ETMHF90_SingleJet80er2p5_dPhi_Min2p1;   //!
-   TBranch        *b_L1_ETMHF90_SingleJet80er2p5_dPhi_Min2p6;   //!
-   TBranch        *b_L1_ETT1600;   //!
-   TBranch        *b_L1_ETT2000;   //!
-   TBranch        *b_L1_FirstBunchAfterTrain;   //!
-   TBranch        *b_L1_FirstBunchBeforeTrain;   //!
-   TBranch        *b_L1_FirstBunchInTrain;   //!
-   TBranch        *b_L1_FirstCollisionInOrbit;   //!
-   TBranch        *b_L1_FirstCollisionInTrain;   //!
-   TBranch        *b_L1_HCAL_LaserMon_Trig;   //!
-   TBranch        *b_L1_HCAL_LaserMon_Veto;   //!
-   TBranch        *b_L1_HTT120_SingleLLPJet40;   //!
-   TBranch        *b_L1_HTT120er;   //!
-   TBranch        *b_L1_HTT160_SingleLLPJet50;   //!
-   TBranch        *b_L1_HTT160er;   //!
-   TBranch        *b_L1_HTT200_SingleLLPJet60;   //!
-   TBranch        *b_L1_HTT200er;   //!
-   TBranch        *b_L1_HTT240_SingleLLPJet70;   //!
-   TBranch        *b_L1_HTT255er;   //!
-   TBranch        *b_L1_HTT280er;   //!
-   TBranch        *b_L1_HTT280er_QuadJet_70_55_40_35_er2p5;   //!
-   TBranch        *b_L1_HTT320er;   //!
-   TBranch        *b_L1_HTT320er_QuadJet_70_55_40_40_er2p5;   //!
-   TBranch        *b_L1_HTT320er_QuadJet_80_60_er2p1_45_40_er2p3;   //!
-   TBranch        *b_L1_HTT320er_QuadJet_80_60_er2p1_50_45_er2p3;   //!
-   TBranch        *b_L1_HTT360er;   //!
-   TBranch        *b_L1_HTT400er;   //!
-   TBranch        *b_L1_HTT450er;   //!
-   TBranch        *b_L1_IsoEG32er2p5_Mt40;   //!
-   TBranch        *b_L1_IsoTau52er2p1_QuadJet36er2p5;   //!
-   TBranch        *b_L1_IsolatedBunch;   //!
-   TBranch        *b_L1_LastBunchInTrain;   //!
-   TBranch        *b_L1_LastCollisionInTrain;   //!
-   TBranch        *b_L1_LooseIsoEG22er2p1_IsoTau26er2p1_dR_Min0p3;   //!
-   TBranch        *b_L1_LooseIsoEG22er2p1_Tau70er2p1_dR_Min0p3;   //!
-   TBranch        *b_L1_LooseIsoEG24er2p1_HTT100er;   //!
-   TBranch        *b_L1_LooseIsoEG24er2p1_IsoTau27er2p1_dR_Min0p3;   //!
-   TBranch        *b_L1_LooseIsoEG26er2p1_HTT100er;   //!
-   TBranch        *b_L1_LooseIsoEG26er2p1_Jet34er2p5_dR_Min0p3;   //!
-   TBranch        *b_L1_LooseIsoEG28er2p1_HTT100er;   //!
-   TBranch        *b_L1_LooseIsoEG28er2p1_Jet34er2p5_dR_Min0p3;   //!
-   TBranch        *b_L1_LooseIsoEG30er2p1_HTT100er;   //!
-   TBranch        *b_L1_LooseIsoEG30er2p1_Jet34er2p5_dR_Min0p3;   //!
-   TBranch        *b_L1_MinimumBiasHF0;   //!
-   TBranch        *b_L1_MinimumBiasHF0_AND_BptxAND;   //!
-   TBranch        *b_L1_Mu10er2p3_Jet32er2p3_dR_Max0p4_DoubleJet32er2p3_dEta_Max1p6;   //!
-   TBranch        *b_L1_Mu12er2p3_Jet40er2p1_dR_Max0p4_DoubleJet40er2p1_dEta_Max1p6;   //!
-   TBranch        *b_L1_Mu12er2p3_Jet40er2p3_dR_Max0p4_DoubleJet40er2p3_dEta_Max1p6;   //!
-   TBranch        *b_L1_Mu18er2p1_Tau24er2p1;   //!
-   TBranch        *b_L1_Mu18er2p1_Tau26er2p1;   //!
-   TBranch        *b_L1_Mu18er2p1_Tau26er2p1_Jet55;   //!
-   TBranch        *b_L1_Mu18er2p1_Tau26er2p1_Jet70;   //!
-   TBranch        *b_L1_Mu20_EG10er2p5;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau28er2p1;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau30er2p1;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau32er2p1;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau34er2p1;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau36er2p1;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau40er2p1;   //!
-   TBranch        *b_L1_Mu22er2p1_Tau70er2p1;   //!
-   TBranch        *b_L1_Mu3_Jet120er2p5_dR_Max0p4;   //!
-   TBranch        *b_L1_Mu3_Jet16er2p5_dR_Max0p4;   //!
-   TBranch        *b_L1_Mu3_Jet30er2p5;   //!
-   TBranch        *b_L1_Mu3_Jet60er2p5_dR_Max0p4;   //!
-   TBranch        *b_L1_Mu3er1p5_Jet100er2p5_ETMHF30;   //!
-   TBranch        *b_L1_Mu3er1p5_Jet100er2p5_ETMHF40;   //!
-   TBranch        *b_L1_Mu3er1p5_Jet100er2p5_ETMHF50;   //!
-   TBranch        *b_L1_Mu5_EG23er2p5;   //!
-   TBranch        *b_L1_Mu5_LooseIsoEG20er2p5;   //!
-   TBranch        *b_L1_Mu6_DoubleEG10er2p5;   //!
-   TBranch        *b_L1_Mu6_DoubleEG12er2p5;   //!
-   TBranch        *b_L1_Mu6_DoubleEG15er2p5;   //!
-   TBranch        *b_L1_Mu6_DoubleEG17er2p5;   //!
-   TBranch        *b_L1_Mu6_HTT240er;   //!
-   TBranch        *b_L1_Mu6_HTT250er;   //!
-   TBranch        *b_L1_Mu7_EG20er2p5;   //!
-   TBranch        *b_L1_Mu7_EG23er2p5;   //!
-   TBranch        *b_L1_Mu7_LooseIsoEG20er2p5;   //!
-   TBranch        *b_L1_Mu7_LooseIsoEG23er2p5;   //!
-   TBranch        *b_L1_NotBptxOR;   //!
-   TBranch        *b_L1_QuadJet60er2p5;   //!
-   TBranch        *b_L1_QuadJet_95_75_65_20_DoubleJet_75_65_er2p5_Jet20_FWD3p0;   //!
-   TBranch        *b_L1_QuadMu0;   //!
-   TBranch        *b_L1_QuadMu0_OQ;   //!
-   TBranch        *b_L1_QuadMu0_SQ;   //!
-   TBranch        *b_L1_SecondBunchInTrain;   //!
-   TBranch        *b_L1_SecondLastBunchInTrain;   //!
-   TBranch        *b_L1_SingleEG10er2p5;   //!
-   TBranch        *b_L1_SingleEG15er2p5;   //!
-   TBranch        *b_L1_SingleEG26er2p5;   //!
-   TBranch        *b_L1_SingleEG28_FWD2p5;   //!
-   TBranch        *b_L1_SingleEG28er1p5;   //!
-   TBranch        *b_L1_SingleEG28er2p1;   //!
-   TBranch        *b_L1_SingleEG28er2p5;   //!
-   TBranch        *b_L1_SingleEG34er2p5;   //!
-   TBranch        *b_L1_SingleEG36er2p5;   //!
-   TBranch        *b_L1_SingleEG38er2p5;   //!
-   TBranch        *b_L1_SingleEG40er2p5;   //!
-   TBranch        *b_L1_SingleEG42er2p5;   //!
-   TBranch        *b_L1_SingleEG45er2p5;   //!
-   TBranch        *b_L1_SingleEG50;   //!
-   TBranch        *b_L1_SingleEG60;   //!
-   TBranch        *b_L1_SingleEG8er2p5;   //!
-   TBranch        *b_L1_SingleIsoEG24er2p1;   //!
-   TBranch        *b_L1_SingleIsoEG26er2p1;   //!
-   TBranch        *b_L1_SingleIsoEG26er2p5;   //!
-   TBranch        *b_L1_SingleIsoEG28_FWD2p5;   //!
-   TBranch        *b_L1_SingleIsoEG28er1p5;   //!
-   TBranch        *b_L1_SingleIsoEG28er2p1;   //!
-   TBranch        *b_L1_SingleIsoEG28er2p5;   //!
-   TBranch        *b_L1_SingleIsoEG30er2p1;   //!
-   TBranch        *b_L1_SingleIsoEG30er2p5;   //!
-   TBranch        *b_L1_SingleIsoEG32er2p1;   //!
-   TBranch        *b_L1_SingleIsoEG32er2p5;   //!
-   TBranch        *b_L1_SingleIsoEG34er2p5;   //!
-   TBranch        *b_L1_SingleIsoTau32er2p1;   //!
-   TBranch        *b_L1_SingleJet10erHE;   //!
-   TBranch        *b_L1_SingleJet120;   //!
-   TBranch        *b_L1_SingleJet120_FWD2p5;   //!
-   TBranch        *b_L1_SingleJet120_FWD3p0;   //!
-   TBranch        *b_L1_SingleJet120er2p5;   //!
-   TBranch        *b_L1_SingleJet12erHE;   //!
-   TBranch        *b_L1_SingleJet140er2p5;   //!
-   TBranch        *b_L1_SingleJet140er2p5_ETMHF90;   //!
-   TBranch        *b_L1_SingleJet160er2p5;   //!
-   TBranch        *b_L1_SingleJet180;   //!
-   TBranch        *b_L1_SingleJet180er2p5;   //!
-   TBranch        *b_L1_SingleJet200;   //!
-   TBranch        *b_L1_SingleJet20er2p5_NotBptxOR;   //!
-   TBranch        *b_L1_SingleJet20er2p5_NotBptxOR_3BX;   //!
-   TBranch        *b_L1_SingleJet35;   //!
-   TBranch        *b_L1_SingleJet35_FWD2p5;   //!
-   TBranch        *b_L1_SingleJet35_FWD3p0;   //!
-   TBranch        *b_L1_SingleJet35er2p5;   //!
-   TBranch        *b_L1_SingleJet43er2p5_NotBptxOR_3BX;   //!
-   TBranch        *b_L1_SingleJet46er2p5_NotBptxOR_3BX;   //!
-   TBranch        *b_L1_SingleJet60;   //!
-   TBranch        *b_L1_SingleJet60_FWD2p5;   //!
-   TBranch        *b_L1_SingleJet8erHE;   //!
-   TBranch        *b_L1_SingleJet90;   //!
-   TBranch        *b_L1_SingleJet90_FWD2p5;   //!
-   TBranch        *b_L1_SingleLooseIsoEG26er1p5;   //!
-   TBranch        *b_L1_SingleLooseIsoEG26er2p5;   //!
-   TBranch        *b_L1_SingleLooseIsoEG28_FWD2p5;   //!
-   TBranch        *b_L1_SingleLooseIsoEG28er1p5;   //!
-   TBranch        *b_L1_SingleLooseIsoEG28er2p1;   //!
-   TBranch        *b_L1_SingleLooseIsoEG28er2p5;   //!
-   TBranch        *b_L1_SingleLooseIsoEG30er1p5;   //!
-   TBranch        *b_L1_SingleLooseIsoEG30er2p5;   //!
-   TBranch        *b_L1_SingleMu0_BMTF;   //!
-   TBranch        *b_L1_SingleMu0_DQ;   //!
-   TBranch        *b_L1_SingleMu0_EMTF;   //!
-   TBranch        *b_L1_SingleMu0_OMTF;   //!
-   TBranch        *b_L1_SingleMu0_Upt10;   //!
-   TBranch        *b_L1_SingleMu0_Upt10_BMTF;   //!
-   TBranch        *b_L1_SingleMu0_Upt10_EMTF;   //!
-   TBranch        *b_L1_SingleMu0_Upt10_OMTF;   //!
-   TBranch        *b_L1_SingleMu12_DQ_BMTF;   //!
-   TBranch        *b_L1_SingleMu12_DQ_EMTF;   //!
-   TBranch        *b_L1_SingleMu12_DQ_OMTF;   //!
-   TBranch        *b_L1_SingleMu15_DQ;   //!
-   TBranch        *b_L1_SingleMu18;   //!
-   TBranch        *b_L1_SingleMu20;   //!
-   TBranch        *b_L1_SingleMu22;   //!
-   TBranch        *b_L1_SingleMu22_BMTF;   //!
-   TBranch        *b_L1_SingleMu22_DQ;   //!
-   TBranch        *b_L1_SingleMu22_EMTF;   //!
-   TBranch        *b_L1_SingleMu22_OMTF;   //!
-   TBranch        *b_L1_SingleMu22_OQ;   //!
-   TBranch        *b_L1_SingleMu25;   //!
-   TBranch        *b_L1_SingleMu3;   //!
-   TBranch        *b_L1_SingleMu5;   //!
-   TBranch        *b_L1_SingleMu7;   //!
-   TBranch        *b_L1_SingleMu7_DQ;   //!
-   TBranch        *b_L1_SingleMuCosmics;   //!
-   TBranch        *b_L1_SingleMuCosmics_BMTF;   //!
-   TBranch        *b_L1_SingleMuCosmics_EMTF;   //!
-   TBranch        *b_L1_SingleMuCosmics_OMTF;   //!
-   TBranch        *b_L1_SingleMuOpen;   //!
-   TBranch        *b_L1_SingleMuOpen_BMTF;   //!
-   TBranch        *b_L1_SingleMuOpen_EMTF;   //!
-   TBranch        *b_L1_SingleMuOpen_NotBptxOR;   //!
-   TBranch        *b_L1_SingleMuOpen_OMTF;   //!
-   TBranch        *b_L1_SingleMuOpen_er1p1_NotBptxOR_3BX;   //!
-   TBranch        *b_L1_SingleMuOpen_er1p4_NotBptxOR_3BX;   //!
-   TBranch        *b_L1_SingleMuShower_Nominal;   //!
-   TBranch        *b_L1_SingleMuShower_Tight;   //!
-   TBranch        *b_L1_SingleTau120er2p1;   //!
-   TBranch        *b_L1_SingleTau130er2p1;   //!
-   TBranch        *b_L1_SingleTau70er2p1;   //!
-   TBranch        *b_L1_TOTEM_1;   //!
-   TBranch        *b_L1_TOTEM_2;   //!
-   TBranch        *b_L1_TOTEM_3;   //!
-   TBranch        *b_L1_TOTEM_4;   //!
-   TBranch        *b_L1_TripleEG16er2p5;   //!
-   TBranch        *b_L1_TripleEG_18_17_8_er2p5;   //!
-   TBranch        *b_L1_TripleEG_18_18_12_er2p5;   //!
-   TBranch        *b_L1_TripleJet_100_80_70_DoubleJet_80_70_er2p5;   //!
-   TBranch        *b_L1_TripleJet_105_85_75_DoubleJet_85_75_er2p5;   //!
-   TBranch        *b_L1_TripleJet_95_75_65_DoubleJet_75_65_er2p5;   //!
-   TBranch        *b_L1_TripleMu0;   //!
-   TBranch        *b_L1_TripleMu0_OQ;   //!
-   TBranch        *b_L1_TripleMu0_SQ;   //!
-   TBranch        *b_L1_TripleMu3;   //!
-   TBranch        *b_L1_TripleMu3_SQ;   //!
-   TBranch        *b_L1_TripleMu_3SQ_2p5SQ_0;   //!
-   TBranch        *b_L1_TripleMu_3SQ_2p5SQ_0_Mass_Max12;   //!
-   TBranch        *b_L1_TripleMu_3SQ_2p5SQ_0_OS_Mass_Max12;   //!
-   TBranch        *b_L1_TripleMu_4SQ_2p5SQ_0_OS_Mass_Max12;   //!
-   TBranch        *b_L1_TripleMu_5SQ_3SQ_0OQ;   //!
-   TBranch        *b_L1_TripleMu_5SQ_3SQ_0OQ_DoubleMu_5_3_SQ_OS_Mass_Max9;   //!
-   TBranch        *b_L1_TripleMu_5SQ_3SQ_0_DoubleMu_5_3_SQ_OS_Mass_Max9;   //!
-   TBranch        *b_L1_TripleMu_5_3_3;   //!
-   TBranch        *b_L1_TripleMu_5_3_3_SQ;   //!
-   TBranch        *b_L1_TripleMu_5_3p5_2p5;   //!
-   TBranch        *b_L1_TripleMu_5_3p5_2p5_DoubleMu_5_2p5_OS_Mass_5to17;   //!
-   TBranch        *b_L1_TripleMu_5_4_2p5_DoubleMu_5_2p5_OS_Mass_5to17;   //!
-   TBranch        *b_L1_TripleMu_5_5_3;   //!
-   TBranch        *b_L1_TwoMuShower_Loose;   //!
-   TBranch        *b_L1_UnpairedBunchBptxMinus;   //!
-   TBranch        *b_L1_UnpairedBunchBptxPlus;   //!
-   TBranch        *b_L1_ZeroBias;   //!
-   TBranch        *b_L1_ZeroBias_copy;   //!
-   TBranch        *b_L1_UnprefireableEvent;   //!
-   TBranch        *b_L1Reco_step;   //!
+					
+   //TBranch        *b_L1_SingleEG10er2p5;   //! --> are those of interest to us? removed all similar ones...
    TBranch        *b_Flag_HBHENoiseFilter_pRECO;   //!
    TBranch        *b_Flag_HBHENoiseIsoFilter_pRECO;   //!
    TBranch        *b_Flag_CSCTightHaloFilter_pRECO;   //!
@@ -1764,414 +937,9 @@ public :
    TBranch        *b_Flag_trkPOG_logErrorTooManyClusters_pRECO;   //!
    TBranch        *b_Flag_METFilters_pRECO;   //!
    TBranch        *b_L1_AlwaysTrue_pRECO;   //!
-   TBranch        *b_L1_BPTX_AND_Ref1_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_AND_Ref3_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_AND_Ref4_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_BeamGas_B1_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_BeamGas_B2_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_BeamGas_Ref1_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_BeamGas_Ref2_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_NotOR_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_OR_Ref3_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_OR_Ref4_VME_pRECO;   //!
-   TBranch        *b_L1_BPTX_RefAND_VME_pRECO;   //!
-   TBranch        *b_L1_BptxMinus_pRECO;   //!
-   TBranch        *b_L1_BptxOR_pRECO;   //!
-   TBranch        *b_L1_BptxPlus_pRECO;   //!
-   TBranch        *b_L1_BptxXOR_pRECO;   //!
-   TBranch        *b_L1_CDC_SingleMu_3_er1p2_TOP120_DPHI2p618_3p142_pRECO;   //!
-   TBranch        *b_L1_DoubleEG10_er1p2_dR_Max0p6_pRECO;   //!
-   TBranch        *b_L1_DoubleEG10p5_er1p2_dR_Max0p6_pRECO;   //!
-   TBranch        *b_L1_DoubleEG11_er1p2_dR_Max0p6_pRECO;   //!
-   TBranch        *b_L1_DoubleEG4_er1p2_dR_Max0p9_pRECO;   //!
-   TBranch        *b_L1_DoubleEG4p5_er1p2_dR_Max0p9_pRECO;   //!
-   TBranch        *b_L1_DoubleEG5_er1p2_dR_Max0p9_pRECO;   //!
-   TBranch        *b_L1_DoubleEG5p5_er1p2_dR_Max0p8_pRECO;   //!
-   TBranch        *b_L1_DoubleEG6_er1p2_dR_Max0p8_pRECO;   //!
-   TBranch        *b_L1_DoubleEG6p5_er1p2_dR_Max0p8_pRECO;   //!
-   TBranch        *b_L1_DoubleEG7_er1p2_dR_Max0p8_pRECO;   //!
-   TBranch        *b_L1_DoubleEG7p5_er1p2_dR_Max0p7_pRECO;   //!
-   TBranch        *b_L1_DoubleEG8_er1p2_dR_Max0p7_pRECO;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT260er_pRECO;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT280er_pRECO;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT300er_pRECO;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT320er_pRECO;   //!
-   TBranch        *b_L1_DoubleEG8er2p5_HTT340er_pRECO;   //!
-   TBranch        *b_L1_DoubleEG8p5_er1p2_dR_Max0p7_pRECO;   //!
-   TBranch        *b_L1_DoubleEG9_er1p2_dR_Max0p7_pRECO;   //!
-   TBranch        *b_L1_DoubleEG9p5_er1p2_dR_Max0p6_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_15_10_er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_20_10_er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_22_10_er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_25_12_er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_25_14_er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_27_14_er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso16_LooseIso12_er1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso18_LooseIso12_er1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso20_LooseIso12_er1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso22_12_er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso22_LooseIso12_er1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso25_12_er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleEG_LooseIso25_LooseIso12_er1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau26er2p1_Jet55_RmOvlp_dR0p5_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau26er2p1_Jet70_RmOvlp_dR0p5_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau28er2p1_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau28er2p1_Mass_Max80_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau28er2p1_Mass_Max90_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau30er2p1_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau30er2p1_Mass_Max80_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau30er2p1_Mass_Max90_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau32er2p1_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau32er2p1_Mass_Max80_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau34er2p1_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau35er2p1_pRECO;   //!
-   TBranch        *b_L1_DoubleIsoTau36er2p1_pRECO;   //!
-   TBranch        *b_L1_DoubleJet100er2p3_dEta_Max1p6_pRECO;   //!
-   TBranch        *b_L1_DoubleJet100er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet112er2p3_dEta_Max1p6_pRECO;   //!
-   TBranch        *b_L1_DoubleJet120er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet120er2p5_Mu3_dR_Max0p8_pRECO;   //!
-   TBranch        *b_L1_DoubleJet150er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet16er2p5_Mu3_dR_Max0p4_pRECO;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min225_dEta_Max1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min250_dEta_Max1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min300_dEta_Max1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min330_dEta_Max1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet30er2p5_Mass_Min360_dEta_Max1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet35_Mass_Min450_IsoTau45_RmOvlp_pRECO;   //!
-   TBranch        *b_L1_DoubleJet35_Mass_Min450_IsoTau45er2p1_RmOvlp_dR0p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet35er2p5_Mu3_dR_Max0p4_pRECO;   //!
-   TBranch        *b_L1_DoubleJet40_Mass_Min450_IsoEG10er2p1_RmOvlp_dR0p2_pRECO;   //!
-   TBranch        *b_L1_DoubleJet40_Mass_Min450_LooseIsoEG15er2p1_RmOvlp_dR0p2_pRECO;   //!
-   TBranch        *b_L1_DoubleJet40er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet45_Mass_Min450_IsoTau45er2p1_RmOvlp_dR0p5_pRECO;   //!
-   TBranch        *b_L1_DoubleJet45_Mass_Min450_LooseIsoEG20er2p1_RmOvlp_dR0p2_pRECO;   //!
-   TBranch        *b_L1_DoubleJet60er2p5_Mu3_dR_Max0p4_pRECO;   //!
-   TBranch        *b_L1_DoubleJet80er2p5_Mu3_dR_Max0p4_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_100_30_DoubleJet30_Mass_Min620_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_100_30_DoubleJet30_Mass_Min800_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_110_35_DoubleJet35_Mass_Min620_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_110_35_DoubleJet35_Mass_Min800_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_115_40_DoubleJet40_Mass_Min620_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_115_40_DoubleJet40_Mass_Min620_Jet60TT28_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_120_45_DoubleJet45_Mass_Min620_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_120_45_DoubleJet45_Mass_Min620_Jet60TT28_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_60_30_DoubleJet30_Mass_Min500_DoubleJetCentral50_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_65_30_DoubleJet30_Mass_Min400_ETMHF65_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_65_35_DoubleJet35_Mass_Min500_DoubleJetCentral50_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_70_35_DoubleJet35_Mass_Min400_ETMHF65_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_80_30_DoubleJet30_Mass_Min500_Mu3OQ_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_80_30_Mass_Min420_DoubleMu0_SQ_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_80_30_Mass_Min420_IsoTau40_RmOvlp_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_80_30_Mass_Min420_Mu8_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_85_35_DoubleJet35_Mass_Min500_Mu3OQ_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_90_30_DoubleJet30_Mass_Min620_pRECO;   //!
-   TBranch        *b_L1_DoubleJet_90_30_DoubleJet30_Mass_Min800_pRECO;   //!
-   TBranch        *b_L1_DoubleLLPJet40_pRECO;   //!
-   TBranch        *b_L1_DoubleLooseIsoEG22er2p1_pRECO;   //!
-   TBranch        *b_L1_DoubleLooseIsoEG24er2p1_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_Mass_Min1_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_OQ_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_SQ_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_SQ_OS_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_Upt15_Upt7_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_Upt15_Upt7_BMTF_EMTF_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_Upt5_Upt5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_Upt5_Upt5_BMTF_EMTF_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_Upt6_IP_Min1_Upt4_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_Upt6_IP_Min1_Upt4_BMTF_EMTF_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0_dR_Max1p6_Jet90er2p5_dR_Max0p8_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er1p4_OQ_OS_dEta_Max1p6_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er1p4_SQ_OS_dEta_Max1p2_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er1p4_SQ_OS_dR_Max1p4_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ_OS_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ_OS_dEta_Max1p2_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ_OS_dR_Max1p4_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er1p5_SQ_dR_Max1p4_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er2p0_SQ_OS_dEta_Max1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er2p0_SQ_OS_dEta_Max1p6_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er2p0_SQ_dEta_Max1p5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu0er2p0_SQ_dEta_Max1p6_pRECO;   //!
-   TBranch        *b_L1_DoubleMu18er2p1_SQ_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_OS_er2p3_Mass_Max14_DoubleEG7p5_er2p1_Mass_Max20_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF30_HTT60er_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF30_Jet60er2p5_OR_DoubleJet40er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF40_HTT60er_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF40_Jet60er2p5_OR_DoubleJet40er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF50_HTT60er_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF50_Jet60er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF50_Jet60er2p5_OR_DoubleJet40er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_ETMHF60_Jet60er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_HTT220er_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_HTT240er_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_SQ_HTT260er_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3_dR_Max1p6_Jet90er2p5_dR_Max0p8_pRECO;   //!
-   TBranch        *b_L1_DoubleMu3er2p0_SQ_OS_dR_Max1p6_pRECO;   //!
-   TBranch        *b_L1_DoubleMu4_SQ_EG9er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu4_SQ_OS_pRECO;   //!
-   TBranch        *b_L1_DoubleMu4_SQ_OS_dR_Max1p2_pRECO;   //!
-   TBranch        *b_L1_DoubleMu4er2p0_SQ_OS_dR_Max1p6_pRECO;   //!
-   TBranch        *b_L1_DoubleMu4p5_SQ_OS_pRECO;   //!
-   TBranch        *b_L1_DoubleMu4p5_SQ_OS_dR_Max1p2_pRECO;   //!
-   TBranch        *b_L1_DoubleMu4p5er2p0_SQ_OS_pRECO;   //!
-   TBranch        *b_L1_DoubleMu4p5er2p0_SQ_OS_Mass_7to18_pRECO;   //!
-   TBranch        *b_L1_DoubleMu4p5er2p0_SQ_OS_Mass_Min7_pRECO;   //!
-   TBranch        *b_L1_DoubleMu5_OS_er2p3_Mass_8to14_DoubleEG3er2p1_Mass_Max20_pRECO;   //!
-   TBranch        *b_L1_DoubleMu5_SQ_EG9er2p5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu5_SQ_OS_dR_Max1p6_pRECO;   //!
-   TBranch        *b_L1_DoubleMu8_SQ_pRECO;   //!
-   TBranch        *b_L1_DoubleMu9_SQ_pRECO;   //!
-   TBranch        *b_L1_DoubleMu_12_5_pRECO;   //!
-   TBranch        *b_L1_DoubleMu_15_5_SQ_pRECO;   //!
-   TBranch        *b_L1_DoubleMu_15_7_pRECO;   //!
-   TBranch        *b_L1_DoubleMu_15_7_Mass_Min1_pRECO;   //!
-   TBranch        *b_L1_DoubleMu_15_7_SQ_pRECO;   //!
-   TBranch        *b_L1_DoubleTau70er2p1_pRECO;   //!
-   TBranch        *b_L1_ETM120_pRECO;   //!
-   TBranch        *b_L1_ETM150_pRECO;   //!
-   TBranch        *b_L1_ETMHF100_pRECO;   //!
-   TBranch        *b_L1_ETMHF100_HTT60er_pRECO;   //!
-   TBranch        *b_L1_ETMHF110_pRECO;   //!
-   TBranch        *b_L1_ETMHF110_HTT60er_pRECO;   //!
-   TBranch        *b_L1_ETMHF120_pRECO;   //!
-   TBranch        *b_L1_ETMHF120_HTT60er_pRECO;   //!
-   TBranch        *b_L1_ETMHF130_pRECO;   //!
-   TBranch        *b_L1_ETMHF130_HTT60er_pRECO;   //!
-   TBranch        *b_L1_ETMHF140_pRECO;   //!
-   TBranch        *b_L1_ETMHF150_pRECO;   //!
-   TBranch        *b_L1_ETMHF70_pRECO;   //!
-   TBranch        *b_L1_ETMHF70_HTT60er_pRECO;   //!
-   TBranch        *b_L1_ETMHF80_pRECO;   //!
-   TBranch        *b_L1_ETMHF80_HTT60er_pRECO;   //!
-   TBranch        *b_L1_ETMHF80_SingleJet55er2p5_dPhi_Min2p1_pRECO;   //!
-   TBranch        *b_L1_ETMHF80_SingleJet55er2p5_dPhi_Min2p6_pRECO;   //!
-   TBranch        *b_L1_ETMHF90_pRECO;   //!
-   TBranch        *b_L1_ETMHF90_HTT60er_pRECO;   //!
-   TBranch        *b_L1_ETMHF90_SingleJet60er2p5_dPhi_Min2p1_pRECO;   //!
-   TBranch        *b_L1_ETMHF90_SingleJet60er2p5_dPhi_Min2p6_pRECO;   //!
-   TBranch        *b_L1_ETMHF90_SingleJet80er2p5_dPhi_Min2p1_pRECO;   //!
-   TBranch        *b_L1_ETMHF90_SingleJet80er2p5_dPhi_Min2p6_pRECO;   //!
-   TBranch        *b_L1_ETT1600_pRECO;   //!
-   TBranch        *b_L1_ETT2000_pRECO;   //!
-   TBranch        *b_L1_FirstBunchAfterTrain_pRECO;   //!
-   TBranch        *b_L1_FirstBunchBeforeTrain_pRECO;   //!
-   TBranch        *b_L1_FirstBunchInTrain_pRECO;   //!
-   TBranch        *b_L1_FirstCollisionInOrbit_pRECO;   //!
-   TBranch        *b_L1_FirstCollisionInTrain_pRECO;   //!
-   TBranch        *b_L1_HCAL_LaserMon_Trig_pRECO;   //!
-   TBranch        *b_L1_HCAL_LaserMon_Veto_pRECO;   //!
-   TBranch        *b_L1_HTT120_SingleLLPJet40_pRECO;   //!
-   TBranch        *b_L1_HTT120er_pRECO;   //!
-   TBranch        *b_L1_HTT160_SingleLLPJet50_pRECO;   //!
-   TBranch        *b_L1_HTT160er_pRECO;   //!
-   TBranch        *b_L1_HTT200_SingleLLPJet60_pRECO;   //!
-   TBranch        *b_L1_HTT200er_pRECO;   //!
-   TBranch        *b_L1_HTT240_SingleLLPJet70_pRECO;   //!
-   TBranch        *b_L1_HTT255er_pRECO;   //!
-   TBranch        *b_L1_HTT280er_pRECO;   //!
-   TBranch        *b_L1_HTT280er_QuadJet_70_55_40_35_er2p5_pRECO;   //!
-   TBranch        *b_L1_HTT320er_pRECO;   //!
-   TBranch        *b_L1_HTT320er_QuadJet_70_55_40_40_er2p5_pRECO;   //!
-   TBranch        *b_L1_HTT320er_QuadJet_80_60_er2p1_45_40_er2p3_pRECO;   //!
-   TBranch        *b_L1_HTT320er_QuadJet_80_60_er2p1_50_45_er2p3_pRECO;   //!
-   TBranch        *b_L1_HTT360er_pRECO;   //!
-   TBranch        *b_L1_HTT400er_pRECO;   //!
-   TBranch        *b_L1_HTT450er_pRECO;   //!
-   TBranch        *b_L1_IsoEG32er2p5_Mt40_pRECO;   //!
-   TBranch        *b_L1_IsoTau52er2p1_QuadJet36er2p5_pRECO;   //!
-   TBranch        *b_L1_IsolatedBunch_pRECO;   //!
-   TBranch        *b_L1_LastBunchInTrain_pRECO;   //!
-   TBranch        *b_L1_LastCollisionInTrain_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG22er2p1_IsoTau26er2p1_dR_Min0p3_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG22er2p1_Tau70er2p1_dR_Min0p3_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG24er2p1_HTT100er_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG24er2p1_IsoTau27er2p1_dR_Min0p3_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG26er2p1_HTT100er_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG26er2p1_Jet34er2p5_dR_Min0p3_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG28er2p1_HTT100er_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG28er2p1_Jet34er2p5_dR_Min0p3_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG30er2p1_HTT100er_pRECO;   //!
-   TBranch        *b_L1_LooseIsoEG30er2p1_Jet34er2p5_dR_Min0p3_pRECO;   //!
    TBranch        *b_L1_MinimumBiasHF0_pRECO;   //!
    TBranch        *b_L1_MinimumBiasHF0_AND_BptxAND_pRECO;   //!
-   TBranch        *b_L1_Mu10er2p3_Jet32er2p3_dR_Max0p4_DoubleJet32er2p3_dEta_Max1p6_pRECO;   //!
-   TBranch        *b_L1_Mu12er2p3_Jet40er2p1_dR_Max0p4_DoubleJet40er2p1_dEta_Max1p6_pRECO;   //!
-   TBranch        *b_L1_Mu12er2p3_Jet40er2p3_dR_Max0p4_DoubleJet40er2p3_dEta_Max1p6_pRECO;   //!
-   TBranch        *b_L1_Mu18er2p1_Tau24er2p1_pRECO;   //!
-   TBranch        *b_L1_Mu18er2p1_Tau26er2p1_pRECO;   //!
-   TBranch        *b_L1_Mu18er2p1_Tau26er2p1_Jet55_pRECO;   //!
-   TBranch        *b_L1_Mu18er2p1_Tau26er2p1_Jet70_pRECO;   //!
-   TBranch        *b_L1_Mu20_EG10er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau28er2p1_pRECO;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau30er2p1_pRECO;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau32er2p1_pRECO;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau34er2p1_pRECO;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau36er2p1_pRECO;   //!
-   TBranch        *b_L1_Mu22er2p1_IsoTau40er2p1_pRECO;   //!
-   TBranch        *b_L1_Mu22er2p1_Tau70er2p1_pRECO;   //!
-   TBranch        *b_L1_Mu3_Jet120er2p5_dR_Max0p4_pRECO;   //!
-   TBranch        *b_L1_Mu3_Jet16er2p5_dR_Max0p4_pRECO;   //!
-   TBranch        *b_L1_Mu3_Jet30er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu3_Jet60er2p5_dR_Max0p4_pRECO;   //!
-   TBranch        *b_L1_Mu3er1p5_Jet100er2p5_ETMHF30_pRECO;   //!
-   TBranch        *b_L1_Mu3er1p5_Jet100er2p5_ETMHF40_pRECO;   //!
-   TBranch        *b_L1_Mu3er1p5_Jet100er2p5_ETMHF50_pRECO;   //!
-   TBranch        *b_L1_Mu5_EG23er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu5_LooseIsoEG20er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu6_DoubleEG10er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu6_DoubleEG12er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu6_DoubleEG15er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu6_DoubleEG17er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu6_HTT240er_pRECO;   //!
-   TBranch        *b_L1_Mu6_HTT250er_pRECO;   //!
-   TBranch        *b_L1_Mu7_EG20er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu7_EG23er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu7_LooseIsoEG20er2p5_pRECO;   //!
-   TBranch        *b_L1_Mu7_LooseIsoEG23er2p5_pRECO;   //!
    TBranch        *b_L1_NotBptxOR_pRECO;   //!
-   TBranch        *b_L1_QuadJet60er2p5_pRECO;   //!
-   TBranch        *b_L1_QuadJet_95_75_65_20_DoubleJet_75_65_er2p5_Jet20_FWD3p0_pRECO;   //!
-   TBranch        *b_L1_QuadMu0_pRECO;   //!
-   TBranch        *b_L1_QuadMu0_OQ_pRECO;   //!
-   TBranch        *b_L1_QuadMu0_SQ_pRECO;   //!
-   TBranch        *b_L1_SecondBunchInTrain_pRECO;   //!
-   TBranch        *b_L1_SecondLastBunchInTrain_pRECO;   //!
-   TBranch        *b_L1_SingleEG10er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG15er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG26er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG28_FWD2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG28er1p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG28er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleEG28er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG34er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG36er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG38er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG40er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG42er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG45er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleEG50_pRECO;   //!
-   TBranch        *b_L1_SingleEG60_pRECO;   //!
-   TBranch        *b_L1_SingleEG8er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG24er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG26er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG26er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG28_FWD2p5_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG28er1p5_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG28er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG28er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG30er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG30er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG32er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG32er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleIsoEG34er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleIsoTau32er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleJet10erHE_pRECO;   //!
-   TBranch        *b_L1_SingleJet120_pRECO;   //!
-   TBranch        *b_L1_SingleJet120_FWD2p5_pRECO;   //!
-   TBranch        *b_L1_SingleJet120_FWD3p0_pRECO;   //!
-   TBranch        *b_L1_SingleJet120er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleJet12erHE_pRECO;   //!
-   TBranch        *b_L1_SingleJet140er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleJet140er2p5_ETMHF90_pRECO;   //!
-   TBranch        *b_L1_SingleJet160er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleJet180_pRECO;   //!
-   TBranch        *b_L1_SingleJet180er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleJet200_pRECO;   //!
-   TBranch        *b_L1_SingleJet20er2p5_NotBptxOR_pRECO;   //!
-   TBranch        *b_L1_SingleJet20er2p5_NotBptxOR_3BX_pRECO;   //!
-   TBranch        *b_L1_SingleJet35_pRECO;   //!
-   TBranch        *b_L1_SingleJet35_FWD2p5_pRECO;   //!
-   TBranch        *b_L1_SingleJet35_FWD3p0_pRECO;   //!
-   TBranch        *b_L1_SingleJet35er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleJet43er2p5_NotBptxOR_3BX_pRECO;   //!
-   TBranch        *b_L1_SingleJet46er2p5_NotBptxOR_3BX_pRECO;   //!
-   TBranch        *b_L1_SingleJet60_pRECO;   //!
-   TBranch        *b_L1_SingleJet60_FWD2p5_pRECO;   //!
-   TBranch        *b_L1_SingleJet8erHE_pRECO;   //!
-   TBranch        *b_L1_SingleJet90_pRECO;   //!
-   TBranch        *b_L1_SingleJet90_FWD2p5_pRECO;   //!
-   TBranch        *b_L1_SingleLooseIsoEG26er1p5_pRECO;   //!
-   TBranch        *b_L1_SingleLooseIsoEG26er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleLooseIsoEG28_FWD2p5_pRECO;   //!
-   TBranch        *b_L1_SingleLooseIsoEG28er1p5_pRECO;   //!
-   TBranch        *b_L1_SingleLooseIsoEG28er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleLooseIsoEG28er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleLooseIsoEG30er1p5_pRECO;   //!
-   TBranch        *b_L1_SingleLooseIsoEG30er2p5_pRECO;   //!
-   TBranch        *b_L1_SingleMu0_BMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu0_DQ_pRECO;   //!
-   TBranch        *b_L1_SingleMu0_EMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu0_OMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu0_Upt10_pRECO;   //!
-   TBranch        *b_L1_SingleMu0_Upt10_BMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu0_Upt10_EMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu0_Upt10_OMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu12_DQ_BMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu12_DQ_EMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu12_DQ_OMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu15_DQ_pRECO;   //!
-   TBranch        *b_L1_SingleMu18_pRECO;   //!
-   TBranch        *b_L1_SingleMu20_pRECO;   //!
-   TBranch        *b_L1_SingleMu22_pRECO;   //!
-   TBranch        *b_L1_SingleMu22_BMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu22_DQ_pRECO;   //!
-   TBranch        *b_L1_SingleMu22_EMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu22_OMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMu22_OQ_pRECO;   //!
-   TBranch        *b_L1_SingleMu25_pRECO;   //!
-   TBranch        *b_L1_SingleMu3_pRECO;   //!
-   TBranch        *b_L1_SingleMu5_pRECO;   //!
-   TBranch        *b_L1_SingleMu7_pRECO;   //!
-   TBranch        *b_L1_SingleMu7_DQ_pRECO;   //!
-   TBranch        *b_L1_SingleMuCosmics_pRECO;   //!
-   TBranch        *b_L1_SingleMuCosmics_BMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMuCosmics_EMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMuCosmics_OMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMuOpen_pRECO;   //!
-   TBranch        *b_L1_SingleMuOpen_BMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMuOpen_EMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMuOpen_NotBptxOR_pRECO;   //!
-   TBranch        *b_L1_SingleMuOpen_OMTF_pRECO;   //!
-   TBranch        *b_L1_SingleMuOpen_er1p1_NotBptxOR_3BX_pRECO;   //!
-   TBranch        *b_L1_SingleMuOpen_er1p4_NotBptxOR_3BX_pRECO;   //!
-   TBranch        *b_L1_SingleMuShower_Nominal_pRECO;   //!
-   TBranch        *b_L1_SingleMuShower_Tight_pRECO;   //!
-   TBranch        *b_L1_SingleTau120er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleTau130er2p1_pRECO;   //!
-   TBranch        *b_L1_SingleTau70er2p1_pRECO;   //!
-   TBranch        *b_L1_TOTEM_1_pRECO;   //!
-   TBranch        *b_L1_TOTEM_2_pRECO;   //!
-   TBranch        *b_L1_TOTEM_3_pRECO;   //!
-   TBranch        *b_L1_TOTEM_4_pRECO;   //!
-   TBranch        *b_L1_TripleEG16er2p5_pRECO;   //!
-   TBranch        *b_L1_TripleEG_18_17_8_er2p5_pRECO;   //!
-   TBranch        *b_L1_TripleEG_18_18_12_er2p5_pRECO;   //!
-   TBranch        *b_L1_TripleJet_100_80_70_DoubleJet_80_70_er2p5_pRECO;   //!
-   TBranch        *b_L1_TripleJet_105_85_75_DoubleJet_85_75_er2p5_pRECO;   //!
-   TBranch        *b_L1_TripleJet_95_75_65_DoubleJet_75_65_er2p5_pRECO;   //!
-   TBranch        *b_L1_TripleMu0_pRECO;   //!
-   TBranch        *b_L1_TripleMu0_OQ_pRECO;   //!
-   TBranch        *b_L1_TripleMu0_SQ_pRECO;   //!
-   TBranch        *b_L1_TripleMu3_pRECO;   //!
-   TBranch        *b_L1_TripleMu3_SQ_pRECO;   //!
-   TBranch        *b_L1_TripleMu_3SQ_2p5SQ_0_pRECO;   //!
-   TBranch        *b_L1_TripleMu_3SQ_2p5SQ_0_Mass_Max12_pRECO;   //!
-   TBranch        *b_L1_TripleMu_3SQ_2p5SQ_0_OS_Mass_Max12_pRECO;   //!
-   TBranch        *b_L1_TripleMu_4SQ_2p5SQ_0_OS_Mass_Max12_pRECO;   //!
-   TBranch        *b_L1_TripleMu_5SQ_3SQ_0OQ_pRECO;   //!
-   TBranch        *b_L1_TripleMu_5SQ_3SQ_0OQ_DoubleMu_5_3_SQ_OS_Mass_Max9_pRECO;   //!
-   TBranch        *b_L1_TripleMu_5SQ_3SQ_0_DoubleMu_5_3_SQ_OS_Mass_Max9_pRECO;   //!
-   TBranch        *b_L1_TripleMu_5_3_3_pRECO;   //!
-   TBranch        *b_L1_TripleMu_5_3_3_SQ_pRECO;   //!
-   TBranch        *b_L1_TripleMu_5_3p5_2p5_pRECO;   //!
-   TBranch        *b_L1_TripleMu_5_3p5_2p5_DoubleMu_5_2p5_OS_Mass_5to17_pRECO;   //!
-   TBranch        *b_L1_TripleMu_5_4_2p5_DoubleMu_5_2p5_OS_Mass_5to17_pRECO;   //!
-   TBranch        *b_L1_TripleMu_5_5_3_pRECO;   //!
-   TBranch        *b_L1_TwoMuShower_Loose_pRECO;   //!
-   TBranch        *b_L1_UnpairedBunchBptxMinus_pRECO;   //!
-   TBranch        *b_L1_UnpairedBunchBptxPlus_pRECO;   //!
    TBranch        *b_L1_ZeroBias_pRECO;   //!
    TBranch        *b_L1_ZeroBias_copy_pRECO;   //!
    TBranch        *b_L1_UnprefireableEvent_pRECO;   //!
@@ -2195,119 +963,19 @@ public :
    TBranch        *b_HLT_HT300_Beamspot;   //!
    TBranch        *b_HLT_IsoTrackHB;   //!
    TBranch        *b_HLT_IsoTrackHE;   //!
-   TBranch        *b_HLT_PFJet40_GPUvsCPU;   //!
-   TBranch        *b_HLT_AK8PFJet400_MassSD30;   //!
-   TBranch        *b_HLT_AK8PFJet420_MassSD30;   //!
-   TBranch        *b_HLT_AK8PFJet450_MassSD30;   //!
-   TBranch        *b_HLT_AK8PFJet470_MassSD30;   //!
-   TBranch        *b_HLT_AK8PFJet500_MassSD30;   //!
-   TBranch        *b_HLT_AK8DiPFJet250_250_MassSD30;   //!
-   TBranch        *b_HLT_AK8DiPFJet260_260_MassSD30;   //!
-   TBranch        *b_HLT_AK8DiPFJet270_270_MassSD30;   //!
-   TBranch        *b_HLT_AK8DiPFJet280_280_MassSD30;   //!
-   TBranch        *b_HLT_AK8DiPFJet290_290_MassSD30;   //!
-   TBranch        *b_HLT_AK8DiPFJet250_250_MassSD50;   //!
-   TBranch        *b_HLT_AK8DiPFJet260_260_MassSD50;   //!
-   TBranch        *b_HLT_CaloJet500_NoJetID;   //!
-   TBranch        *b_HLT_CaloJet550_NoJetID;   //!
-   TBranch        *b_HLT_DoubleMu5_Upsilon_DoubleEle3_CaloIdL_TrackIdL;   //!
-   TBranch        *b_HLT_DoubleMu3_DoubleEle7p5_CaloIdL_TrackIdL_Upsilon;   //!
-   TBranch        *b_HLT_Trimuon5_3p5_2_Upsilon_Muon;   //!
-   TBranch        *b_HLT_TrimuonOpen_5_3p5_2_Upsilon_Muon;   //!
-   TBranch        *b_HLT_DoubleEle25_CaloIdL_MW;   //!
-   TBranch        *b_HLT_DoubleEle27_CaloIdL_MW;   //!
-   TBranch        *b_HLT_DoubleEle33_CaloIdL_MW;   //!
-   TBranch        *b_HLT_DoubleEle24_eta2p1_WPTight_Gsf;   //!
-   TBranch        *b_HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_DZ_PFHT350;   //!
-   TBranch        *b_HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_PFHT350;   //!
-   TBranch        *b_HLT_Mu27_Ele37_CaloIdL_MW;   //!
-   TBranch        *b_HLT_Mu37_Ele27_CaloIdL_MW;   //!
-   TBranch        *b_HLT_Mu37_TkMu27;   //!
-   TBranch        *b_HLT_DoubleMu4_3_Bs;   //!
-   TBranch        *b_HLT_DoubleMu4_3_Jpsi;   //!
-   TBranch        *b_HLT_DoubleMu4_3_LowMass;   //!
-   TBranch        *b_HLT_DoubleMu4_LowMass_Displaced;   //!
-   TBranch        *b_HLT_Mu0_L1DoubleMu;   //!
-   TBranch        *b_HLT_Mu4_L1DoubleMu;   //!
-   TBranch        *b_HLT_DoubleMu4_3_Photon4_BsToMMG;   //!
-   TBranch        *b_HLT_DoubleMu4_3_Displaced_Photon4_BsToMMG;   //!
-   TBranch        *b_HLT_DoubleMu3_Trk_Tau3mu;   //!
-   TBranch        *b_HLT_DoubleMu3_TkMu_DsTau3Mu;   //!
-   TBranch        *b_HLT_DoubleMu4_Mass3p8_DZ_PFHT350;   //!
-   TBranch        *b_HLT_DoubleMu4_MuMuTrk_Displaced;   //!
-   TBranch        *b_HLT_Mu3_PFJet40;   //!
-   TBranch        *b_HLT_Mu7p5_L2Mu2_Jpsi;   //!
-   TBranch        *b_HLT_Mu7p5_L2Mu2_Upsilon;   //!
-   TBranch        *b_HLT_Mu3_L1SingleMu5orSingleMu7;   //!
-   TBranch        *b_HLT_DoublePhoton33_CaloIdL;   //!
-   TBranch        *b_HLT_DoublePhoton70;   //!
-   TBranch        *b_HLT_DoublePhoton85;   //!
-   TBranch        *b_HLT_DiEle27_WPTightCaloOnly_L1DoubleEG;   //!
-   TBranch        *b_HLT_Ele30_WPTight_Gsf;   //!
-   TBranch        *b_HLT_Ele32_WPTight_Gsf;   //!
-   TBranch        *b_HLT_Ele35_WPTight_Gsf;   //!
-   TBranch        *b_HLT_Ele38_WPTight_Gsf;   //!
-   TBranch        *b_HLT_Ele40_WPTight_Gsf;   //!
-   TBranch        *b_HLT_Ele32_WPTight_Gsf_L1DoubleEG;   //!
-   TBranch        *b_HLT_IsoMu27_MediumDeepTauPFTauHPS20_eta2p1_SingleL1;   //!
-   TBranch        *b_HLT_IsoMu20;   //!
-   TBranch        *b_HLT_IsoMu24;   //!
-   TBranch        *b_HLT_IsoMu24_eta2p1;   //!
-   TBranch        *b_HLT_IsoMu27;   //!
+				       
+   //TBranch        *b_HLT_CaloJet500_NoJetID;   //!
+   //TBranch        *b_HLT_CaloJet550_NoJetID;   //!
+   //TBranch        *b_HLT_DoublePhoton33_CaloIdL;   //!
+   //TBranch        *b_HLT_DoublePhoton70;   //!
+   //TBranch        *b_HLT_DoublePhoton85;   //!
+   
    TBranch        *b_HLT_UncorrectedJetE30_NoBPTX;   //!
    TBranch        *b_HLT_UncorrectedJetE30_NoBPTX3BX;   //!
    TBranch        *b_HLT_UncorrectedJetE60_NoBPTX3BX;   //!
    TBranch        *b_HLT_UncorrectedJetE70_NoBPTX3BX;   //!
-   TBranch        *b_HLT_L1SingleMuCosmics;   //!
-   TBranch        *b_HLT_L2Mu10_NoVertex_NoBPTX3BX;   //!
-   TBranch        *b_HLT_L2Mu10_NoVertex_NoBPTX;   //!
-   TBranch        *b_HLT_L2Mu45_NoVertex_3Sta_NoBPTX3BX;   //!
-   TBranch        *b_HLT_L2Mu40_NoVertex_3Sta_NoBPTX3BX;   //!
-   TBranch        *b_HLT_L2Mu23NoVtx_2Cha;   //!
-   TBranch        *b_HLT_L2Mu23NoVtx_2Cha_CosmicSeed;   //!
-   TBranch        *b_HLT_DoubleL2Mu30NoVtx_2Cha_CosmicSeed_Eta2p4;   //!
-   TBranch        *b_HLT_DoubleL2Mu30NoVtx_2Cha_Eta2p4;   //!
-   TBranch        *b_HLT_DoubleL2Mu50;   //!
-   TBranch        *b_HLT_DoubleL2Mu23NoVtx_2Cha_CosmicSeed;   //!
-   TBranch        *b_HLT_DoubleL2Mu25NoVtx_2Cha_CosmicSeed;   //!
-   TBranch        *b_HLT_DoubleL2Mu25NoVtx_2Cha_CosmicSeed_Eta2p4;   //!
-   TBranch        *b_HLT_DoubleL2Mu23NoVtx_2Cha;   //!
-   TBranch        *b_HLT_DoubleL2Mu25NoVtx_2Cha;   //!
-   TBranch        *b_HLT_DoubleL2Mu25NoVtx_2Cha_Eta2p4;   //!
-   TBranch        *b_HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL;   //!
-   TBranch        *b_HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL;   //!
-   TBranch        *b_HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ;   //!
-   TBranch        *b_HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL_DZ;   //!
-   TBranch        *b_HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8;   //!
-   TBranch        *b_HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL_DZ_Mass8;   //!
-   TBranch        *b_HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8;   //!
-   TBranch        *b_HLT_Mu19_TrkIsoVVL_Mu9_TrkIsoVVL_DZ_Mass3p8;   //!
-   TBranch        *b_HLT_Mu30_TkMu0_Psi;   //!
-   TBranch        *b_HLT_Mu30_TkMu0_Upsilon;   //!
-   TBranch        *b_HLT_Mu25_TkMu0_Phi;   //!
-   TBranch        *b_HLT_Mu15;   //!
-   TBranch        *b_HLT_Mu20;   //!
-   TBranch        *b_HLT_Mu27;   //!
-   TBranch        *b_HLT_Mu50;   //!
-   TBranch        *b_HLT_Mu55;   //!
-   TBranch        *b_HLT_CascadeMu100;   //!
-   TBranch        *b_HLT_HighPtTkMu100;   //!
-   TBranch        *b_HLT_DiPFJetAve40;   //!
-   TBranch        *b_HLT_DiPFJetAve60;   //!
-   TBranch        *b_HLT_DiPFJetAve80;   //!
-   TBranch        *b_HLT_DiPFJetAve140;   //!
-   TBranch        *b_HLT_DiPFJetAve200;   //!
-   TBranch        *b_HLT_DiPFJetAve260;   //!
-   TBranch        *b_HLT_DiPFJetAve320;   //!
-   TBranch        *b_HLT_DiPFJetAve400;   //!
-   TBranch        *b_HLT_DiPFJetAve500;   //!
-   TBranch        *b_HLT_DiPFJetAve60_HFJEC;   //!
-   TBranch        *b_HLT_DiPFJetAve80_HFJEC;   //!
-   TBranch        *b_HLT_DiPFJetAve100_HFJEC;   //!
-   TBranch        *b_HLT_DiPFJetAve160_HFJEC;   //!
-   TBranch        *b_HLT_DiPFJetAve220_HFJEC;   //!
-   TBranch        *b_HLT_DiPFJetAve260_HFJEC;   //!
-   TBranch        *b_HLT_DiPFJetAve300_HFJEC;   //!
+							
+   /*
    TBranch        *b_HLT_AK8PFJet40;   //!
    TBranch        *b_HLT_AK8PFJet60;   //!
    TBranch        *b_HLT_AK8PFJet80;   //!
@@ -2363,6 +1031,8 @@ public :
    TBranch        *b_HLT_PFHT780;   //!
    TBranch        *b_HLT_PFHT890;   //!
    TBranch        *b_HLT_PFHT1050;   //!
+   */
+
    TBranch        *b_HLT_PFHT500_PFMET100_PFMHT100_IDTight;   //!
    TBranch        *b_HLT_PFHT500_PFMET110_PFMHT110_IDTight;   //!
    TBranch        *b_HLT_PFHT700_PFMET85_PFMHT85_IDTight;   //!
@@ -2391,47 +1061,16 @@ public :
    TBranch        *b_HLT_PFMETTypeOne200_BeamHaloCleaned;   //!
    TBranch        *b_HLT_MET105_IsoTrk50;   //!
    TBranch        *b_HLT_MET120_IsoTrk50;   //!
-   TBranch        *b_HLT_Mu12eta2p3;   //!
-   TBranch        *b_HLT_Mu12eta2p3_PFJet40;   //!
-   TBranch        *b_HLT_Mu12_DoublePFJets40_PFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_Mu12_DoublePFJets100_PFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_Mu12_DoublePFJets200_PFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_Mu12_DoublePFJets350_PFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_Mu12_DoublePFJets40MaxDeta1p6_DoublePFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_Mu12_DoublePFJets54MaxDeta1p6_DoublePFBTagDeepJet_p71;   //!
+					       //
    TBranch        *b_HLT_DoublePFJets40_PFBTagDeepJet_p71;   //!
    TBranch        *b_HLT_DoublePFJets100_PFBTagDeepJet_p71;   //!
    TBranch        *b_HLT_DoublePFJets200_PFBTagDeepJet_p71;   //!
    TBranch        *b_HLT_DoublePFJets350_PFBTagDeepJet_p71;   //!
    TBranch        *b_HLT_DoublePFJets116MaxDeta1p6_DoublePFBTagDeepJet_p71;   //!
    TBranch        *b_HLT_DoublePFJets128MaxDeta1p6_DoublePFBTagDeepJet_p71;   //!
+									      
    TBranch        *b_HLT_Photon300_NoHE;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL;   //!
-   TBranch        *b_HLT_Mu8_DiEle12_CaloIdL_TrackIdL_DZ;   //!
-   TBranch        *b_HLT_Mu8_DiEle12_CaloIdL_TrackIdL;   //!
-   TBranch        *b_HLT_Mu8_Ele8_CaloIdM_TrackIdM_Mass8_PFHT350_DZ;   //!
-   TBranch        *b_HLT_Mu8_Ele8_CaloIdM_TrackIdM_Mass8_PFHT350;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_PFDiJet30;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_CaloDiJet30;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL;   //!
-   TBranch        *b_HLT_Mu17_TrkIsoVVL;   //!
-   TBranch        *b_HLT_Mu19_TrkIsoVVL;   //!
-   TBranch        *b_HLT_BTagMu_AK4DiJet20_Mu5;   //!
-   TBranch        *b_HLT_BTagMu_AK4DiJet40_Mu5;   //!
-   TBranch        *b_HLT_BTagMu_AK4DiJet70_Mu5;   //!
-   TBranch        *b_HLT_BTagMu_AK4DiJet110_Mu5;   //!
-   TBranch        *b_HLT_BTagMu_AK4DiJet170_Mu5;   //!
-   TBranch        *b_HLT_BTagMu_AK4Jet300_Mu5;   //!
-   TBranch        *b_HLT_BTagMu_AK8DiJet170_Mu5;   //!
-   TBranch        *b_HLT_BTagMu_AK8Jet170_DoubleMu5;   //!
-   TBranch        *b_HLT_BTagMu_AK8Jet300_Mu5;   //!
-   TBranch        *b_HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ;   //!
-   TBranch        *b_HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL;   //!
-   TBranch        *b_HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ;   //!
-   TBranch        *b_HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL;   //!
-   TBranch        *b_HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL;   //!
-   TBranch        *b_HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ;   //!
+
    TBranch        *b_HLT_Photon33;   //!
    TBranch        *b_HLT_Photon50;   //!
    TBranch        *b_HLT_Photon75;   //!
@@ -2458,163 +1097,30 @@ public :
    TBranch        *b_HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass90;   //!
    TBranch        *b_HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass95;   //!
    TBranch        *b_HLT_Photon35_TwoProngs35;   //!
-   TBranch        *b_HLT_IsoMu24_TwoProngs35;   //!
-   TBranch        *b_HLT_Dimuon0_Jpsi_L1_NoOS;   //!
-   TBranch        *b_HLT_Dimuon0_Jpsi_NoVertexing_NoOS;   //!
-   TBranch        *b_HLT_Dimuon0_Jpsi;   //!
-   TBranch        *b_HLT_Dimuon0_Jpsi_NoVertexing;   //!
-   TBranch        *b_HLT_Dimuon0_Jpsi_L1_4R_0er1p5R;   //!
-   TBranch        *b_HLT_Dimuon0_Jpsi_NoVertexing_L1_4R_0er1p5R;   //!
-   TBranch        *b_HLT_Dimuon0_Jpsi3p5_Muon2;   //!
-   TBranch        *b_HLT_Dimuon0_Upsilon_L1_4p5;   //!
-   TBranch        *b_HLT_Dimuon0_Upsilon_L1_4p5er2p0;   //!
-   TBranch        *b_HLT_Dimuon0_Upsilon_L1_4p5er2p0M;   //!
-   TBranch        *b_HLT_Dimuon0_Upsilon_NoVertexing;   //!
-   TBranch        *b_HLT_Dimuon0_LowMass_L1_0er1p5R;   //!
-   TBranch        *b_HLT_Dimuon0_LowMass_L1_0er1p5;   //!
-   TBranch        *b_HLT_Dimuon0_LowMass;   //!
-   TBranch        *b_HLT_Dimuon0_LowMass_L1_4;   //!
-   TBranch        *b_HLT_Dimuon0_LowMass_L1_4R;   //!
-   TBranch        *b_HLT_Dimuon0_LowMass_L1_TM530;   //!
-   TBranch        *b_HLT_Dimuon0_Upsilon_Muon_NoL1Mass;   //!
-   TBranch        *b_HLT_TripleMu_5_3_3_Mass3p8_DZ;   //!
-   TBranch        *b_HLT_TripleMu_10_5_5_DZ;   //!
-   TBranch        *b_HLT_TripleMu_12_10_5;   //!
-   TBranch        *b_HLT_Tau3Mu_Mu7_Mu1_TkMu1_Tau15;   //!
-   TBranch        *b_HLT_Tau3Mu_Mu7_Mu1_TkMu1_Tau15_Charge1;   //!
-   TBranch        *b_HLT_Tau3Mu_Mu7_Mu1_TkMu1_IsoTau15;   //!
-   TBranch        *b_HLT_Tau3Mu_Mu7_Mu1_TkMu1_IsoTau15_Charge1;   //!
-   TBranch        *b_HLT_DoubleMu3_DZ_PFMET50_PFMHT60;   //!
-   TBranch        *b_HLT_DoubleMu3_DZ_PFMET70_PFMHT70;   //!
-   TBranch        *b_HLT_DoubleMu3_DZ_PFMET90_PFMHT90;   //!
-   TBranch        *b_HLT_DoubleMu3_Trk_Tau3mu_NoL1Mass;   //!
-   TBranch        *b_HLT_DoubleMu4_Jpsi_Displaced;   //!
-   TBranch        *b_HLT_DoubleMu4_Jpsi_NoVertexing;   //!
-   TBranch        *b_HLT_DoubleMu4_JpsiTrkTrk_Displaced;   //!
-   TBranch        *b_HLT_DoubleMu4_JpsiTrk_Bc;   //!
-   TBranch        *b_HLT_DoubleMu43NoFiltersNoVtx;   //!
-   TBranch        *b_HLT_DoubleMu48NoFiltersNoVtx;   //!
-   TBranch        *b_HLT_Mu43NoFiltersNoVtx_Photon43_CaloIdL;   //!
-   TBranch        *b_HLT_Mu48NoFiltersNoVtx_Photon48_CaloIdL;   //!
-   TBranch        *b_HLT_Mu38NoFiltersNoVtxDisplaced_Photon38_CaloIdL;   //!
-   TBranch        *b_HLT_Mu43NoFiltersNoVtxDisplaced_Photon43_CaloIdL;   //!
-   TBranch        *b_HLT_DiJet110_35_Mjj650_PFMET110;   //!
-   TBranch        *b_HLT_DiJet110_35_Mjj650_PFMET120;   //!
-   TBranch        *b_HLT_DiJet110_35_Mjj650_PFMET130;   //!
-   TBranch        *b_HLT_TripleJet110_35_35_Mjj650_PFMET110;   //!
-   TBranch        *b_HLT_TripleJet110_35_35_Mjj650_PFMET120;   //!
-   TBranch        *b_HLT_TripleJet110_35_35_Mjj650_PFMET130;   //!
-   TBranch        *b_HLT_Ele30_eta2p1_WPTight_Gsf_CentralPFJet35_EleCleaned;   //!
-   TBranch        *b_HLT_Ele28_eta2p1_WPTight_Gsf_HT150;   //!
-   TBranch        *b_HLT_Ele28_HighEta_SC20_Mass55;   //!
-   TBranch        *b_HLT_Ele15_IsoVVVL_PFHT450_PFMET50;   //!
-   TBranch        *b_HLT_Ele15_IsoVVVL_PFHT450;   //!
-   TBranch        *b_HLT_Ele50_IsoVVVL_PFHT450;   //!
-   TBranch        *b_HLT_Ele15_IsoVVVL_PFHT600;   //!
-   TBranch        *b_HLT_Mu4_TrkIsoVVL_DiPFJet90_40_DEta3p5_MJJ750_HTT300_PFMETNoMu60;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_DiPFJet40_DEta3p5_MJJ750_HTT300_PFMETNoMu60;   //!
-   TBranch        *b_HLT_Mu10_TrkIsoVVL_DiPFJet40_DEta3p5_MJJ750_HTT350_PFMETNoMu60;   //!
-   TBranch        *b_HLT_Mu15_IsoVVVL_PFHT450_PFMET50;   //!
-   TBranch        *b_HLT_Mu15_IsoVVVL_PFHT450;   //!
-   TBranch        *b_HLT_Mu50_IsoVVVL_PFHT450;   //!
-   TBranch        *b_HLT_Mu15_IsoVVVL_PFHT600;   //!
-   TBranch        *b_HLT_Mu3er1p5_PFJet100er2p5_PFMET80_PFMHT80_IDTight;   //!
-   TBranch        *b_HLT_Mu3er1p5_PFJet100er2p5_PFMET90_PFMHT90_IDTight;   //!
-   TBranch        *b_HLT_Mu3er1p5_PFJet100er2p5_PFMET100_PFMHT100_IDTight;   //!
-   TBranch        *b_HLT_Mu3er1p5_PFJet100er2p5_PFMETNoMu80_PFMHTNoMu80_IDTight;   //!
-   TBranch        *b_HLT_Mu3er1p5_PFJet100er2p5_PFMETNoMu90_PFMHTNoMu90_IDTight;   //!
-   TBranch        *b_HLT_Mu3er1p5_PFJet100er2p5_PFMETNoMu100_PFMHTNoMu100_IDTight;   //!
-   TBranch        *b_HLT_Dimuon10_Upsilon_y1p4;   //!
-   TBranch        *b_HLT_Dimuon12_Upsilon_y1p4;   //!
-   TBranch        *b_HLT_Dimuon14_Phi_Barrel_Seagulls;   //!
-   TBranch        *b_HLT_Dimuon25_Jpsi;   //!
-   TBranch        *b_HLT_Dimuon14_PsiPrime;   //!
-   TBranch        *b_HLT_Dimuon14_PsiPrime_noCorrL1;   //!
-   TBranch        *b_HLT_Dimuon18_PsiPrime;   //!
-   TBranch        *b_HLT_Dimuon18_PsiPrime_noCorrL1;   //!
-   TBranch        *b_HLT_Dimuon24_Upsilon_noCorrL1;   //!
-   TBranch        *b_HLT_Dimuon24_Phi_noCorrL1;   //!
-   TBranch        *b_HLT_Dimuon25_Jpsi_noCorrL1;   //!
-   TBranch        *b_HLT_DiMu4_Ele9_CaloIdL_TrackIdL_DZ_Mass3p8;   //!
-   TBranch        *b_HLT_DiMu9_Ele9_CaloIdL_TrackIdL_DZ;   //!
-   TBranch        *b_HLT_DiMu9_Ele9_CaloIdL_TrackIdL;   //!
-   TBranch        *b_HLT_DoubleIsoMu20_eta2p1;   //!
-   TBranch        *b_HLT_TrkMu12_DoubleTrkMu5NoFiltersNoVtx;   //!
-   TBranch        *b_HLT_Mu8;   //!
-   TBranch        *b_HLT_Mu17;   //!
-   TBranch        *b_HLT_Mu19;   //!
-   TBranch        *b_HLT_Mu17_Photon30_IsoCaloId;   //!
-   TBranch        *b_HLT_Ele8_CaloIdL_TrackIdL_IsoVL_PFJet30;   //!
-   TBranch        *b_HLT_Ele12_CaloIdL_TrackIdL_IsoVL_PFJet30;   //!
-   TBranch        *b_HLT_Ele23_CaloIdL_TrackIdL_IsoVL_PFJet30;   //!
-   TBranch        *b_HLT_Ele8_CaloIdM_TrackIdM_PFJet30;   //!
-   TBranch        *b_HLT_Ele17_CaloIdM_TrackIdM_PFJet30;   //!
-   TBranch        *b_HLT_Ele23_CaloIdM_TrackIdM_PFJet30;   //!
-   TBranch        *b_HLT_Ele50_CaloIdVT_GsfTrkIdT_PFJet165;   //!
-   TBranch        *b_HLT_Ele115_CaloIdVT_GsfTrkIdT;   //!
-   TBranch        *b_HLT_Ele135_CaloIdVT_GsfTrkIdT;   //!
-   TBranch        *b_HLT_PFHT330PT30_QuadPFJet_75_60_45_40;   //!
-   TBranch        *b_HLT_PFHT400_SixPFJet32;   //!
-   TBranch        *b_HLT_PFHT400_SixPFJet32_PNet2BTagMean0p50;   //!
-   TBranch        *b_HLT_PFHT450_SixPFJet36;   //!
-   TBranch        *b_HLT_PFHT450_SixPFJet36_PNetBTag0p35;   //!
-   TBranch        *b_HLT_PFHT400_FivePFJet_100_100_60_30_30;   //!
-   TBranch        *b_HLT_PFHT350;   //!
+						 
+   //TBranch        *b_HLT_PFHT330PT30_QuadPFJet_75_60_45_40;   //!
+   //TBranch        *b_HLT_PFHT400_SixPFJet32;   //!
+   //TBranch        *b_HLT_PFHT400_SixPFJet32_PNet2BTagMean0p50;   //!
+   //TBranch        *b_HLT_PFHT450_SixPFJet36;   //!
+   //TBranch        *b_HLT_PFHT450_SixPFJet36_PNetBTag0p35;   //!
+   //TBranch        *b_HLT_PFHT400_FivePFJet_100_100_60_30_30;   //!
+   //TBranch        *b_HLT_PFHT350;   //!
+				    
    TBranch        *b_HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT350;   //!
    TBranch        *b_HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT380;   //!
    TBranch        *b_HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT400;   //!
-   TBranch        *b_HLT_ECALHT800;   //!
-   TBranch        *b_HLT_DiSC30_18_EIso_AND_HE_Mass70;   //!
+									      
+   //TBranch        *b_HLT_ECALHT800;   //!
+   //TBranch        *b_HLT_DiSC30_18_EIso_AND_HE_Mass70;   //!
    TBranch        *b_HLT_Photon20_HoverELoose;   //!
    TBranch        *b_HLT_Photon30_HoverELoose;   //!
-   TBranch        *b_HLT_L1_CDC_SingleMu_3_er1p2_TOP120_DPHI2p618_3p142;   //!
-   TBranch        *b_HLT_CDC_L2cosmic_10_er1p0;   //!
-   TBranch        *b_HLT_CDC_L2cosmic_5p5_er1p0;   //!
-   TBranch        *b_HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL;   //!
-   TBranch        *b_HLT_VBF_DoubleMediumDeepTauPFTauHPS20_eta2p1;   //!
+						 
    TBranch        *b_HLT_Photon60_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3;   //!
    TBranch        *b_HLT_Photon75_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3;   //!
-   TBranch        *b_HLT_Mu18_Mu9_SameSign;   //!
-   TBranch        *b_HLT_DoubleMu2_Jpsi_DoubleTrk1_Phi1p05;   //!
-   TBranch        *b_HLT_DoubleMu3_DCA_PFMET50_PFMHT60;   //!
-   TBranch        *b_HLT_TripleMu_5_3_3_Mass3p8_DCA;   //!
-   TBranch        *b_HLT_QuadPFJet103_88_75_15;   //!
-   TBranch        *b_HLT_QuadPFJet105_88_76_15;   //!
-   TBranch        *b_HLT_QuadPFJet111_90_80_15;   //!
+									       
    TBranch        *b_HLT_Diphoton30_18_R9IdL_AND_HE_AND_IsoCaloId;   //!
    TBranch        *b_HLT_Diphoton30_18_R9IdL_AND_HE_AND_IsoCaloId_Mass55;   //!
-   TBranch        *b_HLT_DoubleMediumDeepTauPFTauHPS35_L2NN_eta2p1;   //!
-   TBranch        *b_HLT_Ele24_eta2p1_WPTight_Gsf_LooseDeepTauPFTauHPS30_eta2p1_CrossL1;   //!
-   TBranch        *b_HLT_IsoMu20_eta2p1_LooseDeepTauPFTauHPS27_eta2p1_CrossL1;   //!
-   TBranch        *b_HLT_IsoMu24_eta2p1_LooseDeepTauPFTauHPS180_eta2p1;   //!
-   TBranch        *b_HLT_IsoMu24_eta2p1_LooseDeepTauPFTauHPS30_eta2p1_CrossL1;   //!
-   TBranch        *b_HLT_IsoMu24_eta2p1_MediumDeepTauPFTauHPS35_L2NN_eta2p1_CrossL1;   //!
-   TBranch        *b_HLT_LooseDeepTauPFTauHPS180_L2NN_eta2p1;   //!
-   TBranch        *b_HLT_PFHT330PT30_QuadPFJet_75_60_45_40_TriplePFBTagDeepJet_4p5;   //!
-   TBranch        *b_HLT_PFHT400_FivePFJet_100_100_60_30_30_DoublePFBTagDeepJet_4p5;   //!
-   TBranch        *b_HLT_PFHT400_FivePFJet_120_120_60_30_30_DoublePFBTagDeepJet_4p5;   //!
-   TBranch        *b_HLT_QuadPFJet103_88_75_15_DoublePFBTagDeepJet_1p3_7p7_VBF1;   //!
-   TBranch        *b_HLT_QuadPFJet103_88_75_15_PFBTagDeepJet_1p3_VBF2;   //!
-   TBranch        *b_HLT_QuadPFJet105_88_76_15_DoublePFBTagDeepJet_1p3_7p7_VBF1;   //!
-   TBranch        *b_HLT_QuadPFJet105_88_76_15_PFBTagDeepJet_1p3_VBF2;   //!
-   TBranch        *b_HLT_QuadPFJet111_90_80_15_DoublePFBTagDeepJet_1p3_7p7_VBF1;   //!
-   TBranch        *b_HLT_QuadPFJet111_90_80_15_PFBTagDeepJet_1p3_VBF2;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_PFDiJet30_PFBtagDeepJet_1p5;   //!
-   TBranch        *b_HLT_PFHT280_QuadPFJet30;   //!
-   TBranch        *b_HLT_PFHT280_QuadPFJet30_PNet2BTagMean0p55;   //!
-   TBranch        *b_HLT_PFHT280_QuadPFJet30_PNet2BTagMean0p60;   //!
-   TBranch        *b_HLT_PFHT280_QuadPFJet35_PNet2BTagMean0p60;   //!
-   TBranch        *b_HLT_PFHT340_QuadPFJet70_50_40_40_PNet2BTagMean0p70;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_PFHT280;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_PFHT280_QuadPFJet30;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_PFHT280_QuadPFJet30_PNet2BTagMean0p55;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_PFDiJet30_PNet2BTagMean0p50;   //!
-   TBranch        *b_HLT_QuadPFJet100_88_70_30;   //!
-   TBranch        *b_HLT_QuadPFJet105_88_75_30;   //!
-   TBranch        *b_HLT_QuadPFJet111_90_80_30;   //!
-   TBranch        *b_HLT_QuadPFJet100_88_70_30_PNet1CvsAll0p5_VBF3Tight;   //!
-   TBranch        *b_HLT_QuadPFJet105_88_75_30_PNet1CvsAll0p5_VBF3Tight;   //!
-   TBranch        *b_HLT_QuadPFJet111_90_80_30_PNet1CvsAll0p6_VBF3Tight;   //!
+									    
    TBranch        *b_HLT_AK8PFJet220_SoftDropMass40;   //!
    TBranch        *b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p50;   //!
    TBranch        *b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p53;   //!
@@ -2635,113 +1141,13 @@ public :
    TBranch        *b_HLT_AK8PFJet275_SoftDropMass40_PNetTauTau0p05;   //!
    TBranch        *b_HLT_AK8PFJet425_SoftDropMass40;   //!
    TBranch        *b_HLT_AK8PFJet450_SoftDropMass40;   //!
-   TBranch        *b_HLT_IsoMu50_AK8PFJet220_SoftDropMass40;   //!
-   TBranch        *b_HLT_IsoMu50_AK8PFJet220_SoftDropMass40_PNetBB0p06;   //!
-   TBranch        *b_HLT_IsoMu50_AK8PFJet230_SoftDropMass40;   //!
-   TBranch        *b_HLT_IsoMu50_AK8PFJet230_SoftDropMass40_PNetBB0p06;   //!
-   TBranch        *b_HLT_IsoMu50_AK8PFJet230_SoftDropMass40_PNetBB0p10;   //!
-   TBranch        *b_HLT_Ele50_CaloIdVT_GsfTrkIdT_AK8PFJet220_SoftDropMass40;   //!
-   TBranch        *b_HLT_Ele50_CaloIdVT_GsfTrkIdT_AK8PFJet220_SoftDropMass40_PNetBB0p06;   //!
-   TBranch        *b_HLT_Ele50_CaloIdVT_GsfTrkIdT_AK8PFJet230_SoftDropMass40;   //!
-   TBranch        *b_HLT_Ele50_CaloIdVT_GsfTrkIdT_AK8PFJet230_SoftDropMass40_PNetBB0p06;   //!
-   TBranch        *b_HLT_Ele50_CaloIdVT_GsfTrkIdT_AK8PFJet230_SoftDropMass40_PNetBB0p10;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_DoubleAK4PFJet60_30;   //!
-   TBranch        *b_HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_DoubleAK4PFJet60_30_PNet2BTagMean0p50;   //!
-   TBranch        *b_HLT_DoubleMediumDeepTauPFTauHPS30_L2NN_eta2p1_PFJet60;   //!
-   TBranch        *b_HLT_DoubleMediumDeepTauPFTauHPS30_L2NN_eta2p1_PFJet75;   //!
-   TBranch        *b_HLT_IsoMu24_eta2p1_MediumDeepTauPFTauHPS30_L2NN_eta2p1_CrossL1;   //!
-   TBranch        *b_HLT_IsoMu24_eta2p1_MediumDeepTauPFTauHPS30_L2NN_eta2p1_PFJet60_CrossL1;   //!
-   TBranch        *b_HLT_IsoMu24_eta2p1_MediumDeepTauPFTauHPS30_L2NN_eta2p1_PFJet75_CrossL1;   //!
-   TBranch        *b_HLT_DoublePFJets40_Mass500_MediumDeepTauPFTauHPS45_L2NN_MediumDeepTauPFTauHPS20_eta2p1;   //!
-   TBranch        *b_HLT_IsoMu24_eta2p1_MediumDeepTauPFTauHPS20_eta2p1_SingleL1;   //!
-   TBranch        *b_HLT_IsoMu24_eta2p1_MediumDeepTauPFTauHPS45_L2NN_eta2p1_CrossL1;   //!
-   TBranch        *b_HLT_DoubleL2Mu10NoVtx_2Cha_VetoL3Mu0DxyMax1cm;   //!
-   TBranch        *b_HLT_DoubleL2Mu12NoVtx_2Cha_VetoL3Mu0DxyMax1cm;   //!
-   TBranch        *b_HLT_DoubleL2Mu14NoVtx_2Cha_VetoL3Mu0DxyMax1cm;   //!
-   TBranch        *b_HLT_DoubleL3Mu16_10NoVtx_DxyMin0p01cm;   //!
-   TBranch        *b_HLT_DoubleL3Mu18_10NoVtx_DxyMin0p01cm;   //!
-   TBranch        *b_HLT_DoubleL3Mu20_10NoVtx_DxyMin0p01cm;   //!
-   TBranch        *b_HLT_L2Mu10NoVtx_2Cha;   //!
-   TBranch        *b_HLT_L2Mu10NoVtx_2Cha_VetoL3Mu0DxyMax1cm;   //!
-   TBranch        *b_HLT_L3Mu10NoVtx;   //!
-   TBranch        *b_HLT_L3Mu10NoVtx_DxyMin0p01cm;   //!
-   TBranch        *b_HLT_DoubleL2Mu_L3Mu16NoVtx_VetoL3Mu0DxyMax0p1cm;   //!
-   TBranch        *b_HLT_DoubleL2Mu_L3Mu18NoVtx_VetoL3Mu0DxyMax0p1cm;   //!
-   TBranch        *b_HLT_DoubleL2Mu10NoVtx_2Cha_CosmicSeed_VetoL3Mu0DxyMax1cm;   //!
-   TBranch        *b_HLT_DoubleL2Mu12NoVtx_2Cha_CosmicSeed_VetoL3Mu0DxyMax1cm;   //!
-   TBranch        *b_HLT_L2Mu10NoVtx_2Cha_CosmicSeed;   //!
-   TBranch        *b_HLT_L2Mu10NoVtx_2Cha_CosmicSeed_VetoL3Mu0DxyMax1cm;   //!
-   TBranch        *b_HLT_DoubleL3dTksMu16_10NoVtx_DxyMin0p01cm;   //!
-   TBranch        *b_HLT_L3dTksMu10_NoVtx_DxyMin0p01cm;   //!
-   TBranch        *b_HLT_Mu20NoFiltersNoVtxDisplaced_Photon20_CaloCustomId;   //!
-   TBranch        *b_HLT_DoubleMediumChargedIsoDisplacedPFTauHPS32_Trk1_eta2p1;   //!
-   TBranch        *b_HLT_HT350_DelayedJet40_SingleDelay1p5To3p5nsInclusive;   //!
-   TBranch        *b_HLT_HT350_DelayedJet40_SingleDelay1p6To3p5nsInclusive;   //!
-   TBranch        *b_HLT_HT350_DelayedJet40_SingleDelay1p75To3p5nsInclusive;   //!
-   TBranch        *b_HLT_HT350_DelayedJet40_SingleDelay3nsInclusive;   //!
-   TBranch        *b_HLT_HT350_DelayedJet40_SingleDelay3p25nsInclusive;   //!
-   TBranch        *b_HLT_HT350_DelayedJet40_SingleDelay3p5nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay0p5nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay1nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay1To1p5nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay1p1To1p6nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay1p25To1p75nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay1p5nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay2nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay2p25nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay2p5nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay0p5nsTrackless;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay1nsTrackless;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay1p25nsTrackless;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_SingleDelay1p5nsTrackless;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_DoubleDelay0p5nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_DoubleDelay1nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_DoubleDelay1p25nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_DoubleDelay1p5nsInclusive;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_DoubleDelay0p5nsTrackless;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_DoubleDelay0p75nsTrackless;   //!
-   TBranch        *b_HLT_HT430_DelayedJet40_DoubleDelay1nsTrackless;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_SingleDelay2p5To4nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_SingleDelay2p6To4nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_SingleDelay2p75To4nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_SingleDelay3p5nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_SingleDelay3p75nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_SingleDelay4nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_SingleDelay2p5nsTrackless;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_SingleDelay2p75nsTrackless;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_SingleDelay3nsTrackless;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_DoubleDelay0p75nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_DoubleDelay1p25nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_DoubleDelay1p5nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_DoubleDelay1p75nsInclusive;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_DoubleDelay0p5nsTrackless;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_DoubleDelay1nsTrackless;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_DoubleDelay1p25nsTrackless;   //!
-   TBranch        *b_HLT_L1Tau_DelayedJet40_DoubleDelay1p5nsTrackless;   //!
-   TBranch        *b_HLT_L1Mu6HT240;   //!
-   TBranch        *b_HLT_Mu6HT240_DisplacedDijet30_Inclusive1PtrkShortSig5_DisplacedLoose;   //!
-   TBranch        *b_HLT_Mu6HT240_DisplacedDijet35_Inclusive0PtrkShortSig5;   //!
-   TBranch        *b_HLT_Mu6HT240_DisplacedDijet35_Inclusive1PtrkShortSig5_DisplacedLoose;   //!
-   TBranch        *b_HLT_Mu6HT240_DisplacedDijet40_Inclusive0PtrkShortSig5;   //!
-   TBranch        *b_HLT_Mu6HT240_DisplacedDijet40_Inclusive1PtrkShortSig5_DisplacedLoose;   //!
-   TBranch        *b_HLT_Mu6HT240_DisplacedDijet45_Inclusive0PtrkShortSig5;   //!
-   TBranch        *b_HLT_Mu6HT240_DisplacedDijet50_Inclusive0PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT350;   //!
-   TBranch        *b_HLT_HT425;   //!
-   TBranch        *b_HLT_HT360_DisplacedDijet40_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT360_DisplacedDijet45_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT390_DisplacedDijet40_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT390_DisplacedDijet45_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT390eta2p0_DisplacedDijet40_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT430_DisplacedDijet40_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT400_DisplacedDijet40_DisplacedTrack;   //!
-   TBranch        *b_HLT_HT430_DisplacedDijet40_DisplacedTrack;   //!
-   TBranch        *b_HLT_HT550_DisplacedDijet60_Inclusive;   //!
-   TBranch        *b_HLT_HT650_DisplacedDijet60_Inclusive;   //!
-   TBranch        *b_HLT_CaloMET60_DTCluster50;   //!
-   TBranch        *b_HLT_CaloMET60_DTClusterNoMB1S50;   //!
-   TBranch        *b_HLT_L1MET_DTCluster50;   //!
-   TBranch        *b_HLT_L1MET_DTClusterNoMB1S50;   //!
+						       //
+   //TBranch        *b_HLT_HT350;   //!
+   //TBranch        *b_HLT_HT425;   //!
+   //TBranch        *b_HLT_CaloMET60_DTCluster50;   //!
+   //TBranch        *b_HLT_CaloMET60_DTClusterNoMB1S50;   //!
+   //TBranch        *b_HLT_L1MET_DTCluster50;   //!
+   //TBranch        *b_HLT_L1MET_DTClusterNoMB1S50;   //!
    TBranch        *b_HLT_CscCluster_Loose;   //!
    TBranch        *b_HLT_CscCluster_Medium;   //!
    TBranch        *b_HLT_CscCluster_Tight;   //!
@@ -2751,20 +1157,8 @@ public :
    TBranch        *b_HLT_L1CSCShower_DTCluster75;   //!
    TBranch        *b_HLT_PFMET105_IsoTrk50;   //!
    TBranch        *b_HLT_L1SingleLLPJet;   //!
-   TBranch        *b_HLT_HT170_L1SingleLLPJet_DisplacedDijet40_DisplacedTrack;   //!
-   TBranch        *b_HLT_HT200_L1SingleLLPJet_DisplacedDijet40_DisplacedTrack;   //!
-   TBranch        *b_HLT_HT200_L1SingleLLPJet_DisplacedDijet60_DisplacedTrack;   //!
-   TBranch        *b_HLT_HT270_L1SingleLLPJet_DisplacedDijet40_DisplacedTrack;   //!
-   TBranch        *b_HLT_HT200_L1SingleLLPJet_DisplacedDijet35_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT200_L1SingleLLPJet_DisplacedDijet40_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT240_L1SingleLLPJet_DisplacedDijet40_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT280_L1SingleLLPJet_DisplacedDijet40_Inclusive1PtrkShortSig5;   //!
-   TBranch        *b_HLT_HT320_L1SingleLLPJet_DisplacedDijet60_Inclusive;   //!
-   TBranch        *b_HLT_HT420_L1SingleLLPJet_DisplacedDijet60_Inclusive;   //!
-   TBranch        *b_HLT_HT200_L1SingleLLPJet_DelayedJet40_SingleDelay1nsTrackless;   //!
-   TBranch        *b_HLT_HT200_L1SingleLLPJet_DelayedJet40_SingleDelay2nsInclusive;   //!
-   TBranch        *b_HLT_HT200_L1SingleLLPJet_DelayedJet40_DoubleDelay0p5nsTrackless;   //!
-   TBranch        *b_HLT_HT200_L1SingleLLPJet_DelayedJet40_DoubleDelay1nsInclusive;   //!
+
+										      
    TBranch        *b_HLT_DiPhoton10Time1ns;   //!
    TBranch        *b_HLT_DiPhoton10Time1p2ns;   //!
    TBranch        *b_HLT_DiPhoton10Time1p4ns;   //!
@@ -2774,86 +1168,17 @@ public :
    TBranch        *b_HLT_DiPhoton10sminlt0p1;   //!
    TBranch        *b_HLT_DiPhoton10sminlt0p12;   //!
    TBranch        *b_HLT_DiPhoton10_CaloIdL;   //!
-   TBranch        *b_HLT_DoubleEle4_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle4p5_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle5_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle5p5_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle6_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle6p5_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle7_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle7p5_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle8_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle8p5_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle9_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle9p5_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle10_eta1p22_mMax6;   //!
-   TBranch        *b_HLT_DoubleEle4_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle4p5_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle5_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle5p5_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle6_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle6p5_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle7_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle7p5_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle8_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle8p5_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle9_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle9p5_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle10_eta1p22_mMax6_dz0p8;   //!
-   TBranch        *b_HLT_DoubleEle4_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle4p5_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle5_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle5p5_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle6_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle6p5_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle7_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle7p5_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle8_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle8p5_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle9_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle9p5_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_DoubleEle10_eta1p22_mMax6_trkHits10;   //!
-   TBranch        *b_HLT_SingleEle8;   //!
-   TBranch        *b_HLT_SingleEle8_SingleEGL1;   //!
+					       
    TBranch        *b_HLT_Diphoton20_14_eta1p5_R9IdL_AND_HE_AND_IsoTCaloIdT;   //!
    TBranch        *b_HLT_Diphoton20_14_eta1p5_R9IdL_AND_HET_AND_IsoTCaloIdT;   //!
    TBranch        *b_HLT_Diphoton22_14_eta1p5_R9IdL_AND_HE_AND_IsoTCaloIdT;   //!
    TBranch        *b_HLT_Diphoton22_14_eta1p5_R9IdL_AND_HET_AND_IsoTCaloIdT;   //!
    TBranch        *b_HLT_Diphoton24_14_eta1p5_R9IdL_AND_HET_AND_IsoTCaloIdT;   //!
    TBranch        *b_HLT_Diphoton24_16_eta1p5_R9IdL_AND_HET_AND_IsoTCaloIdT;   //!
-   TBranch        *b_HLT_Mu50_L1SingleMuShower;   //!
-   TBranch        *b_HLT_IsoMu24_OneProng32;   //!
+									       
    TBranch        *b_HLT_Photon32_OneProng32_M50To105;   //!
-   TBranch        *b_HLT_DoubleMediumDeepTauPFTauHPS30_L2NN_eta2p1_OneProng_M5to80;   //!
-   TBranch        *b_HLT_VBF_DiPFJet105_40_Mjj1000_Detajj3p5;   //!
-   TBranch        *b_HLT_VBF_DiPFJet105_40_Mjj1000_Detajj3p5_TriplePFJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet110_40_Mjj1000_Detajj3p5;   //!
-   TBranch        *b_HLT_VBF_DiPFJet110_40_Mjj1000_Detajj3p5_TriplePFJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet125_45_Mjj1000_Detajj3p5;   //!
-   TBranch        *b_HLT_VBF_DiPFJet125_45_Mjj1000_Detajj3p5_TriplePFJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet125_45_Mjj720_Detajj3p0;   //!
-   TBranch        *b_HLT_VBF_DiPFJet125_45_Mjj720_Detajj3p0_TriplePFJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet70_40_Mjj600_Detajj2p5_DiPFJet60_JetMatchingQuadJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet70_40_Mjj600_Detajj2p5_DiPFJet60_JetMatchingFiveJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet70_40_Mjj600_Detajj2p5_DiPFJet60_JetMatchingSixJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet75_45_Mjj600_Detajj2p5_DiPFJet60_JetMatchingQuadJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet75_45_Mjj600_Detajj2p5_DiPFJet60_JetMatchingFiveJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet75_45_Mjj600_Detajj2p5_DiPFJet60_JetMatchingSixJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet75_40_Mjj500_Detajj2p5_PFMET85;   //!
-   TBranch        *b_HLT_VBF_DiPFJet75_40_Mjj500_Detajj2p5_PFMET85_TriplePFJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet80_45_Mjj500_Detajj2p5_PFMET85;   //!
-   TBranch        *b_HLT_VBF_DiPFJet80_45_Mjj500_Detajj2p5_PFMET85_TriplePFJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet90_40_Mjj600_Detajj2p5_Mu3_TrkIsoVVL;   //!
-   TBranch        *b_HLT_VBF_DiPFJet90_40_Mjj600_Detajj2p5_Mu3_TrkIsoVVL_TriplePFJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet95_45_Mjj600_Detajj2p5_Mu3_TrkIsoVVL;   //!
-   TBranch        *b_HLT_VBF_DiPFJet95_45_Mjj600_Detajj2p5_Mu3_TrkIsoVVL_TriplePFJet;   //!
-   TBranch        *b_HLT_VBF_DiPFJet45_Mjj500_Detajj2p5_MediumDeepTauPFTauHPS45_L2NN_eta2p1;   //!
-   TBranch        *b_HLT_VBF_DiPFJet45_Mjj500_Detajj2p5_Photon12;   //!
-   TBranch        *b_HLT_VBF_DiPFJet45_Mjj500_Detajj2p5_Photon17;   //!
-   TBranch        *b_HLT_VBF_DiPFJet50_Mjj500_Detajj2p5_Photon22;   //!
-   TBranch        *b_HLT_VBF_DiPFJet45_Mjj500_Detajj2p5_Ele12_eta2p1_WPTight_Gsf;   //!
-   TBranch        *b_HLT_VBF_DiPFJet45_Mjj500_Detajj2p5_Ele17_eta2p1_WPTight_Gsf;   //!
-   TBranch        *b_HLT_VBF_DiPFJet50_Mjj500_Detajj2p5_Ele22_eta2p1_WPTight_Gsf;   //!
+							 
+   /*
    TBranch        *b_HLT_PFJet200_TimeLtNeg2p5ns;   //!
    TBranch        *b_HLT_PFJet200_TimeGt2p5ns;   //!
    TBranch        *b_HLT_Photon50_TimeLtNeg2p5ns;   //!
@@ -2863,6 +1188,9 @@ public :
    TBranch        *b_HLT_PPSMaxTracksPerRP4;   //!
    TBranch        *b_HLT_PPSRandom;   //!
    TBranch        *b_HLTriggerFinalPath;   //!
+   */
+
+
 
    PhotonJetAnalysis(TTree *tree=0);
    virtual ~PhotonJetAnalysis();
