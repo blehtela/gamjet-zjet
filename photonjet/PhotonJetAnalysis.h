@@ -33,7 +33,7 @@
 //Add some stuff for JEC
 #include "CondFormats/JetMETObjects/interface/FactorizedJetCorrector.h"
 #include "CondFormats/JetMETObjects/interface/JetCorrectorParameters.h"
-#include "CondFormats/JetMETObjects/interface/JetCorrectorUncertainty.h"
+#include "CondFormats/JetMETObjects/interface/JetCorrectionUncertainty.h"
 
 //some general includes (i used to do this in .C files, now moved to header)
 #include <iostream>
@@ -1192,6 +1192,7 @@ PhotonJetAnalysis::PhotonJetAnalysis(TTree *tree) : fChain(0)
 
       // The following code should be used if you want this class to access a chain
       // of trees.
+      // testing with the three files below (used to create this originally)
       TChain * chain = new TChain("Events","");
       chain->Add("data/2ac63590-ec9d-4d95-a37e-13f8819e0503.root/Events");
       chain->Add("data/0c71c68e-416e-42a7-a6cf-d7d168dad678.root/Events");
