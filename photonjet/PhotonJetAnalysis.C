@@ -38,6 +38,7 @@ void PhotonJetAnalysis::Loop()
       Long64_t ientry = LoadTree(jentry);
       if (ientry < 0) break;
       nb = fChain->GetEntry(jentry);   nbytes += nb;
+      cout << "testing: jentry=" << jentry << endl;
       // if (Cut(ientry) < 0) continue;
    }
 }
