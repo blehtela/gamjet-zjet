@@ -103,48 +103,48 @@ public :
  
    Int_t           nJet;
    UChar_t         Jet_jetId[nJetMax];   //[nJet], size used to be 15
-   UChar_t         Jet_nConstituents[nJetMax];   //[nJet]
-   UChar_t         Jet_nElectrons[nJetMax];   //[nJet]
-   UChar_t         Jet_nMuons[];   //[nJet]
-   UChar_t         Jet_nSVs[];   //[nJet]
-   Short_t         Jet_electronIdx1[];   //[nJet]
-   Short_t         Jet_electronIdx2[];   //[nJet]
-   Short_t         Jet_muonIdx1[];   //[nJet]
-   Short_t         Jet_muonIdx2[];   //[nJet]
-   Short_t         Jet_svIdx1[];   //[nJet]
-   Short_t         Jet_svIdx2[];   //[nJet]
-   Int_t           Jet_hfadjacentEtaStripsSize[];   //[nJet]
-   Int_t           Jet_hfcentralEtaStripSize[];   //[nJet]
-   Float_t         Jet_PNetRegPtRawCorr[];   //[nJet]
-   Float_t         Jet_PNetRegPtRawCorrNeutrino[];   //[nJet]
-   Float_t         Jet_PNetRegPtRawRes[];   //[nJet]
-   Float_t         Jet_area[];   //[nJet]
-   Float_t         Jet_btagDeepFlavB[];   //[nJet]
-   Float_t         Jet_btagDeepFlavCvB[];   //[nJet]
-   Float_t         Jet_btagDeepFlavCvL[];   //[nJet]
-   Float_t         Jet_btagDeepFlavQG[];   //[nJet]
-   Float_t         Jet_btagPNetB[];   //[nJet]
-   Float_t         Jet_btagPNetCvB[];   //[nJet]
-   Float_t         Jet_btagPNetCvL[];   //[nJet]
-   Float_t         Jet_btagPNetQvG[];   //[nJet]
-   Float_t         Jet_btagPNetTauVJet[];   //[nJet]
-   Float_t         Jet_btagRobustParTAK4B[];   //[nJet]
-   Float_t         Jet_btagRobustParTAK4CvB[];   //[nJet]
-   Float_t         Jet_btagRobustParTAK4CvL[];   //[nJet]
-   Float_t         Jet_btagRobustParTAK4QG[];   //[nJet]
-   Float_t         Jet_chEmEF[];   //[nJet]
-   Float_t         Jet_chHEF[];   //[nJet]
-   Float_t         Jet_eta[];   //[nJet]
-   Float_t         Jet_hfsigmaEtaEta[];   //[nJet]
-   Float_t         Jet_hfsigmaPhiPhi[];   //[nJet]
-   Float_t         Jet_mass[];   //[nJet]
-   Float_t         Jet_muEF[];   //[nJet]
-   Float_t         Jet_muonSubtrFactor[];   //[nJet]
-   Float_t         Jet_neEmEF[];   //[nJet]
-   Float_t         Jet_neHEF[];   //[nJet]
-   Float_t         Jet_phi[];   //[nJet]
-   Float_t         Jet_pt[];   //[nJet]
-   Float_t         Jet_rawFactor[];   //[nJet]
+   //UChar_t         Jet_nConstituents[nJetMax];   //[nJet]
+   //UChar_t         Jet_nElectrons[nJetMax];   //[nJet]
+   //UChar_t         Jet_nMuons[nJetMax];   //[nJet]
+   UChar_t         Jet_nSVs[nJetMax];   //[nJet]
+   Short_t         Jet_electronIdx1[nJetMax];   //[nJet]
+   Short_t         Jet_electronIdx2[nJetMax];   //[nJet]
+   Short_t         Jet_muonIdx1[nJetMax];   //[nJet]
+   Short_t         Jet_muonIdx2[nJetMax];   //[nJet]
+   Short_t         Jet_svIdx1[nJetMax];   //[nJet]
+   Short_t         Jet_svIdx2[nJetMax];   //[nJet]
+   Int_t           Jet_hfadjacentEtaStripsSize[nJetMax];   //[nJet]
+   Int_t           Jet_hfcentralEtaStripSize[nJetMax];   //[nJet]
+   Float_t         Jet_PNetRegPtRawCorr[nJetMax];   //[nJet]
+   Float_t         Jet_PNetRegPtRawCorrNeutrino[nJetMax];   //[nJet]
+   Float_t         Jet_PNetRegPtRawRes[nJetMax];   //[nJet]
+   Float_t         Jet_area[nJetMax];   //[nJet]
+   Float_t         Jet_btagDeepFlavB[nJetMax];   //[nJet]
+   Float_t         Jet_btagDeepFlavCvB[nJetMax];   //[nJet]
+   Float_t         Jet_btagDeepFlavCvL[nJetMax];   //[nJet]
+   Float_t         Jet_btagDeepFlavQG[nJetMax];   //[nJet]
+   Float_t         Jet_btagPNetB[nJetMax];   //[nJet]
+   Float_t         Jet_btagPNetCvB[nJetMax];   //[nJet]
+   Float_t         Jet_btagPNetCvL[nJetMax];   //[nJet]
+   Float_t         Jet_btagPNetQvG[nJetMax];   //[nJet]
+   Float_t         Jet_btagPNetTauVJet[nJetMax];   //[nJet]
+   Float_t         Jet_btagRobustParTAK4B[nJetMax];   //[nJet]
+   Float_t         Jet_btagRobustParTAK4CvB[nJetMax];   //[nJet]
+   Float_t         Jet_btagRobustParTAK4CvL[nJetMax];   //[nJet]
+   Float_t         Jet_btagRobustParTAK4QG[nJetMax];   //[nJet]
+   Float_t         Jet_chEmEF[nJetMax];   //[nJet]
+   Float_t         Jet_chHEF[nJetMax];   //[nJet]
+   Float_t         Jet_eta[nJetMax];   //[nJet]
+   Float_t         Jet_hfsigmaEtaEta[nJetMax];   //[nJet]
+   Float_t         Jet_hfsigmaPhiPhi[nJetMax];   //[nJet]
+   Float_t         Jet_mass[nJetMax];   //[nJet]
+   Float_t         Jet_muEF[nJetMax];   //[nJet]
+   Float_t         Jet_muonSubtrFactor[nJetMax];   //[nJet]
+   Float_t         Jet_neEmEF[nJetMax];   //[nJet]
+   Float_t         Jet_neHEF[nJetMax];   //[nJet]
+   Float_t         Jet_phi[nJetMax];   //[nJet]
+   Float_t         Jet_pt[nJetMax];   //[nJet]
+   Float_t         Jet_rawFactor[nJetMax];   //[nJet]
 				      
    Float_t         MET_MetUnclustEnUpDeltaX;
    Float_t         MET_MetUnclustEnUpDeltaY;
@@ -158,51 +158,51 @@ public :
    Float_t         MET_sumPtUnclustered;
 
    Int_t           nPhoton;
-   Char_t          Photon_seediEtaOriX[10];   //[nPhoton]
-   UChar_t         Photon_cutBased[10];   //[nPhoton]
-   Bool_t          Photon_electronVeto[10];   //[nPhoton]
-   Bool_t          Photon_hasConversionTracks[10];   //[nPhoton]
-   Bool_t          Photon_isScEtaEB[10];   //[nPhoton]
-   Bool_t          Photon_isScEtaEE[10];   //[nPhoton]
-   Bool_t          Photon_mvaID_WP80[10];   //[nPhoton]
-   Bool_t          Photon_mvaID_WP90[10];   //[nPhoton]
-   Bool_t          Photon_pixelSeed[10];   //[nPhoton]
-   UChar_t         Photon_seedGain[10];   //[nPhoton]
-   Short_t         Photon_electronIdx[10];   //[nPhoton]
-   Short_t         Photon_jetIdx[10];   //[nPhoton]
-   Int_t           Photon_seediPhiOriY[10];   //[nPhoton]
-   Int_t           Photon_vidNestedWPBitmap[10];   //[nPhoton]
-   Float_t         Photon_ecalPFClusterIso[10];   //[nPhoton]
-   Float_t         Photon_energyErr[10];   //[nPhoton]
-   Float_t         Photon_energyRaw[10];   //[nPhoton]
-   Float_t         Photon_esEffSigmaRR[10];   //[nPhoton]
-   Float_t         Photon_esEnergyOverRawE[10];   //[nPhoton]
-   Float_t         Photon_eta[10];   //[nPhoton]
-   Float_t         Photon_etaWidth[10];   //[nPhoton]
-   Float_t         Photon_haloTaggerMVAVal[10];   //[nPhoton]
-   Float_t         Photon_hcalPFClusterIso[10];   //[nPhoton]
-   Float_t         Photon_hoe[10];   //[nPhoton]
-   Float_t         Photon_hoe_PUcorr[10];   //[nPhoton]
-   Float_t         Photon_mvaID[10];   //[nPhoton]
-   Float_t         Photon_pfChargedIso[10];   //[nPhoton]
-   Float_t         Photon_pfChargedIsoPFPV[10];   //[nPhoton]
-   Float_t         Photon_pfChargedIsoWorstVtx[10];   //[nPhoton]
-   Float_t         Photon_pfPhoIso03[10];   //[nPhoton]
-   Float_t         Photon_pfRelIso03_all_quadratic[10];   //[nPhoton]
-   Float_t         Photon_pfRelIso03_chg_quadratic[10];   //[nPhoton]
-   Float_t         Photon_phi[10];   //[nPhoton]
-   Float_t         Photon_phiWidth[10];   //[nPhoton]
-   Float_t         Photon_pt[10];   //[nPhoton]
-   Float_t         Photon_r9[10];   //[nPhoton]
-   Float_t         Photon_s4[10];   //[nPhoton]
-   Float_t         Photon_sieie[10];   //[nPhoton]
-   Float_t         Photon_sieip[10];   //[nPhoton]
-   Float_t         Photon_sipip[10];   //[nPhoton]
-   Float_t         Photon_trkSumPtHollowConeDR03[10];   //[nPhoton]
-   Float_t         Photon_trkSumPtSolidConeDR04[10];   //[nPhoton]
-   Float_t         Photon_x_calo[10];   //[nPhoton]
-   Float_t         Photon_y_calo[10];   //[nPhoton]
-   Float_t         Photon_z_calo[10];   //[nPhoton]
+   Char_t          Photon_seediEtaOriX[nPhotonMax];   //[nPhoton]
+   UChar_t         Photon_cutBased[nPhotonMax];   //[nPhoton]
+   Bool_t          Photon_electronVeto[nPhotonMax];   //[nPhoton]
+   Bool_t          Photon_hasConversionTracks[nPhotonMax];   //[nPhoton]
+   Bool_t          Photon_isScEtaEB[nPhotonMax];   //[nPhoton]
+   Bool_t          Photon_isScEtaEE[nPhotonMax];   //[nPhoton]
+   Bool_t          Photon_mvaID_WP80[nPhotonMax];   //[nPhoton]
+   Bool_t          Photon_mvaID_WP90[nPhotonMax];   //[nPhoton]
+   Bool_t          Photon_pixelSeed[nPhotonMax];   //[nPhoton]
+   UChar_t         Photon_seedGain[nPhotonMax];   //[nPhoton]
+   Short_t         Photon_electronIdx[nPhotonMax];   //[nPhoton]
+   Short_t         Photon_jetIdx[nPhotonMax];   //[nPhoton]
+   Int_t           Photon_seediPhiOriY[nPhotonMax];   //[nPhoton]
+   Int_t           Photon_vidNestedWPBitmap[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_ecalPFClusterIso[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_energyErr[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_energyRaw[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_esEffSigmaRR[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_esEnergyOverRawE[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_eta[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_etaWidth[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_haloTaggerMVAVal[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_hcalPFClusterIso[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_hoe[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_hoe_PUcorr[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_mvaID[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_pfChargedIso[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_pfChargedIsoPFPV[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_pfChargedIsoWorstVtx[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_pfPhoIso03[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_pfRelIso03_all_quadratic[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_pfRelIso03_chg_quadratic[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_phi[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_phiWidth[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_pt[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_r9[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_s4[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_sieie[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_sieip[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_sipip[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_trkSumPtHollowConeDR03[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_trkSumPtSolidConeDR04[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_x_calo[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_y_calo[nPhotonMax];   //[nPhoton]
+   Float_t         Photon_z_calo[nPhotonMax];   //[nPhoton]
 					//
    Float_t         PuppiMET_phi;
    Float_t         PuppiMET_phiJERDown;
@@ -495,25 +495,6 @@ public :
    //Bool_t          HLT_AK8PFJetFwd450;
    //Bool_t          HLT_AK8PFJetFwd500;
    
-   //Bool_t          HLT_PFHT180;
-   //Bool_t          HLT_PFHT250;
-   //Bool_t          HLT_PFHT370;
-   //Bool_t          HLT_PFHT430;
-   //Bool_t          HLT_PFHT510;
-   //Bool_t          HLT_PFHT590;
-   //Bool_t          HLT_PFHT680;
-   //Bool_t          HLT_PFHT780;
-   //Bool_t          HLT_PFHT890;
-   //Bool_t          HLT_PFHT1050;
-   //Bool_t          HLT_PFHT500_PFMET100_PFMHT100_IDTight;
-   //Bool_t          HLT_PFHT500_PFMET110_PFMHT110_IDTight;
-   //Bool_t          HLT_PFHT700_PFMET85_PFMHT85_IDTight;
-   //Bool_t          HLT_PFHT800_PFMET75_PFMHT75_IDTight;
-   //Bool_t          HLT_PFMET120_PFMHT120_IDTight;
-   //Bool_t          HLT_PFMET130_PFMHT130_IDTight;
-   //Bool_t          HLT_PFMET140_PFMHT140_IDTight;
-   //Bool_t          HLT_PFMET120_PFMHT120_IDTight_PFHT60;
-   
 
    //TODO: continue to remove branches below this (of course only the ones that are not needed, keep photon stuff)
    
@@ -624,11 +605,6 @@ public :
    TBranch        *b_luminosityBlock;   //!
    TBranch        *b_event;   //!
    TBranch        *b_bunchCrossing;   //!
-   TBranch        *b_BeamSpot_type;   //!
-   TBranch        *b_BeamSpot_sigmaZ;   //!
-   TBranch        *b_BeamSpot_sigmaZError;   //!
-   TBranch        *b_BeamSpot_z;   //!
-   TBranch        *b_BeamSpot_zError;   //!
 					
    TBranch        *b_CaloMET_phi;   //!
    TBranch        *b_CaloMET_pt;   //!
@@ -659,9 +635,9 @@ public :
 						  
    TBranch        *b_nJet;   //!
    TBranch        *b_Jet_jetId;   //!
-   TBranch        *b_Jet_nConstituents;   //!
-   TBranch        *b_Jet_nElectrons;   //!
-   TBranch        *b_Jet_nMuons;   //!
+   //TBranch        *b_Jet_nConstituents;   //!
+   //TBranch        *b_Jet_nElectrons;   //!
+   //TBranch        *b_Jet_nMuons;   //!
    TBranch        *b_Jet_nSVs;   //!
    TBranch        *b_Jet_electronIdx1;   //!
    TBranch        *b_Jet_electronIdx2;   //!
@@ -761,15 +737,6 @@ public :
    TBranch        *b_Photon_y_calo;   //!
    TBranch        *b_Photon_z_calo;   //!
 				      
-   TBranch        *b_nPPSLocalTrack;   //!
-   TBranch        *b_PPSLocalTrack_multiRPProtonIdx;   //!
-   TBranch        *b_PPSLocalTrack_singleRPProtonIdx;   //!
-   TBranch        *b_PPSLocalTrack_decRPId;   //!
-   TBranch        *b_PPSLocalTrack_rpType;   //!
-   TBranch        *b_PPSLocalTrack_x;   //!
-   TBranch        *b_PPSLocalTrack_y;   //!
-   TBranch        *b_PPSLocalTrack_time;   //!
-   TBranch        *b_PPSLocalTrack_timeUnc;   //!
    TBranch        *b_PuppiMET_phi;   //!
    TBranch        *b_PuppiMET_phiJERDown;   //!
    TBranch        *b_PuppiMET_phiJERUp;   //!
@@ -911,8 +878,6 @@ public :
    TBranch        *b_L1_ZeroBias_copy_pRECO;   //!
    TBranch        *b_L1_UnprefireableEvent_pRECO;   //!
    TBranch        *b_HLTriggerFirstPath;   //!
-   TBranch        *b_HLT_EphemeralPhysics;   //!
-   TBranch        *b_HLT_EphemeralZeroBias;   //!
    TBranch        *b_HLT_EcalCalibration;   //!
    TBranch        *b_HLT_HcalCalibration;   //!
    TBranch        *b_HLT_HcalNZS;   //!
@@ -937,11 +902,7 @@ public :
    //TBranch        *b_HLT_DoublePhoton70;   //!
    //TBranch        *b_HLT_DoublePhoton85;   //!
    
-   TBranch        *b_HLT_UncorrectedJetE30_NoBPTX;   //!
-   TBranch        *b_HLT_UncorrectedJetE30_NoBPTX3BX;   //!
-   TBranch        *b_HLT_UncorrectedJetE60_NoBPTX3BX;   //!
-   TBranch        *b_HLT_UncorrectedJetE70_NoBPTX3BX;   //!
-							
+
    /*
    TBranch        *b_HLT_AK8PFJet40;   //!
    TBranch        *b_HLT_AK8PFJet60;   //!
@@ -988,35 +949,8 @@ public :
    TBranch        *b_HLT_AK8PFJetFwd400;   //!
    TBranch        *b_HLT_AK8PFJetFwd450;   //!
    TBranch        *b_HLT_AK8PFJetFwd500;   //!
-   TBranch        *b_HLT_PFHT180;   //!
-   TBranch        *b_HLT_PFHT250;   //!
-   TBranch        *b_HLT_PFHT370;   //!
-   TBranch        *b_HLT_PFHT430;   //!
-   TBranch        *b_HLT_PFHT510;   //!
-   TBranch        *b_HLT_PFHT590;   //!
-   TBranch        *b_HLT_PFHT680;   //!
-   TBranch        *b_HLT_PFHT780;   //!
-   TBranch        *b_HLT_PFHT890;   //!
-   TBranch        *b_HLT_PFHT1050;   //!
    */
 
-   TBranch        *b_HLT_PFHT500_PFMET100_PFMHT100_IDTight;   //!
-   TBranch        *b_HLT_PFHT500_PFMET110_PFMHT110_IDTight;   //!
-   TBranch        *b_HLT_PFHT700_PFMET85_PFMHT85_IDTight;   //!
-   TBranch        *b_HLT_PFHT800_PFMET75_PFMHT75_IDTight;   //!
-   TBranch        *b_HLT_PFMET120_PFMHT120_IDTight;   //!
-   TBranch        *b_HLT_PFMET130_PFMHT130_IDTight;   //!
-   TBranch        *b_HLT_PFMET140_PFMHT140_IDTight;   //!
-   TBranch        *b_HLT_PFMET120_PFMHT120_IDTight_PFHT60;   //!
-   TBranch        *b_HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60;   //!
-   TBranch        *b_HLT_PFMETTypeOne140_PFMHT140_IDTight;   //!
-   TBranch        *b_HLT_PFMETNoMu120_PFMHTNoMu120_IDTight;   //!
-   TBranch        *b_HLT_PFMETNoMu130_PFMHTNoMu130_IDTight;   //!
-   TBranch        *b_HLT_PFMETNoMu140_PFMHTNoMu140_IDTight;   //!
-   TBranch        *b_HLT_PFMETNoMu110_PFMHTNoMu110_IDTight_FilterHF;   //!
-   TBranch        *b_HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_FilterHF;   //!
-   TBranch        *b_HLT_PFMETNoMu130_PFMHTNoMu130_IDTight_FilterHF;   //!
-   TBranch        *b_HLT_PFMETNoMu140_PFMHTNoMu140_IDTight_FilterHF;   //!
    TBranch        *b_HLT_L1ETMHadSeeds;   //!
    TBranch        *b_HLT_CaloMHT90;   //!
    TBranch        *b_HLT_CaloMET90_NotCleaned;   //!
@@ -1065,14 +999,6 @@ public :
    TBranch        *b_HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass95;   //!
    TBranch        *b_HLT_Photon35_TwoProngs35;   //!
 						 
-   //TBranch        *b_HLT_PFHT330PT30_QuadPFJet_75_60_45_40;   //!
-   //TBranch        *b_HLT_PFHT400_SixPFJet32;   //!
-   //TBranch        *b_HLT_PFHT400_SixPFJet32_PNet2BTagMean0p50;   //!
-   //TBranch        *b_HLT_PFHT450_SixPFJet36;   //!
-   //TBranch        *b_HLT_PFHT450_SixPFJet36_PNetBTag0p35;   //!
-   //TBranch        *b_HLT_PFHT400_FivePFJet_100_100_60_30_30;   //!
-   //TBranch        *b_HLT_PFHT350;   //!
-				    
    TBranch        *b_HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT350;   //!
    TBranch        *b_HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT380;   //!
    TBranch        *b_HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT400;   //!
@@ -1249,11 +1175,6 @@ void PhotonJetAnalysis::Init(TTree *tree)
    fChain->SetBranchAddress("luminosityBlock", &luminosityBlock, &b_luminosityBlock);
    fChain->SetBranchAddress("event", &event, &b_event);
    fChain->SetBranchAddress("bunchCrossing", &bunchCrossing, &b_bunchCrossing);
-   fChain->SetBranchAddress("BeamSpot_type", &BeamSpot_type, &b_BeamSpot_type);
-   fChain->SetBranchAddress("BeamSpot_sigmaZ", &BeamSpot_sigmaZ, &b_BeamSpot_sigmaZ);
-   fChain->SetBranchAddress("BeamSpot_sigmaZError", &BeamSpot_sigmaZError, &b_BeamSpot_sigmaZError);
-   fChain->SetBranchAddress("BeamSpot_z", &BeamSpot_z, &b_BeamSpot_z);
-   fChain->SetBranchAddress("BeamSpot_zError", &BeamSpot_zError, &b_BeamSpot_zError);
 
    fChain->SetBranchAddress("CaloMET_phi", &CaloMET_phi, &b_CaloMET_phi);
    fChain->SetBranchAddress("CaloMET_pt", &CaloMET_pt, &b_CaloMET_pt);
@@ -1283,9 +1204,9 @@ void PhotonJetAnalysis::Init(TTree *tree)
 
    fChain->SetBranchAddress("nJet", &nJet, &b_nJet);
    fChain->SetBranchAddress("Jet_jetId", Jet_jetId, &b_Jet_jetId);
-   fChain->SetBranchAddress("Jet_nConstituents", Jet_nConstituents, &b_Jet_nConstituents);
-   fChain->SetBranchAddress("Jet_nElectrons", Jet_nElectrons, &b_Jet_nElectrons);
-   fChain->SetBranchAddress("Jet_nMuons", Jet_nMuons, &b_Jet_nMuons);
+   //fChain->SetBranchAddress("Jet_nConstituents", Jet_nConstituents, &b_Jet_nConstituents);
+   //fChain->SetBranchAddress("Jet_nElectrons", Jet_nElectrons, &b_Jet_nElectrons);
+   //fChain->SetBranchAddress("Jet_nMuons", Jet_nMuons, &b_Jet_nMuons);
    fChain->SetBranchAddress("Jet_nSVs", Jet_nSVs, &b_Jet_nSVs);
    fChain->SetBranchAddress("Jet_electronIdx1", Jet_electronIdx1, &b_Jet_electronIdx1);
    fChain->SetBranchAddress("Jet_electronIdx2", Jet_electronIdx2, &b_Jet_electronIdx2);
@@ -1384,15 +1305,6 @@ void PhotonJetAnalysis::Init(TTree *tree)
    fChain->SetBranchAddress("Photon_y_calo", Photon_y_calo, &b_Photon_y_calo);
    fChain->SetBranchAddress("Photon_z_calo", Photon_z_calo, &b_Photon_z_calo);
 
-   fChain->SetBranchAddress("nPPSLocalTrack", &nPPSLocalTrack, &b_nPPSLocalTrack);
-   fChain->SetBranchAddress("PPSLocalTrack_multiRPProtonIdx", &PPSLocalTrack_multiRPProtonIdx, &b_PPSLocalTrack_multiRPProtonIdx);
-   fChain->SetBranchAddress("PPSLocalTrack_singleRPProtonIdx", &PPSLocalTrack_singleRPProtonIdx, &b_PPSLocalTrack_singleRPProtonIdx);
-   fChain->SetBranchAddress("PPSLocalTrack_decRPId", &PPSLocalTrack_decRPId, &b_PPSLocalTrack_decRPId);
-   fChain->SetBranchAddress("PPSLocalTrack_rpType", &PPSLocalTrack_rpType, &b_PPSLocalTrack_rpType);
-   fChain->SetBranchAddress("PPSLocalTrack_x", &PPSLocalTrack_x, &b_PPSLocalTrack_x);
-   fChain->SetBranchAddress("PPSLocalTrack_y", &PPSLocalTrack_y, &b_PPSLocalTrack_y);
-   fChain->SetBranchAddress("PPSLocalTrack_time", &PPSLocalTrack_time, &b_PPSLocalTrack_time);
-   fChain->SetBranchAddress("PPSLocalTrack_timeUnc", &PPSLocalTrack_timeUnc, &b_PPSLocalTrack_timeUnc);
    fChain->SetBranchAddress("PuppiMET_phi", &PuppiMET_phi, &b_PuppiMET_phi);
    fChain->SetBranchAddress("PuppiMET_phiJERDown", &PuppiMET_phiJERDown, &b_PuppiMET_phiJERDown);
    fChain->SetBranchAddress("PuppiMET_phiJERUp", &PuppiMET_phiJERUp, &b_PuppiMET_phiJERUp);
@@ -1543,8 +1455,6 @@ void PhotonJetAnalysis::Init(TTree *tree)
    //fChain->SetBranchAddress("L1_UnprefireableEvent_pRECO", &L1_UnprefireableEvent_pRECO, &b_L1_UnprefireableEvent_pRECO);
    
    fChain->SetBranchAddress("HLTriggerFirstPath", &HLTriggerFirstPath, &b_HLTriggerFirstPath);
-   fChain->SetBranchAddress("HLT_EphemeralPhysics", &HLT_EphemeralPhysics, &b_HLT_EphemeralPhysics);
-   fChain->SetBranchAddress("HLT_EphemeralZeroBias", &HLT_EphemeralZeroBias, &b_HLT_EphemeralZeroBias);
    fChain->SetBranchAddress("HLT_EcalCalibration", &HLT_EcalCalibration, &b_HLT_EcalCalibration);
    fChain->SetBranchAddress("HLT_HcalCalibration", &HLT_HcalCalibration, &b_HLT_HcalCalibration);
    fChain->SetBranchAddress("HLT_HcalNZS", &HLT_HcalNZS, &b_HLT_HcalNZS);
@@ -1569,12 +1479,6 @@ void PhotonJetAnalysis::Init(TTree *tree)
    //fChain->SetBranchAddress("HLT_DoublePhoton70", &HLT_DoublePhoton70, &b_HLT_DoublePhoton70);
    //fChain->SetBranchAddress("HLT_DoublePhoton85", &HLT_DoublePhoton85, &b_HLT_DoublePhoton85);
  
-
-   fChain->SetBranchAddress("HLT_UncorrectedJetE30_NoBPTX", &HLT_UncorrectedJetE30_NoBPTX, &b_HLT_UncorrectedJetE30_NoBPTX);
-   fChain->SetBranchAddress("HLT_UncorrectedJetE30_NoBPTX3BX", &HLT_UncorrectedJetE30_NoBPTX3BX, &b_HLT_UncorrectedJetE30_NoBPTX3BX);
-   fChain->SetBranchAddress("HLT_UncorrectedJetE60_NoBPTX3BX", &HLT_UncorrectedJetE60_NoBPTX3BX, &b_HLT_UncorrectedJetE60_NoBPTX3BX);
-   fChain->SetBranchAddress("HLT_UncorrectedJetE70_NoBPTX3BX", &HLT_UncorrectedJetE70_NoBPTX3BX, &b_HLT_UncorrectedJetE70_NoBPTX3BX);
-
 
 
    /*
@@ -1623,36 +1527,8 @@ void PhotonJetAnalysis::Init(TTree *tree)
    fChain->SetBranchAddress("HLT_AK8PFJetFwd400", &HLT_AK8PFJetFwd400, &b_HLT_AK8PFJetFwd400);
    fChain->SetBranchAddress("HLT_AK8PFJetFwd450", &HLT_AK8PFJetFwd450, &b_HLT_AK8PFJetFwd450);
    fChain->SetBranchAddress("HLT_AK8PFJetFwd500", &HLT_AK8PFJetFwd500, &b_HLT_AK8PFJetFwd500);
-   fChain->SetBranchAddress("HLT_PFHT180", &HLT_PFHT180, &b_HLT_PFHT180);
-   fChain->SetBranchAddress("HLT_PFHT250", &HLT_PFHT250, &b_HLT_PFHT250);
-   fChain->SetBranchAddress("HLT_PFHT370", &HLT_PFHT370, &b_HLT_PFHT370);
-   fChain->SetBranchAddress("HLT_PFHT430", &HLT_PFHT430, &b_HLT_PFHT430);
-   fChain->SetBranchAddress("HLT_PFHT510", &HLT_PFHT510, &b_HLT_PFHT510);
-   fChain->SetBranchAddress("HLT_PFHT590", &HLT_PFHT590, &b_HLT_PFHT590);
-   fChain->SetBranchAddress("HLT_PFHT680", &HLT_PFHT680, &b_HLT_PFHT680);
-   fChain->SetBranchAddress("HLT_PFHT780", &HLT_PFHT780, &b_HLT_PFHT780);
-   fChain->SetBranchAddress("HLT_PFHT890", &HLT_PFHT890, &b_HLT_PFHT890);
-   fChain->SetBranchAddress("HLT_PFHT1050", &HLT_PFHT1050, &b_HLT_PFHT1050);
    */
 
-   fChain->SetBranchAddress("HLT_PFHT500_PFMET100_PFMHT100_IDTight", &HLT_PFHT500_PFMET100_PFMHT100_IDTight, &b_HLT_PFHT500_PFMET100_PFMHT100_IDTight);
-   fChain->SetBranchAddress("HLT_PFHT500_PFMET110_PFMHT110_IDTight", &HLT_PFHT500_PFMET110_PFMHT110_IDTight, &b_HLT_PFHT500_PFMET110_PFMHT110_IDTight);
-   fChain->SetBranchAddress("HLT_PFHT700_PFMET85_PFMHT85_IDTight", &HLT_PFHT700_PFMET85_PFMHT85_IDTight, &b_HLT_PFHT700_PFMET85_PFMHT85_IDTight);
-   fChain->SetBranchAddress("HLT_PFHT800_PFMET75_PFMHT75_IDTight", &HLT_PFHT800_PFMET75_PFMHT75_IDTight, &b_HLT_PFHT800_PFMET75_PFMHT75_IDTight);
-   fChain->SetBranchAddress("HLT_PFMET120_PFMHT120_IDTight", &HLT_PFMET120_PFMHT120_IDTight, &b_HLT_PFMET120_PFMHT120_IDTight);
-   fChain->SetBranchAddress("HLT_PFMET130_PFMHT130_IDTight", &HLT_PFMET130_PFMHT130_IDTight, &b_HLT_PFMET130_PFMHT130_IDTight);
-   fChain->SetBranchAddress("HLT_PFMET140_PFMHT140_IDTight", &HLT_PFMET140_PFMHT140_IDTight, &b_HLT_PFMET140_PFMHT140_IDTight);
-   fChain->SetBranchAddress("HLT_PFMET120_PFMHT120_IDTight_PFHT60", &HLT_PFMET120_PFMHT120_IDTight_PFHT60, &b_HLT_PFMET120_PFMHT120_IDTight_PFHT60);
-   fChain->SetBranchAddress("HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60", &HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60, &b_HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_PFHT60);
-   fChain->SetBranchAddress("HLT_PFMETTypeOne140_PFMHT140_IDTight", &HLT_PFMETTypeOne140_PFMHT140_IDTight, &b_HLT_PFMETTypeOne140_PFMHT140_IDTight);
-   fChain->SetBranchAddress("HLT_PFMETNoMu120_PFMHTNoMu120_IDTight", &HLT_PFMETNoMu120_PFMHTNoMu120_IDTight, &b_HLT_PFMETNoMu120_PFMHTNoMu120_IDTight);
-   fChain->SetBranchAddress("HLT_PFMETNoMu130_PFMHTNoMu130_IDTight", &HLT_PFMETNoMu130_PFMHTNoMu130_IDTight, &b_HLT_PFMETNoMu130_PFMHTNoMu130_IDTight);
-   fChain->SetBranchAddress("HLT_PFMETNoMu140_PFMHTNoMu140_IDTight", &HLT_PFMETNoMu140_PFMHTNoMu140_IDTight, &b_HLT_PFMETNoMu140_PFMHTNoMu140_IDTight);
-   fChain->SetBranchAddress("HLT_PFMETNoMu110_PFMHTNoMu110_IDTight_FilterHF", &HLT_PFMETNoMu110_PFMHTNoMu110_IDTight_FilterHF, &b_HLT_PFMETNoMu110_PFMHTNoMu110_IDTight_FilterHF);
-   fChain->SetBranchAddress("HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_FilterHF", &HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_FilterHF, &b_HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_FilterHF);
-   fChain->SetBranchAddress("HLT_PFMETNoMu130_PFMHTNoMu130_IDTight_FilterHF", &HLT_PFMETNoMu130_PFMHTNoMu130_IDTight_FilterHF, &b_HLT_PFMETNoMu130_PFMHTNoMu130_IDTight_FilterHF);
-   fChain->SetBranchAddress("HLT_PFMETNoMu140_PFMHTNoMu140_IDTight_FilterHF", &HLT_PFMETNoMu140_PFMHTNoMu140_IDTight_FilterHF, &b_HLT_PFMETNoMu140_PFMHTNoMu140_IDTight_FilterHF);
-   fChain->SetBranchAddress("HLT_L1ETMHadSeeds", &HLT_L1ETMHadSeeds, &b_HLT_L1ETMHadSeeds);
    fChain->SetBranchAddress("HLT_CaloMHT90", &HLT_CaloMHT90, &b_HLT_CaloMHT90);
    fChain->SetBranchAddress("HLT_CaloMET90_NotCleaned", &HLT_CaloMET90_NotCleaned, &b_HLT_CaloMET90_NotCleaned);
    fChain->SetBranchAddress("HLT_CaloMET350_NotCleaned", &HLT_CaloMET350_NotCleaned, &b_HLT_CaloMET350_NotCleaned);
@@ -1702,14 +1578,6 @@ void PhotonJetAnalysis::Init(TTree *tree)
    fChain->SetBranchAddress("HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass95", &HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass95, &b_HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass95);
    fChain->SetBranchAddress("HLT_Photon35_TwoProngs35", &HLT_Photon35_TwoProngs35, &b_HLT_Photon35_TwoProngs35);
 
-
-   //fChain->SetBranchAddress("HLT_PFHT330PT30_QuadPFJet_75_60_45_40", &HLT_PFHT330PT30_QuadPFJet_75_60_45_40, &b_HLT_PFHT330PT30_QuadPFJet_75_60_45_40);
-   //fChain->SetBranchAddress("HLT_PFHT400_SixPFJet32", &HLT_PFHT400_SixPFJet32, &b_HLT_PFHT400_SixPFJet32);
-   //fChain->SetBranchAddress("HLT_PFHT400_SixPFJet32_PNet2BTagMean0p50", &HLT_PFHT400_SixPFJet32_PNet2BTagMean0p50, &b_HLT_PFHT400_SixPFJet32_PNet2BTagMean0p50);
-   //fChain->SetBranchAddress("HLT_PFHT450_SixPFJet36", &HLT_PFHT450_SixPFJet36, &b_HLT_PFHT450_SixPFJet36);
-   //fChain->SetBranchAddress("HLT_PFHT450_SixPFJet36_PNetBTag0p35", &HLT_PFHT450_SixPFJet36_PNetBTag0p35, &b_HLT_PFHT450_SixPFJet36_PNetBTag0p35);
-   //fChain->SetBranchAddress("HLT_PFHT400_FivePFJet_100_100_60_30_30", &HLT_PFHT400_FivePFJet_100_100_60_30_30, &b_HLT_PFHT400_FivePFJet_100_100_60_30_30);
-   //fChain->SetBranchAddress("HLT_PFHT350", &HLT_PFHT350, &b_HLT_PFHT350);
 
    fChain->SetBranchAddress("HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT350", &HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT350, &b_HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT350);
    fChain->SetBranchAddress("HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT380", &HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT380, &b_HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT380);
