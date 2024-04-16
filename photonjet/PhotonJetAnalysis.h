@@ -101,23 +101,6 @@ public :
    Float_t         FsrPhoton_pt[3];   //[nFsrPhoton]
    Float_t         FsrPhoton_relIso03[3];   //[nFsrPhoton]
  
-   Int_t           nIsoTrack;
-   Bool_t          IsoTrack_isHighPurityTrack[7];   //[nIsoTrack]
-   Bool_t          IsoTrack_isPFcand[7];   //[nIsoTrack]
-   Bool_t          IsoTrack_isFromLostTrack[7];   //[nIsoTrack]
-   Short_t         IsoTrack_charge[7];   //[nIsoTrack]
-   Short_t         IsoTrack_fromPV[7];   //[nIsoTrack]
-   Int_t           IsoTrack_pdgId[7];   //[nIsoTrack]
-   Float_t         IsoTrack_dxy[7];   //[nIsoTrack]
-   Float_t         IsoTrack_dz[7];   //[nIsoTrack]
-   Float_t         IsoTrack_eta[7];   //[nIsoTrack]
-   Float_t         IsoTrack_pfRelIso03_all[7];   //[nIsoTrack]
-   Float_t         IsoTrack_pfRelIso03_chg[7];   //[nIsoTrack]
-   Float_t         IsoTrack_phi[7];   //[nIsoTrack]
-   Float_t         IsoTrack_pt[7];   //[nIsoTrack]
-   Float_t         IsoTrack_miniPFRelIso_all[7];   //[nIsoTrack]
-   Float_t         IsoTrack_miniPFRelIso_chg[7];   //[nIsoTrack]
-						   //
    Int_t           nJet;
    UChar_t         Jet_jetId[nJetMax];   //[nJet], size used to be 15
    UChar_t         Jet_nConstituents[nJetMax];   //[nJet]
@@ -673,22 +656,6 @@ public :
    TBranch        *b_FsrPhoton_pt;   //!
    TBranch        *b_FsrPhoton_relIso03;   //!
 					   
-   TBranch        *b_nIsoTrack;   //!
-   TBranch        *b_IsoTrack_isHighPurityTrack;   //!
-   TBranch        *b_IsoTrack_isPFcand;   //!
-   TBranch        *b_IsoTrack_isFromLostTrack;   //!
-   TBranch        *b_IsoTrack_charge;   //!
-   TBranch        *b_IsoTrack_fromPV;   //!
-   TBranch        *b_IsoTrack_pdgId;   //!
-   TBranch        *b_IsoTrack_dxy;   //!
-   TBranch        *b_IsoTrack_dz;   //!
-   TBranch        *b_IsoTrack_eta;   //!
-   TBranch        *b_IsoTrack_pfRelIso03_all;   //!
-   TBranch        *b_IsoTrack_pfRelIso03_chg;   //!
-   TBranch        *b_IsoTrack_phi;   //!
-   TBranch        *b_IsoTrack_pt;   //!
-   TBranch        *b_IsoTrack_miniPFRelIso_all;   //!
-   TBranch        *b_IsoTrack_miniPFRelIso_chg;   //!
 						  
    TBranch        *b_nJet;   //!
    TBranch        *b_Jet_jetId;   //!
@@ -1312,23 +1279,6 @@ void PhotonJetAnalysis::Init(TTree *tree)
    fChain->SetBranchAddress("FsrPhoton_phi", FsrPhoton_phi, &b_FsrPhoton_phi);
    fChain->SetBranchAddress("FsrPhoton_pt", FsrPhoton_pt, &b_FsrPhoton_pt);
    fChain->SetBranchAddress("FsrPhoton_relIso03", FsrPhoton_relIso03, &b_FsrPhoton_relIso03);
-
-   fChain->SetBranchAddress("nIsoTrack", &nIsoTrack, &b_nIsoTrack);
-   fChain->SetBranchAddress("IsoTrack_isHighPurityTrack", IsoTrack_isHighPurityTrack, &b_IsoTrack_isHighPurityTrack);
-   fChain->SetBranchAddress("IsoTrack_isPFcand", IsoTrack_isPFcand, &b_IsoTrack_isPFcand);
-   fChain->SetBranchAddress("IsoTrack_isFromLostTrack", IsoTrack_isFromLostTrack, &b_IsoTrack_isFromLostTrack);
-   fChain->SetBranchAddress("IsoTrack_charge", IsoTrack_charge, &b_IsoTrack_charge);
-   fChain->SetBranchAddress("IsoTrack_fromPV", IsoTrack_fromPV, &b_IsoTrack_fromPV);
-   fChain->SetBranchAddress("IsoTrack_pdgId", IsoTrack_pdgId, &b_IsoTrack_pdgId);
-   fChain->SetBranchAddress("IsoTrack_dxy", IsoTrack_dxy, &b_IsoTrack_dxy);
-   fChain->SetBranchAddress("IsoTrack_dz", IsoTrack_dz, &b_IsoTrack_dz);
-   fChain->SetBranchAddress("IsoTrack_eta", IsoTrack_eta, &b_IsoTrack_eta);
-   fChain->SetBranchAddress("IsoTrack_pfRelIso03_all", IsoTrack_pfRelIso03_all, &b_IsoTrack_pfRelIso03_all);
-   fChain->SetBranchAddress("IsoTrack_pfRelIso03_chg", IsoTrack_pfRelIso03_chg, &b_IsoTrack_pfRelIso03_chg);
-   fChain->SetBranchAddress("IsoTrack_phi", IsoTrack_phi, &b_IsoTrack_phi);
-   fChain->SetBranchAddress("IsoTrack_pt", IsoTrack_pt, &b_IsoTrack_pt);
-   fChain->SetBranchAddress("IsoTrack_miniPFRelIso_all", IsoTrack_miniPFRelIso_all, &b_IsoTrack_miniPFRelIso_all);
-   fChain->SetBranchAddress("IsoTrack_miniPFRelIso_chg", IsoTrack_miniPFRelIso_chg, &b_IsoTrack_miniPFRelIso_chg);
 
    fChain->SetBranchAddress("nJet", &nJet, &b_nJet);
    fChain->SetBranchAddress("Jet_jetId", Jet_jetId, &b_Jet_jetId);
