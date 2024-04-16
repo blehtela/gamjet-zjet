@@ -382,11 +382,6 @@ public :
 
    //comment these out for now, but could probably even remove from photon analysis! (TO DO)
    //Bool_t          HLT_PFJet40_GPUvsCPU;
-   //Bool_t          HLT_AK8PFJet400_MassSD30;
-   //Bool_t          HLT_AK8PFJet420_MassSD30;
-   //Bool_t          HLT_AK8PFJet450_MassSD30;
-   //Bool_t          HLT_AK8PFJet470_MassSD30;
-   //Bool_t          HLT_AK8PFJet500_MassSD30;
    //Bool_t          HLT_CaloJet500_NoJetID;
    //Bool_t          HLT_CaloJet550_NoJetID;
    //Bool_t          HLT_DoubleEle25_CaloIdL_MW;
@@ -449,17 +444,6 @@ public :
    //Bool_t          HLT_CascadeMu100;
    //Bool_t          HLT_HighPtTkMu100;
    
-   //Bool_t          HLT_AK8PFJet40;
-   //Bool_t          HLT_AK8PFJet60;
-   //Bool_t          HLT_AK8PFJet80;
-   //Bool_t          HLT_AK8PFJet140;
-   //Bool_t          HLT_AK8PFJet200;
-   //Bool_t          HLT_AK8PFJet260;
-   //Bool_t          HLT_AK8PFJet320;
-   //Bool_t          HLT_AK8PFJet400;
-   //Bool_t          HLT_AK8PFJet450;
-   //Bool_t          HLT_AK8PFJet500;
-   //Bool_t          HLT_AK8PFJet550;
    //Bool_t          HLT_PFJet40;
    //Bool_t          HLT_PFJet60;
    //Bool_t          HLT_PFJet80;
@@ -482,33 +466,10 @@ public :
    //Bool_t          HLT_PFJetFwd400;
    //Bool_t          HLT_PFJetFwd450;
    //Bool_t          HLT_PFJetFwd500;
-   //Bool_t          HLT_AK8PFJetFwd15;
-   //Bool_t          HLT_AK8PFJetFwd25;
-   //Bool_t          HLT_AK8PFJetFwd40;
-   //Bool_t          HLT_AK8PFJetFwd60;
-   //Bool_t          HLT_AK8PFJetFwd80;
-   //Bool_t          HLT_AK8PFJetFwd140;
-   //Bool_t          HLT_AK8PFJetFwd200;
-   //Bool_t          HLT_AK8PFJetFwd260;
-   //Bool_t          HLT_AK8PFJetFwd320;
-   //Bool_t          HLT_AK8PFJetFwd400;
-   //Bool_t          HLT_AK8PFJetFwd450;
-   //Bool_t          HLT_AK8PFJetFwd500;
-   
+  
 
    //TODO: continue to remove branches below this (of course only the ones that are not needed, keep photon stuff)
    
-   //Bool_t          HLT_L1ETMHadSeeds;
-   //Bool_t          HLT_CaloMHT90;
-   //Bool_t          HLT_CaloMET90_NotCleaned;
-   //Bool_t          HLT_CaloMET350_NotCleaned;
-   //Bool_t          HLT_PFMET200_NotCleaned;
-   //Bool_t          HLT_PFMET250_NotCleaned;
-   //Bool_t          HLT_PFMET300_NotCleaned;
-   //Bool_t          HLT_PFMET200_BeamHaloCleaned;
-   //Bool_t          HLT_PFMETTypeOne200_BeamHaloCleaned;
-   //Bool_t          HLT_MET105_IsoTrk50;
-   //Bool_t          HLT_MET120_IsoTrk50;
 
    Bool_t          HLT_Photon300_NoHE;
 
@@ -556,21 +517,6 @@ public :
    Bool_t          HLT_Diphoton30_18_R9IdL_AND_HE_AND_IsoCaloId;
    Bool_t          HLT_Diphoton30_18_R9IdL_AND_HE_AND_IsoCaloId_Mass55;
 
-
-   //Bool_t          HLT_HT350;
-   //Bool_t          HLT_HT425;
-   //Bool_t          HLT_CaloMET60_DTCluster50;
-   //Bool_t          HLT_CaloMET60_DTClusterNoMB1S50;
-   //Bool_t          HLT_L1MET_DTCluster50;
-   //Bool_t          HLT_L1MET_DTClusterNoMB1S50;
-   //Bool_t          HLT_CscCluster_Loose;
-   //Bool_t          HLT_CscCluster_Medium;
-   //Bool_t          HLT_CscCluster_Tight;
-   //Bool_t          HLT_DoubleCscCluster75;
-   //Bool_t          HLT_DoubleCscCluster100;
-   //Bool_t          HLT_L1CSCShower_DTCluster50;
-   //Bool_t          HLT_L1CSCShower_DTCluster75;
-   //Bool_t          HLT_PFMET105_IsoTrk50;
 
    /*
    Bool_t          HLT_DiPhoton10Time1ns;
@@ -904,17 +850,6 @@ public :
    
 
    /*
-   TBranch        *b_HLT_AK8PFJet40;   //!
-   TBranch        *b_HLT_AK8PFJet60;   //!
-   TBranch        *b_HLT_AK8PFJet80;   //!
-   TBranch        *b_HLT_AK8PFJet140;   //!
-   TBranch        *b_HLT_AK8PFJet200;   //!
-   TBranch        *b_HLT_AK8PFJet260;   //!
-   TBranch        *b_HLT_AK8PFJet320;   //!
-   TBranch        *b_HLT_AK8PFJet400;   //!
-   TBranch        *b_HLT_AK8PFJet450;   //!
-   TBranch        *b_HLT_AK8PFJet500;   //!
-   TBranch        *b_HLT_AK8PFJet550;   //!
    TBranch        *b_HLT_PFJet40;   //!
    TBranch        *b_HLT_PFJet60;   //!
    TBranch        *b_HLT_PFJet80;   //!
@@ -937,39 +872,9 @@ public :
    TBranch        *b_HLT_PFJetFwd400;   //!
    TBranch        *b_HLT_PFJetFwd450;   //!
    TBranch        *b_HLT_PFJetFwd500;   //!
-   TBranch        *b_HLT_AK8PFJetFwd15;   //!
-   TBranch        *b_HLT_AK8PFJetFwd25;   //!
-   TBranch        *b_HLT_AK8PFJetFwd40;   //!
-   TBranch        *b_HLT_AK8PFJetFwd60;   //!
-   TBranch        *b_HLT_AK8PFJetFwd80;   //!
-   TBranch        *b_HLT_AK8PFJetFwd140;   //!
-   TBranch        *b_HLT_AK8PFJetFwd200;   //!
-   TBranch        *b_HLT_AK8PFJetFwd260;   //!
-   TBranch        *b_HLT_AK8PFJetFwd320;   //!
-   TBranch        *b_HLT_AK8PFJetFwd400;   //!
-   TBranch        *b_HLT_AK8PFJetFwd450;   //!
-   TBranch        *b_HLT_AK8PFJetFwd500;   //!
-   */
+  */
 
-   TBranch        *b_HLT_L1ETMHadSeeds;   //!
-   TBranch        *b_HLT_CaloMHT90;   //!
-   TBranch        *b_HLT_CaloMET90_NotCleaned;   //!
-   TBranch        *b_HLT_CaloMET350_NotCleaned;   //!
-   TBranch        *b_HLT_PFMET200_NotCleaned;   //!
-   TBranch        *b_HLT_PFMET250_NotCleaned;   //!
-   TBranch        *b_HLT_PFMET300_NotCleaned;   //!
-   TBranch        *b_HLT_PFMET200_BeamHaloCleaned;   //!
-   TBranch        *b_HLT_PFMETTypeOne200_BeamHaloCleaned;   //!
-   TBranch        *b_HLT_MET105_IsoTrk50;   //!
-   TBranch        *b_HLT_MET120_IsoTrk50;   //!
-					       //
-   TBranch        *b_HLT_DoublePFJets40_PFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_DoublePFJets100_PFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_DoublePFJets200_PFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_DoublePFJets350_PFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_DoublePFJets116MaxDeta1p6_DoublePFBTagDeepJet_p71;   //!
-   TBranch        *b_HLT_DoublePFJets128MaxDeta1p6_DoublePFBTagDeepJet_p71;   //!
-									      
+								      
    TBranch        *b_HLT_Photon300_NoHE;   //!
 
    TBranch        *b_HLT_Photon33;   //!
@@ -1014,44 +919,7 @@ public :
    TBranch        *b_HLT_Diphoton30_18_R9IdL_AND_HE_AND_IsoCaloId;   //!
    TBranch        *b_HLT_Diphoton30_18_R9IdL_AND_HE_AND_IsoCaloId_Mass55;   //!
 									    
-   TBranch        *b_HLT_AK8PFJet220_SoftDropMass40;   //!
-   TBranch        *b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p50;   //!
-   TBranch        *b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p53;   //!
-   TBranch        *b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p55;   //!
-   TBranch        *b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p60;   //!
-   TBranch        *b_HLT_AK8PFJet230_SoftDropMass40;   //!
-   TBranch        *b_HLT_AK8PFJet230_SoftDropMass40_PNetBB0p06;   //!
-   TBranch        *b_HLT_AK8PFJet230_SoftDropMass40_PNetBB0p10;   //!
-   TBranch        *b_HLT_AK8PFJet230_SoftDropMass40_PNetTauTau0p03;   //!
-   TBranch        *b_HLT_AK8PFJet230_SoftDropMass40_PNetTauTau0p05;   //!
-   TBranch        *b_HLT_AK8PFJet250_SoftDropMass40_PNetBB0p06;   //!
-   TBranch        *b_HLT_AK8PFJet250_SoftDropMass40_PNetBB0p10;   //!
-   TBranch        *b_HLT_AK8PFJet250_SoftDropMass40_PNetTauTau0p03;   //!
-   TBranch        *b_HLT_AK8PFJet250_SoftDropMass40_PNetTauTau0p05;   //!
-   TBranch        *b_HLT_AK8PFJet275_SoftDropMass40_PNetBB0p06;   //!
-   TBranch        *b_HLT_AK8PFJet275_SoftDropMass40_PNetBB0p10;   //!
-   TBranch        *b_HLT_AK8PFJet275_SoftDropMass40_PNetTauTau0p03;   //!
-   TBranch        *b_HLT_AK8PFJet275_SoftDropMass40_PNetTauTau0p05;   //!
-   TBranch        *b_HLT_AK8PFJet425_SoftDropMass40;   //!
-   TBranch        *b_HLT_AK8PFJet450_SoftDropMass40;   //!
-						       //
-   //TBranch        *b_HLT_HT350;   //!
-   //TBranch        *b_HLT_HT425;   //!
-   //TBranch        *b_HLT_CaloMET60_DTCluster50;   //!
-   //TBranch        *b_HLT_CaloMET60_DTClusterNoMB1S50;   //!
-   //TBranch        *b_HLT_L1MET_DTCluster50;   //!
-   //TBranch        *b_HLT_L1MET_DTClusterNoMB1S50;   //!
-   TBranch        *b_HLT_CscCluster_Loose;   //!
-   TBranch        *b_HLT_CscCluster_Medium;   //!
-   TBranch        *b_HLT_CscCluster_Tight;   //!
-   TBranch        *b_HLT_DoubleCscCluster75;   //!
-   TBranch        *b_HLT_DoubleCscCluster100;   //!
-   TBranch        *b_HLT_L1CSCShower_DTCluster50;   //!
-   TBranch        *b_HLT_L1CSCShower_DTCluster75;   //!
-   TBranch        *b_HLT_PFMET105_IsoTrk50;   //!
-   TBranch        *b_HLT_L1SingleLLPJet;   //!
-
-										      
+						       
    TBranch        *b_HLT_DiPhoton10Time1ns;   //!
    TBranch        *b_HLT_DiPhoton10Time1p2ns;   //!
    TBranch        *b_HLT_DiPhoton10Time1p4ns;   //!
@@ -1482,17 +1350,6 @@ void PhotonJetAnalysis::Init(TTree *tree)
 
 
    /*
-   fChain->SetBranchAddress("HLT_AK8PFJet40", &HLT_AK8PFJet40, &b_HLT_AK8PFJet40);
-   fChain->SetBranchAddress("HLT_AK8PFJet60", &HLT_AK8PFJet60, &b_HLT_AK8PFJet60);
-   fChain->SetBranchAddress("HLT_AK8PFJet80", &HLT_AK8PFJet80, &b_HLT_AK8PFJet80);
-   fChain->SetBranchAddress("HLT_AK8PFJet140", &HLT_AK8PFJet140, &b_HLT_AK8PFJet140);
-   fChain->SetBranchAddress("HLT_AK8PFJet200", &HLT_AK8PFJet200, &b_HLT_AK8PFJet200);
-   fChain->SetBranchAddress("HLT_AK8PFJet260", &HLT_AK8PFJet260, &b_HLT_AK8PFJet260);
-   fChain->SetBranchAddress("HLT_AK8PFJet320", &HLT_AK8PFJet320, &b_HLT_AK8PFJet320);
-   fChain->SetBranchAddress("HLT_AK8PFJet400", &HLT_AK8PFJet400, &b_HLT_AK8PFJet400);
-   fChain->SetBranchAddress("HLT_AK8PFJet450", &HLT_AK8PFJet450, &b_HLT_AK8PFJet450);
-   fChain->SetBranchAddress("HLT_AK8PFJet500", &HLT_AK8PFJet500, &b_HLT_AK8PFJet500);
-   fChain->SetBranchAddress("HLT_AK8PFJet550", &HLT_AK8PFJet550, &b_HLT_AK8PFJet550);
    fChain->SetBranchAddress("HLT_PFJet40", &HLT_PFJet40, &b_HLT_PFJet40);
    fChain->SetBranchAddress("HLT_PFJet60", &HLT_PFJet60, &b_HLT_PFJet60);
    fChain->SetBranchAddress("HLT_PFJet80", &HLT_PFJet80, &b_HLT_PFJet80);
@@ -1515,37 +1372,7 @@ void PhotonJetAnalysis::Init(TTree *tree)
    fChain->SetBranchAddress("HLT_PFJetFwd400", &HLT_PFJetFwd400, &b_HLT_PFJetFwd400);
    fChain->SetBranchAddress("HLT_PFJetFwd450", &HLT_PFJetFwd450, &b_HLT_PFJetFwd450);
    fChain->SetBranchAddress("HLT_PFJetFwd500", &HLT_PFJetFwd500, &b_HLT_PFJetFwd500);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd15", &HLT_AK8PFJetFwd15, &b_HLT_AK8PFJetFwd15);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd25", &HLT_AK8PFJetFwd25, &b_HLT_AK8PFJetFwd25);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd40", &HLT_AK8PFJetFwd40, &b_HLT_AK8PFJetFwd40);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd60", &HLT_AK8PFJetFwd60, &b_HLT_AK8PFJetFwd60);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd80", &HLT_AK8PFJetFwd80, &b_HLT_AK8PFJetFwd80);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd140", &HLT_AK8PFJetFwd140, &b_HLT_AK8PFJetFwd140);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd200", &HLT_AK8PFJetFwd200, &b_HLT_AK8PFJetFwd200);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd260", &HLT_AK8PFJetFwd260, &b_HLT_AK8PFJetFwd260);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd320", &HLT_AK8PFJetFwd320, &b_HLT_AK8PFJetFwd320);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd400", &HLT_AK8PFJetFwd400, &b_HLT_AK8PFJetFwd400);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd450", &HLT_AK8PFJetFwd450, &b_HLT_AK8PFJetFwd450);
-   fChain->SetBranchAddress("HLT_AK8PFJetFwd500", &HLT_AK8PFJetFwd500, &b_HLT_AK8PFJetFwd500);
    */
-
-   fChain->SetBranchAddress("HLT_CaloMHT90", &HLT_CaloMHT90, &b_HLT_CaloMHT90);
-   fChain->SetBranchAddress("HLT_CaloMET90_NotCleaned", &HLT_CaloMET90_NotCleaned, &b_HLT_CaloMET90_NotCleaned);
-   fChain->SetBranchAddress("HLT_CaloMET350_NotCleaned", &HLT_CaloMET350_NotCleaned, &b_HLT_CaloMET350_NotCleaned);
-   fChain->SetBranchAddress("HLT_PFMET200_NotCleaned", &HLT_PFMET200_NotCleaned, &b_HLT_PFMET200_NotCleaned);
-   fChain->SetBranchAddress("HLT_PFMET250_NotCleaned", &HLT_PFMET250_NotCleaned, &b_HLT_PFMET250_NotCleaned);
-   fChain->SetBranchAddress("HLT_PFMET300_NotCleaned", &HLT_PFMET300_NotCleaned, &b_HLT_PFMET300_NotCleaned);
-   fChain->SetBranchAddress("HLT_PFMET200_BeamHaloCleaned", &HLT_PFMET200_BeamHaloCleaned, &b_HLT_PFMET200_BeamHaloCleaned);
-   fChain->SetBranchAddress("HLT_PFMETTypeOne200_BeamHaloCleaned", &HLT_PFMETTypeOne200_BeamHaloCleaned, &b_HLT_PFMETTypeOne200_BeamHaloCleaned);
-   fChain->SetBranchAddress("HLT_MET105_IsoTrk50", &HLT_MET105_IsoTrk50, &b_HLT_MET105_IsoTrk50);
-   fChain->SetBranchAddress("HLT_MET120_IsoTrk50", &HLT_MET120_IsoTrk50, &b_HLT_MET120_IsoTrk50);
-
-  fChain->SetBranchAddress("HLT_DoublePFJets40_PFBTagDeepJet_p71", &HLT_DoublePFJets40_PFBTagDeepJet_p71, &b_HLT_DoublePFJets40_PFBTagDeepJet_p71);
-   fChain->SetBranchAddress("HLT_DoublePFJets100_PFBTagDeepJet_p71", &HLT_DoublePFJets100_PFBTagDeepJet_p71, &b_HLT_DoublePFJets100_PFBTagDeepJet_p71);
-   fChain->SetBranchAddress("HLT_DoublePFJets200_PFBTagDeepJet_p71", &HLT_DoublePFJets200_PFBTagDeepJet_p71, &b_HLT_DoublePFJets200_PFBTagDeepJet_p71);
-   fChain->SetBranchAddress("HLT_DoublePFJets350_PFBTagDeepJet_p71", &HLT_DoublePFJets350_PFBTagDeepJet_p71, &b_HLT_DoublePFJets350_PFBTagDeepJet_p71);
-   fChain->SetBranchAddress("HLT_DoublePFJets116MaxDeta1p6_DoublePFBTagDeepJet_p71", &HLT_DoublePFJets116MaxDeta1p6_DoublePFBTagDeepJet_p71, &b_HLT_DoublePFJets116MaxDeta1p6_DoublePFBTagDeepJet_p71);
-   fChain->SetBranchAddress("HLT_DoublePFJets128MaxDeta1p6_DoublePFBTagDeepJet_p71", &HLT_DoublePFJets128MaxDeta1p6_DoublePFBTagDeepJet_p71, &b_HLT_DoublePFJets128MaxDeta1p6_DoublePFBTagDeepJet_p71);
 
 
    fChain->SetBranchAddress("HLT_Photon300_NoHE", &HLT_Photon300_NoHE, &b_HLT_Photon300_NoHE);
@@ -1591,28 +1418,6 @@ void PhotonJetAnalysis::Init(TTree *tree)
    fChain->SetBranchAddress("HLT_Photon60_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3", &HLT_Photon60_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3, &b_HLT_Photon60_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3);
    fChain->SetBranchAddress("HLT_Photon75_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3", &HLT_Photon75_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3, &b_HLT_Photon75_R9Id90_HE10_IsoM_EBOnly_PFJetsMJJ300DEta3);
 
-
-
-   fChain->SetBranchAddress("HLT_AK8PFJet220_SoftDropMass40", &HLT_AK8PFJet220_SoftDropMass40, &b_HLT_AK8PFJet220_SoftDropMass40);
-   fChain->SetBranchAddress("HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p50", &HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p50, &b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p50);
-   fChain->SetBranchAddress("HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p53", &HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p53, &b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p53);
-   fChain->SetBranchAddress("HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p55", &HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p55, &b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p55);
-   fChain->SetBranchAddress("HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p60", &HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p60, &b_HLT_AK8PFJet220_SoftDropMass40_PNetBB0p06_DoubleAK4PFJet60_30_PNet2BTagMean0p60);
-   fChain->SetBranchAddress("HLT_AK8PFJet230_SoftDropMass40", &HLT_AK8PFJet230_SoftDropMass40, &b_HLT_AK8PFJet230_SoftDropMass40);
-   fChain->SetBranchAddress("HLT_AK8PFJet230_SoftDropMass40_PNetBB0p06", &HLT_AK8PFJet230_SoftDropMass40_PNetBB0p06, &b_HLT_AK8PFJet230_SoftDropMass40_PNetBB0p06);
-   fChain->SetBranchAddress("HLT_AK8PFJet230_SoftDropMass40_PNetBB0p10", &HLT_AK8PFJet230_SoftDropMass40_PNetBB0p10, &b_HLT_AK8PFJet230_SoftDropMass40_PNetBB0p10);
-   fChain->SetBranchAddress("HLT_AK8PFJet230_SoftDropMass40_PNetTauTau0p03", &HLT_AK8PFJet230_SoftDropMass40_PNetTauTau0p03, &b_HLT_AK8PFJet230_SoftDropMass40_PNetTauTau0p03);
-   fChain->SetBranchAddress("HLT_AK8PFJet230_SoftDropMass40_PNetTauTau0p05", &HLT_AK8PFJet230_SoftDropMass40_PNetTauTau0p05, &b_HLT_AK8PFJet230_SoftDropMass40_PNetTauTau0p05);
-   fChain->SetBranchAddress("HLT_AK8PFJet250_SoftDropMass40_PNetBB0p06", &HLT_AK8PFJet250_SoftDropMass40_PNetBB0p06, &b_HLT_AK8PFJet250_SoftDropMass40_PNetBB0p06);
-   fChain->SetBranchAddress("HLT_AK8PFJet250_SoftDropMass40_PNetBB0p10", &HLT_AK8PFJet250_SoftDropMass40_PNetBB0p10, &b_HLT_AK8PFJet250_SoftDropMass40_PNetBB0p10);
-   fChain->SetBranchAddress("HLT_AK8PFJet250_SoftDropMass40_PNetTauTau0p03", &HLT_AK8PFJet250_SoftDropMass40_PNetTauTau0p03, &b_HLT_AK8PFJet250_SoftDropMass40_PNetTauTau0p03);
-   fChain->SetBranchAddress("HLT_AK8PFJet250_SoftDropMass40_PNetTauTau0p05", &HLT_AK8PFJet250_SoftDropMass40_PNetTauTau0p05, &b_HLT_AK8PFJet250_SoftDropMass40_PNetTauTau0p05);
-   fChain->SetBranchAddress("HLT_AK8PFJet275_SoftDropMass40_PNetBB0p06", &HLT_AK8PFJet275_SoftDropMass40_PNetBB0p06, &b_HLT_AK8PFJet275_SoftDropMass40_PNetBB0p06);
-   fChain->SetBranchAddress("HLT_AK8PFJet275_SoftDropMass40_PNetBB0p10", &HLT_AK8PFJet275_SoftDropMass40_PNetBB0p10, &b_HLT_AK8PFJet275_SoftDropMass40_PNetBB0p10);
-   fChain->SetBranchAddress("HLT_AK8PFJet275_SoftDropMass40_PNetTauTau0p03", &HLT_AK8PFJet275_SoftDropMass40_PNetTauTau0p03, &b_HLT_AK8PFJet275_SoftDropMass40_PNetTauTau0p03);
-   fChain->SetBranchAddress("HLT_AK8PFJet275_SoftDropMass40_PNetTauTau0p05", &HLT_AK8PFJet275_SoftDropMass40_PNetTauTau0p05, &b_HLT_AK8PFJet275_SoftDropMass40_PNetTauTau0p05);
-   fChain->SetBranchAddress("HLT_AK8PFJet425_SoftDropMass40", &HLT_AK8PFJet425_SoftDropMass40, &b_HLT_AK8PFJet425_SoftDropMass40);
-   fChain->SetBranchAddress("HLT_AK8PFJet450_SoftDropMass40", &HLT_AK8PFJet450_SoftDropMass40, &b_HLT_AK8PFJet450_SoftDropMass40);
 
 
 
